@@ -1,302 +1,410 @@
 // src/pages/matrimony.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
 
 const MatrimonyPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
-      <section className="bg-[#FFF9F4] py-16 px-4 md:px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <motion.section 
+        className="bg-[#FFF9F4] py-16 px-4 sm:px-6 lg:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <motion.div 
+            className="lg:w-1/2"
+            variants={fadeInLeft}
+          >
+            <motion.h1 
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+              variants={staggerItem}
+            >
               Matrimony Website Design Company in Coimbatore
-            </h1>
-            <p className="text-lg mb-8 leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              className="text-lg mb-8 leading-relaxed"
+              variants={staggerItem}
+            >
               Are you in the business of matchmaking or operating a matrimony service in Coimbatore? 
-              In today’s digital age, having an attractive and functional matrimony website is essential to connect potential life partners. 
+              In today's digital age, having an attractive and functional matrimony website is essential to connect potential life partners. 
               Look no further for the best matrimony website design services in Coimbatore.
-            </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Let’s discuss →
-            </button>
-          </div>
-          <div className="lg:w-1/2 flex justify-center">
+            </motion.p>
+            <motion.button 
+              variants={staggerItem}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+            >
+              Let's discuss →
+            </motion.button>
+          </motion.div>
+          <motion.div 
+            className="lg:w-1/2 flex justify-center"
+            variants={fadeInRight}
+          >
             <img
               src="/images/matrimony-hero-illustration.png"
               alt="Matrimony Illustration"
               className="max-w-full h-auto rounded-xl shadow-lg"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ====== SECTION 2: Internet Website Designers for Matrimony ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2 flex justify-center">
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-12">
+          <motion.div 
+            className="lg:w-1/2"
+            variants={fadeInLeft}
+          >
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              variants={staggerItem}
+            >
+              Internet Website Designers for Matrimony
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8 leading-relaxed"
+              variants={staggerItem}
+            >
+              At Brightnestsoft, we understand the importance of creating a platform where hearts meet and relationships blossom. 
+              Our mission is to help you in your endeavor to bring together individuals searching for love and companionship. 
+              We stand out among matrimony website design companies in Coimbatore with our commitment to excellence. 
+              Our team of experienced professionals possesses a deep understanding of what it takes to make a successful matrimony website. 
+              Whether you are just starting or looking to revamp your existing site, we've got you covered.
+            </motion.p>
+            <motion.div 
+              className="flex items-center gap-4"
+              variants={staggerItem}
+            >
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md flex-1"
+              >
+                Crafting Love Stories Online →
+              </motion.button>
+              <span className="text-gray-600 font-medium whitespace-nowrap">or</span>
+              <a 
+                href="tel:+919342570575" 
+                className="text-orange-500 font-semibold hover:underline flex-1 text-center"
+              >
+                Call Us +91 9342570575
+              </a>
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            className="lg:w-1/2 flex justify-center"
+            variants={fadeInRight}
+          >
             <img
               src="/images/matrimony-team-illustration.png"
               alt="Team Working"
               className="max-w-full h-auto rounded-xl shadow-lg"
             />
-          </div>
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Internet Website Designers for Matrimony
-            </h2>
-            <p className="text-lg mb-8 leading-relaxed">
-              At Brightnestsoft, we understand the importance of creating a platform where hearts meet and relationships blossom. 
-              Our mission is to help you in your endeavor to bring together individuals searching for love and companionship. 
-              We stand out among matrimony website design companies in Coimbatore with our commitment to excellence. 
-              Our team of experienced professionals possesses a deep understanding of what it takes to make a successful matrimony website. 
-              Whether you are just starting or looking to revamp your existing site, we’ve got you covered.
-            </p>
-            <div className="flex items-center gap-4">
-  <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md flex-1">
-    Crafting Love Stories Online →
-  </button>
-  <span className="text-gray-600 font-medium whitespace-nowrap">or</span>
-  <a href="tel:+919342570575" className="text-orange-500 font-semibold hover:underline flex-1 text-center">
-    Call Us +91 9342570575
-  </a>
-</div>
-
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* ====== SECTION 3: We Offer Affordable Matrimony Web Design Company in Coimbatore ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      {/* ====== SECTION 3: We Offer Affordable Matrimony Web Design ====== */}
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <motion.div 
+            className="lg:w-1/2"
+            variants={fadeInLeft}
+          >
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              variants={staggerItem}
+            >
               We Offer Affordable Matrimony Web Design Company in Coimbatore
-            </h2>
-            <p className="text-lg mb-8 leading-relaxed">
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8 leading-relaxed"
+              variants={staggerItem}
+            >
               We are not just a web design company; we are your partner in crafting love stories online. 
               Our designs are not only visually appealing but also highly functional, making the journey of finding love a seamless experience. 
-              If you’re searching for internet website designers for matrimony, your search ends here. 
+              If you're searching for internet website designers for matrimony, your search ends here. 
               Our team has a strong portfolio of successfully designed matrimony websites that have united countless hearts in Coimbatore and beyond.
-            </p>
-          </div>
-          <div className="lg:w-1/2 flex justify-center">
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="lg:w-1/2 flex justify-center"
+            variants={fadeInRight}
+          >
             <img
               src="/images/matrimony-agency-illustration.png"
               alt="Agency Team"
               className="max-w-full h-auto rounded-xl shadow-lg"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ====== SECTION 4: What Sets Us Apart ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center mb-6"
+            variants={fadeInUp}
+          >
             What Sets Us Apart
-          </h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
             Discover Brightnestsoft's Professional Website Solutions
-          </p>
+          </motion.p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">User-Focused Design</h3>
-              <p className="text-gray-600">
-                We know that your users are at the heart of your business. Our designs are tailored to offer an intuitive and enjoyable user experience, making it easier for potential matches to connect.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Security and Privacy</h3>
-              <p className="text-gray-600">
-                In the world of matrimony, trust and privacy are paramount. We implement robust security measures to ensure the safety of user data and maintain confidentiality.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Mobile Compatibility</h3>
-              <p className="text-gray-600">
-                With the majority of users accessing websites through mobile devices, our designs are mobile-responsive, ensuring that your website looks and works beautifully on smartphones and tablets.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">SEO for Visibility</h3>
-              <p className="text-gray-600">
-                Your matrimony website deserves to be found by those seeking love. We implement SEO strategies to enhance your website’s visibility in search engines, attracting more users.
-              </p>
-            </div>
+            {[
+              { 
+                icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+                title: "User-Focused Design",
+                desc: "We know that your users are at the heart of your business. Our designs are tailored to offer an intuitive and enjoyable user experience, making it easier for potential matches to connect."
+              },
+              { 
+                icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+                title: "Security and Privacy",
+                desc: "In the world of matrimony, trust and privacy are paramount. We implement robust security measures to ensure the safety of user data and maintain confidentiality."
+              },
+              { 
+                icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+                title: "Mobile Compatibility",
+                desc: "With the majority of users accessing websites through mobile devices, our designs are mobile-responsive, ensuring that your website looks and works beautifully on smartphones and tablets."
+              },
+              { 
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
+                title: "SEO for Visibility",
+                desc: "Your matrimony website deserves to be found by those seeking love. We implement SEO strategies to enhance your website's visibility in search engines, attracting more users."
+              }
+            ].map((service, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                variants={staggerItem}
+                whileHover={{ y: -5 }}
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600">{service.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ====== CTA SECTION ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Don’t wait any longer to make your mark in the matrimony industry.
-            </h2>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4">
-              let’s create a matrimony website →
-            </button>
-          </div>
-          <div className="lg:w-1/2 flex justify-center">
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <motion.div 
+            className="lg:w-1/2"
+            variants={fadeInLeft}
+          >
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              variants={staggerItem}
+            >
+              Don't wait any longer to make your mark in the matrimony industry.
+            </motion.h2>
+            <motion.button 
+              variants={staggerItem}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
+            >
+              let's create a matrimony website →
+            </motion.button>
+          </motion.div>
+          <motion.div 
+            className="lg:w-1/2 flex justify-center"
+            variants={fadeInRight}
+          >
             <img
               src="/images/matrimony-cta-illustration.png"
               alt="Matrimony CTA"
               className="max-w-full h-auto rounded-xl shadow-lg"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ====== FAQ SECTION ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center mb-6"
+            variants={fadeInUp}
+          >
             FAQ's Matrimony Web Design Services
-          </h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
             Unlock the Power of Creativity: Your Matrimony Web Design FAQs Answered!
-          </p>
+          </motion.p>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What does your matrimony website design offer?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  We offer custom-designed, secure, and mobile-friendly matrimony websites with SEO optimization and ongoing support.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can you customize the design of matrimony websites to match our brand’s identity?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes! We tailor every design to reflect your brand’s colors, logo, and messaging for a unique and cohesive look.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How long does it take to develop a matrimony website with your company?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Typically 4–8 weeks, depending on complexity, features, and feedback cycles.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What features can we expect in a matrimony website developed by your company?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Features include user profiles, search filters, messaging, photo galleries, payment gateways, admin dashboard, and mobile responsiveness.
-                </p>
-              </details>
-            </div>
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Do you provide ongoing support and maintenance for matrimony websites?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes! We offer monthly maintenance plans including updates, security patches, backups, and technical support.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How do I start a matrimony website?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Start with a consultation — we’ll discuss your goals, audience, and features, then create a custom plan and timeline.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How much does it cost to develop a matrimony app?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Pricing varies based on features, complexity, and platform (iOS/Android/Web). Contact us for a customized quote.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How much does it cost to build a matrimonial website in India?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Starting from ₹50,000 for basic sites, up to ₹3,00,000+ for premium, feature-rich platforms — all inclusive of design, development, and launch.
-                </p>
-              </details>
-            </div>
+            <motion.div className="space-y-4" variants={fadeInLeft}>
+              {[
+                {
+                  question: "What does your matrimony website design offer?",
+                  answer: "We offer custom-designed, secure, and mobile-friendly matrimony websites with SEO optimization and ongoing support."
+                },
+                {
+                  question: "Can you customize the design of matrimony websites to match our brand's identity?",
+                  answer: "Yes! We tailor every design to reflect your brand's colors, logo, and messaging for a unique and cohesive look."
+                },
+                {
+                  question: "How long does it take to develop a matrimony website with your company?",
+                  answer: "Typically 4–8 weeks, depending on complexity, features, and feedback cycles."
+                },
+                {
+                  question: "What features can we expect in a matrimony website developed by your company?",
+                  answer: "Features include user profiles, search filters, messaging, photo galleries, payment gateways, admin dashboard, and mobile responsiveness."
+                }
+              ].map((faq, index) => (
+                <motion.details 
+                  key={index}
+                  className="group border-b border-gray-200 pb-4"
+                  variants={staggerItem}
+                  whileHover={{ y: -2 }}
+                >
+                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                    <span>{faq.question}</span>
+                    <span className="transition group-open:rotate-180">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <motion.p 
+                    className="mt-4 text-gray-600"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {faq.answer}
+                  </motion.p>
+                </motion.details>
+              ))}
+            </motion.div>
+            <motion.div className="space-y-4" variants={fadeInRight}>
+              {[
+                {
+                  question: "Do you provide ongoing support and maintenance for matrimony websites?",
+                  answer: "Yes! We offer monthly maintenance plans including updates, security patches, backups, and technical support."
+                },
+                {
+                  question: "How do I start a matrimony website?",
+                  answer: "Start with a consultation — we'll discuss your goals, audience, and features, then create a custom plan and timeline."
+                },
+                {
+                  question: "How much does it cost to develop a matrimony app?",
+                  answer: "Pricing varies based on features, complexity, and platform (iOS/Android/Web). Contact us for a customized quote."
+                },
+                {
+                  question: "How much does it cost to build a matrimonial website in India?",
+                  answer: "Starting from ₹50,000 for basic sites, up to ₹3,00,000+ for premium, feature-rich platforms — all inclusive of design, development, and launch."
+                }
+              ].map((faq, index) => (
+                <motion.details 
+                  key={index}
+                  className="group border-b border-gray-200 pb-4"
+                  variants={staggerItem}
+                  whileHover={{ y: -2 }}
+                >
+                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                    <span>{faq.question}</span>
+                    <span className="transition group-open:rotate-180">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <motion.p 
+                    className="mt-4 text-gray-600"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {faq.answer}
+                  </motion.p>
+                </motion.details>
+              ))}
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
