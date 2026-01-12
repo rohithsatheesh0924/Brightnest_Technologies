@@ -22,6 +22,7 @@ import SEOPage from "./pages/seo";               // SEO
 import SocialMediaPage from "./pages/social-media"; // Social Media Optimization
 import GoogleAdsPage from "./pages/google-ads";   // Google Ads
 import EmailMarketingPage from "./pages/email-marketing"; // Email Marketing
+import ContactPage from "./pages/contact";
 
 
 import "aos/dist/aos.css";
@@ -67,7 +68,7 @@ function App() {
             {/* Fallbacks */}
             <Route path="/services" element={<div className="text-white p-8">Our full range of services</div>} />
             <Route path="/portfolio" element={<div className="text-white p-8">Portfolio Page</div>} />
-            <Route path="/contact" element={<div className="text-white p-8">Contact Page</div>} />
+            <Route path="/contact" element={<ContactPage />} />
 
             {/* Optional: catch-all 404 */}
             <Route path="*" element={<div className="text-white p-8">Page not found</div>} />
