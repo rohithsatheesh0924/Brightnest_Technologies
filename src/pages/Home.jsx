@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LogoLoop from "../components/LogoLoop";
 
 // Animation Variants
 const fadeInUp = {
@@ -100,97 +101,143 @@ const Home = () => {
 
   {/* CLIENT LOGOS / BOXES */}
   <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
-    className="container mx-auto px-4 md:px-8 lg:px-16 mt-16 flex flex-wrap items-center justify-center gap-8"
-  >
-    {[1, 2, 3, 4].map((i) => (
-      <div 
-        key={i} 
-        className="w-32 h-14 bg-gray-50 border border-gray-100 rounded-lg shadow-sm flex items-center justify-center grayscale hover:grayscale-0 transition duration-300"
-      >
-        {/* Replace with actual partner/client logos */}
-        <div className="w-20 h-6 bg-gray-200 rounded animate-pulse" />
-      </div>
-    ))}
-  </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.5, duration: 0.8 }}
+  className="container mx-auto px-4 md:px-8 lg:px-16 mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-12"
+>
+  {[
+    { id: 1, name: "Client 1", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+    { id: 2, name: "Client 2", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+    { id: 3, name: "Client 3", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+    { id: 4, name: "Client 4", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
+    { id: 5, name: "Client 5", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+  ].map((client) => (
+    <motion.div 
+      key={client.id}
+      whileHover={{ scale: 1.1 }}
+      className="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+    >
+      <img 
+        src={client.logo} 
+        alt={client.name} 
+        className="max-w-full max-h-full object-contain filter drop-shadow-sm" 
+      />
+    </motion.div>
+  ))}
+</motion.div>
 </section>
 
         {/* Services grid - Unique Animation: Staggered Fade Up Cards */}
         <section className="w-full py-16 bg-[#FFF2EA]">
-          <div className="container mx-auto px-4 md:px-8 lg:px-16">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center mb-8"
-            >
-              <p className="text-xs uppercase tracking-wide text-orange-500 mb-2">
-                What we can do for your business
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold">
-                Brightnestsoft: Your Trusted Partner for Web Development Services
-              </h2>
-              <p className="mt-3 text-gray-600 max-w-2xl mx-auto font-luciole">
-                Brightnestsoft is a creative website design company in Coimbatore,
-                Tamilnadu that focuses on delivering effective digital solutions
-                for businesses of all sizes. From custom website design to
-                comprehensive ecommerce development, our team ensures your online
-                presence is professional, responsive, and results‑driven. [web:3]
-              </p>
-            </motion.div>
+  <div className="container mx-auto px-4 md:px-8 lg:px-16">
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="text-center mb-12"
+    >
+      <p className="text-xs uppercase tracking-wide text-orange-500 mb-2 font-bold">
+        What we can do for your business
+      </p>
+      <h2 className="text-2xl md:text-3xl font-bold font-montserrat">
+        Brightnestsoft: Your Trusted Partner for Web Development Services
+      </h2>
+      <p className="mt-3 text-gray-600 max-w-2xl mx-auto font-luciole leading-relaxed">
+        Brightnestsoft is a creative website design company in Coimbatore,
+        Tamilnadu that focuses on delivering effective digital solutions
+        for businesses of all sizes. From custom website design to
+        comprehensive ecommerce development, our team ensures your online
+        presence is professional, responsive, and results‑driven.
+      </p>
+    </motion.div>
 
-            <motion.div 
-              className="grid md:grid-cols-3 gap-6"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {[
-                { title: "Website Design and Development", desc: "Get a professional and responsive website that reflects your brand and engages your audience. We build static, dynamic, and custom web solutions tailored to your goals. [web:3]" },
-                { title: "Logo Design", desc: "Create a memorable visual identity for your business with our custom logo design services. We craft unique and scalable logos that strengthen your brand recall. [web:3]" },
-                { title: "E-Commerce Website", desc: "Launch a powerful ecommerce store with secure payments, product management, and user‑friendly navigation to maximize sales and conversions online. [web:3]" },
-                { title: "CMS Website", desc: "Manage your content with ease using user‑friendly CMS platforms. Update pages, images, and blogs without any technical expertise. [web:3]" },
-                { title: "Mobile App Development", desc: "Extend your digital presence with high‑performance mobile apps designed for Android and iOS platforms to engage customers on the go. [web:3]" },
-                { title: "SEO & Digital Marketing", desc: "Improve your visibility on search engines and attract targeted traffic with SEO‑friendly design and digital marketing services. [web:3]" },
-              ].map((item) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeInUp}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col"
-                >
-                  <div className="w-10 h-10 rounded-full bg-orange-100 mb-4" />
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 flex-1 font-luciole">{item.desc}</p>
-                  <button className="mt-4 text-sm text-orange-500 font-semibold text-left">
-                    Get started today
-                  </button>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4"
-            >
-              <p className="text-gray-700 font-luciole">
-                Elevate your business with Brightnestsoft and transform your
-                website into a powerful marketing asset tailored to your unique
-                needs. [web:3]
-              </p>
-              <button className="px-6 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold shadow hover:bg-orange-600 transition whitespace-nowrap">
-                Explore Now
-              </button>
-            </motion.div>
+    <motion.div 
+      className="grid md:grid-cols-3 gap-6"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {[
+        { 
+          title: "Website Design and Development", 
+          image: "https://cdn-icons-png.flaticon.com/512/2210/2210153.png",
+          desc: "Get a professional and responsive website that reflects your brand and engages your audience. We build static, dynamic, and custom web solutions." 
+        },
+        { 
+          title: "Logo Design", 
+          image: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png",
+          desc: "Create a memorable visual identity for your business with our custom logo design services. We craft unique and scalable logos." 
+        },
+        { 
+          title: "E-Commerce Website", 
+          image: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
+          desc: "Launch a powerful ecommerce store with secure payments, product management, and user‑friendly navigation to maximize sales." 
+        },
+        { 
+          title: "CMS Website", 
+          image: "https://cdn-icons-png.flaticon.com/512/3534/3534033.png",
+          desc: "Manage your content with ease using user‑friendly CMS platforms. Update pages, images, and blogs without any technical expertise." 
+        },
+        { 
+          title: "Mobile App Development", 
+          image: "https://cdn-icons-png.flaticon.com/512/2586/2586488.png",
+          desc: "Extend your digital presence with high‑performance mobile apps designed for Android and iOS platforms to engage customers." 
+        },
+        { 
+          title: "SEO & Digital Marketing", 
+          image: "https://cdn-icons-png.flaticon.com/512/1055/1055644.png",
+          desc: "Improve your visibility on search engines and attract targeted traffic with SEO‑friendly design and digital marketing services." 
+        },
+      ].map((item) => (
+        <motion.div
+          key={item.title}
+          variants={fadeInUp}
+          whileHover={{ y: -10 }}
+          className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+        >
+          {/* Circular Image Container */}
+          <div className="w-16 h-16 rounded-full bg-orange-50 mb-6 flex items-center justify-center overflow-hidden border border-orange-100 group-hover:bg-orange-500 transition-colors duration-300">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              className="w-10 h-10 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+            />
           </div>
-        </section>
+
+          <h3 className="font-bold text-lg mb-3 font-montserrat text-gray-800">{item.title}</h3>
+          <p className="text-sm text-gray-600 flex-1 font-luciole leading-relaxed">
+            {item.desc}
+          </p>
+          
+          <button className="mt-6 text-sm text-orange-600 font-bold text-left flex items-center gap-2 hover:gap-3 transition-all">
+            Get started today
+            <span className="text-lg">→</span>
+          </button>
+        </motion.div>
+      ))}
+    </motion.div>
+
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6 "
+    >
+      <p className="text-gray-700 font-luciole text-lg">
+        Elevate your business with <strong>Brightnestsoft</strong> and transform your
+        website into a powerful marketing asset.
+      </p>
+      <button className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 hover:scale-105 transition-all whitespace-nowrap">
+        Explore Now
+      </button>
+    </motion.div>
+  </div>
+</section>
 
         {/* Intro stats section - Unique Animation: Individual Item Pop-in */}
         <section className="w-full py-16 bg-white">
@@ -251,156 +298,227 @@ const Home = () => {
         </section>
 
         {/* Technologies - Unique Animation: Staggered Fade Up */}
-        <section className="w-full py-16 bg-[#FFF9F4]">
-          <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
-              Technologies we work with
-            </h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-luciole">
-              From modern frontend frameworks to robust backend platforms,
-              Brightnestsoft uses reliable technologies to build secure, scalable,
-              and high‑performance web solutions. [web:3]
-            </p>
+    <section className="w-full py-20 bg-[#FFF9F4] overflow-hidden">
+  <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+    
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-gray-900">
+        Technologies we work with
+      </h2>
+      <p className="text-gray-600 mb-12 max-w-2xl mx-auto font-luciole leading-relaxed text-lg">
+        From modern frontend frameworks to robust backend platforms,
+        Brightnestsoft uses reliable technologies to build secure, scalable,
+        and high‑performance web solutions.
+      </p>
+    </motion.div>
 
-            <motion.div 
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-3 md:grid-cols-6 gap-4"
-            >
-              {[
-                "iOS", "Android", "React", "Vue", "Node", "Python",
-                "Laravel", "PHP", "MySQL", "MongoDB", "WordPress", "Shopify",
-              ].map((tech) => (
-                <motion.div
-                  key={tech}
-                  variants={fadeInUp}
-                  className="bg-white rounded-xl py-3 px-2 shadow-sm text-sm font-medium text-gray-700"
-                >
-                  {tech}
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+    <div className="w-full">
+      <LogoLoop 
+        speed={80}           // Adjust speed (pixels per second)
+        logoHeight={60}      // Increased size so logos are visible
+        gap={60}             // Spacing between logos
+        pauseOnHover={true}
+              // Adds the nice fade effect on sides
+        logos={[
+          { src: "/ios.jpg", alt: "iOS" },
+          { src: "/android.svg", alt: "Android" },
+          { src: "/react.svg", alt: "React" },
+          { src: "/node.svg", alt: "Node" },
+          { src: "/python.svg", alt: "Python" },
+          { src: "/laravel.svg", alt: "Laravel" },
+          { src: "/php.svg", alt: "PHP" },
+          { src: "/mysql.svg", alt: "MySQL" },
+          { src: "/mongodb.svg", alt: "MongoDB" },
+          { src: "/wordpress.svg", alt: "WordPress" },
+          { src: "/shopify.svg", alt: "Shopify" },
+        ]} 
+      />
+    </div>
+  </div>
+</section>
 
         {/* Testimonial - Unique Animation: Scale Up Focus */}
-        <section className="w-full py-16 bg-white">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="container mx-auto px-4 md:px-8 lg:px-16 text-center"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
-              Client Voices, Web Design Excellence
-            </h2>
-            <p className="text-gray-600 mb-8 font-luciole">
-              Hear what our clients say about their experience partnering with
-              Brightnestsoft for web design in Coimbatore. [web:3]
-            </p>
-            <p className="italic text-gray-700 max-w-xl mx-auto mb-4">
-              “Brightnest Technologies Pvt Ltd, well experienced web developer
-              in Coimbatore, you guys are the best! Keep up the great work!”
-              [web:3]
-            </p>
-            <div className="inline-flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-orange-200 mb-2" />
-              <p className="font-semibold text-sm">Mr. L. Komaran</p>
-              <p className="text-xs text-gray-500">
-                Correspondent - Minerva Public School [web:3]
-              </p>
-            </div>
-          </motion.div>
-        </section>
+       <section className="w-full py-16 bg-white">
+  <motion.div 
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 md:px-8 lg:px-16 text-center"
+  >
+    <h2 className="text-2xl md:text-3xl font-bold mb-2 font-montserrat">
+      Client Voices, Web Design Excellence
+    </h2>
+    <p className="text-gray-600 mb-8 font-luciole">
+      Hear what our clients say about their experience partnering with
+      Brightnestsoft for web design in Coimbatore.
+    </p>
+    
+    <p className="italic text-gray-700 max-w-xl mx-auto mb-6 font-luciole text-lg">
+      “Brightnest Technologies Pvt Ltd, well experienced web developer
+      in Coimbatore, you guys are the best! Keep up the great work!”
+    </p>
+
+    <div className="inline-flex flex-col items-center">
+      {/* Circular Image Container */}
+      <div className="w-20 h-20 rounded-full bg-orange-200 mb-3 overflow-hidden border-2 border-orange-500 shadow-sm">
+        <img 
+          src="/client-avatar.jpg" // Replace with your actual image name in the public folder
+          alt="Mr. L. Komaran"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = "https://ui-avatars.com/api/?name=L+Komaran&background=ffedd5&color=ea580c";
+          }}
+        />
+      </div>
+      
+      <p className="font-semibold text-gray-900 text-base font-poppins">Mr. L. Komaran</p>
+      <p className="text-xs text-gray-500 font-luciole uppercase tracking-wider">
+        Correspondent - Minerva Public School
+      </p>
+    </div>
+  </motion.div>
+</section>
 
         {/* FAQ - Unique Animation: Bottom Slide Up */}
-        <section className="w-full py-16 bg-[#FFF2EA]">
-          <div className="container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-10 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}
-            >
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Web Design FAQs: Everything You Need to Know
-              </h2>
-              <p className="text-gray-600 mb-4 font-luciole">
-                Website design questions often arise when businesses start their
-                digital journey. At Brightnestsoft, we answer your queries and
-                guide you with clear, transparent information. [web:3]
-              </p>
-              <ul className="space-y-3 text-sm text-gray-700 font-luciole">
-                <li>• What is Brightnestsoft? A full‑service web, app, and digital marketing company based in Coimbatore, India. [web:5]</li>
-                <li>• Do you provide responsive design? Yes, all websites are fully responsive and mobile‑friendly. [web:4]</li>
-                <li>• Can I update my website content? Yes, we build CMS‑based sites so you can edit text, images, and blogs easily. [web:4]</li>
-                <li>• Do you offer maintenance and support? We provide ongoing support and maintenance packages based on your needs. [web:4]</li>
-              </ul>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex justify-center"
-            >
-              <div className="w-64 h-64 bg-orange-100 rounded-3xl flex items-center justify-center shadow-inner">
-                <span className="text-orange-400 font-semibold">FAQ Illustration</span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
+      <section className="w-full py-16 bg-[#FFF2EA]">
+  <div className="container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* LEFT SIDE: Content */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInLeft}
+    >
+      <h2 className="text-2xl md:text-3xl font-bold mb-2 font-montserrat text-gray-900">
+        Web Design FAQs: Everything You Need to Know
+      </h2>
+      <p className="text-gray-600 mb-6 font-luciole leading-relaxed">
+        Website design questions often arise when businesses start their
+        digital journey. At Brightnestsoft, we answer your queries and
+        guide you with clear, transparent information.
+      </p>
+      
+      <ul className="space-y-4 text-sm text-gray-700 font-luciole">
+        <li className="flex gap-2">
+          <span className="text-orange-500 font-bold">•</span>
+          <span><strong>What is Brightnestsoft?</strong> A full‑service web, app, and digital marketing company based in Coimbatore, India.</span>
+        </li>
+        <li className="flex gap-2">
+          <span className="text-orange-500 font-bold">•</span>
+          <span><strong>Do you provide responsive design?</strong> Yes, all websites are fully responsive and mobile‑friendly.</span>
+        </li>
+        <li className="flex gap-2">
+          <span className="text-orange-500 font-bold">•</span>
+          <span><strong>Can I update my website content?</strong> Yes, we build CMS‑based sites so you can edit text, images, and blogs easily.</span>
+        </li>
+        <li className="flex gap-2">
+          <span className="text-orange-500 font-bold">•</span>
+          <span><strong>Do you offer maintenance?</strong> We provide ongoing support and maintenance packages based on your needs.</span>
+        </li>
+      </ul>
+    </motion.div>
+    
+    {/* RIGHT SIDE: Image */}
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="flex justify-center"
+    >
+      <div className="relative w-full max-w-md">
+        {/* Subtle background decorative shape */}
+        <div className="absolute -inset-4 bg-orange-200/30 rounded-full blur-3xl z-0" />
+        
+        <img 
+          src="/faq-image.jpg" // Ensure this image is in your public folder
+          alt="Frequently Asked Questions"
+          className="relative z-10 w-full h-auto rounded-3xl shadow-xl object-cover aspect-square md:aspect-auto"
+          onError={(e) => {
+            e.target.src = "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974";
+          }}
+        />
+      </div>
+    </motion.div>
+  </div>
+</section>
         {/* Pricing - Unique Animation: Right Slide Reveal */}
-        <section className="w-full py-16 bg-white">
-          <div className="container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-10 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}
-            >
-              <p className="text-xs uppercase tracking-wide text-orange-500 mb-2">
-                Are you looking for a website design company in or around Coimbatore?
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Web Designing Charges in Coimbatore
-              </h2>
-              <p className="text-gray-600 mb-3 font-luciole">
-                Brightnestsoft offers affordable website design pricing in
-                Coimbatore with clear packages that include responsive design,
-                SEO‑friendly pages, contact forms, and more. [web:6]
-              </p>
-              <p className="text-gray-600 mb-6 font-luciole">
-                Whether you need a starter website or a fully featured ecommerce
-                platform, our pricing ensures you get maximum value without
-                compromising on quality or performance. [web:6]
-              </p>
-              <div className="flex gap-4">
-                <motion.button whileHover={{ scale: 1.05 }} className="px-6 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold shadow">
-                  Get a Quote
-                </motion.button>
-                <motion.button whileHover={{ scale: 1.05 }} className="px-6 py-3 rounded-full bg-green-500 text-white text-sm font-semibold shadow">
-                  WhatsApp
-                </motion.button>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex justify-center"
-            >
-              <div className="w-64 h-64 bg-orange-100 rounded-3xl flex items-center justify-center shadow-inner">
-                <span className="text-orange-400 font-semibold">Pricing Illustration</span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+       <section className="w-full py-16 bg-white">
+  <div className="container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* LEFT SIDE: Content */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInLeft}
+    >
+      <p className="text-xs uppercase tracking-wide text-orange-500 mb-2 font-bold font-poppins">
+        Are you looking for a website design company in or around Coimbatore?
+      </p>
+      <h2 className="text-2xl md:text-3xl font-bold mb-3 font-montserrat text-gray-900">
+        Web Designing Charges in Coimbatore
+      </h2>
+      <p className="text-gray-600 mb-3 font-luciole leading-relaxed">
+        Brightnestsoft offers affordable website design pricing in
+        Coimbatore with clear packages that include responsive design,
+        SEO‑friendly pages, contact forms, and more.
+      </p>
+      <p className="text-gray-600 mb-6 font-luciole leading-relaxed">
+        Whether you need a starter website or a fully featured ecommerce
+        platform, our pricing ensures you get maximum value without
+        compromising on quality or performance.
+      </p>
+      
+      <div className="flex gap-4">
+        <motion.button 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="px-6 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold shadow-lg shadow-orange-200 hover:bg-orange-600 transition font-poppins"
+        >
+          Get a Quote
+        </motion.button>
+        <motion.button 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="px-6 py-3 rounded-full bg-green-500 text-white text-sm font-semibold shadow-lg shadow-green-200 hover:bg-green-600 transition font-poppins"
+        >
+          WhatsApp
+        </motion.button>
+      </div>
+    </motion.div>
+    
+    {/* RIGHT SIDE: Image */}
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="flex justify-center"
+    >
+      <div className="relative w-full max-w-md group">
+        {/* Background decorative glow */}
+        <div className="absolute inset-0 bg-orange-100 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+        
+        <img 
+          src="/pricing-details.jpg" // Replace with your actual image path in the public folder
+          alt="Web Design Pricing in Coimbatore"
+          className="relative z-10 w-full h-auto rounded-3xl shadow-xl object-cover"
+          onError={(e) => {
+            e.target.src = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2022";
+          }}
+        />
+      </div>
+    </motion.div>
+  </div>
+</section>
       </main>
     </div>
   );
