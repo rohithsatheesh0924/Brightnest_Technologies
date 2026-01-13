@@ -64,13 +64,13 @@ const Home = () => {
       <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
   {/* Background Layer: ColorBends */}
   <div className="absolute inset-0 z-0">
-    <ColorBends 
-      speed={0.3} 
-      amplitude={1.1} 
-      color1="#EA580C" 
-      color2="#7C2D12" 
-      color3="#000000" 
-    />
+   <ColorBends 
+         speed={0.5}
+         amplitude={1.1}
+         color1="#EA580C" // Deep Orange
+         color2="#7C2D12" // Burnt Orange
+         color3="#000000" // Black for deep blending
+       />
     <div className="absolute inset-0 bg-black/40 z-0" />
   </div>
 
