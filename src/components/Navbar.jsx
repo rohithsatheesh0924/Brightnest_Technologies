@@ -117,7 +117,7 @@ const Navbar = () => {
               }`}>B</span>
             </div>
             <div>
-              <span className={`font-bold tracking-tight block ${
+              <span className={`font-bold tracking-tight block text-white ${
                 scrolled 
                   ? 'text-lg leading-5' 
                   : 'text-2xl lg:text-3xl leading-tight'
