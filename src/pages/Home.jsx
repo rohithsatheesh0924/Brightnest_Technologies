@@ -65,13 +65,13 @@ const Home = () => {
    <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
   {/* Background Layer: ColorBends */}
   <div className="absolute inset-0 z-0">
-    <ColorBends 
-  speed={0.3} 
-  amplitude={1.1} 
-  color1="#F97316" // Your Specific RGB(249, 115, 22) - Vibrant
-  color2="#F97316" // Deep Espresso/Burnt Orange - For Depth
-  color3="#F97316" // Pure Black - For High-Contrast Blending
-/>
+   <ColorBends 
+         speed={0.5}
+         amplitude={1.1}
+         color1="#EA580C" // Deep Orange
+         color2="#7C2D12" // Burnt Orange
+         color3="#000000" // Black for deep blending
+       />
     {/* Radial Mask: Fades the animation toward the edges to keep focus on center text */}
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_85%)] z-[1]" />
   </div>
@@ -356,12 +356,12 @@ const Home = () => {
         pauseOnHover={true}
               // Adds the nice fade effect on sides
         logos={[
-          { src: "/ios.svg", alt: "iOS" },
-          { src: "/android.svg", alt: "Android" },
-          { src: "/reactjs.svg", alt: "React" },
-          { src: "/nodejs.svg", alt: "Node" },
-          { src: "/python.svg", alt: "Python" },
-          { src: "/laravel.svg", alt: "Laravel" },
+          { src: "./ios.svg", alt: "iOS" },
+          { src: "./android.svg", alt: "Android" },
+          { src: "./reactjs.svg", alt: "React" },
+          { src: "./nodejs.svg", alt: "Node" },
+          { src: "./python.svg", alt: "Python" },
+          { src: "./laravel.svg", alt: "Laravel" },
           { src: "/php.svg", alt: "PHP" },
           { src: "/mysql.svg", alt: "MySQL" },
           { src: "/mongodb.svg", alt: "MongoDB" },
@@ -374,44 +374,59 @@ const Home = () => {
 </section>
 
         {/* Testimonial - Unique Animation: Scale Up Focus */}
-       <section className="w-full py-16 bg-white">
+       <section className="relative w-full py-24 overflow-hidden flex items-center justify-center min-h-[500px]">
+  {/* LAYER 1: Background Image */}
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" // Corporate office background
+      alt="Corporate Background" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* LAYER 2: Black Overlay (20% Opacity) */}
+  <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-[2px]" />
+
+  {/* LAYER 3: Content Layer (Visible & Sharp) */}
   <motion.div 
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
-    className="container mx-auto px-4 md:px-8 lg:px-16 text-center"
+    className="container relative z-20 mx-auto px-4 md:px-8 lg:px-16 text-center"
   >
-    <h2 className="text-2xl md:text-3xl font-bold mb-2 font-montserrat">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-white drop-shadow-md">
       Client Voices, Web Design Excellence
     </h2>
-    <p className="text-gray-600 mb-8 font-poppins">
+    <p className="text-gray-100 mb-12 font-poppins max-w-2xl mx-auto text-lg">
       Hear what our clients say about their experience partnering with
       Brightnestsoft for web design in Coimbatore.
     </p>
     
-    <p className="italic text-gray-700 max-w-xl mx-auto mb-6 font-poppins text-lg">
-      “Brightnest Technologies Pvt Ltd, well experienced web developer
-      in Coimbatore, you guys are the best! Keep up the great work!”
-    </p>
-
-    <div className="inline-flex flex-col items-center">
-      {/* Circular Image Container */}
-      <div className="w-20 h-20 rounded-full bg-orange-200 mb-3 overflow-hidden border-2 border-orange-500 shadow-sm">
-        <img 
-          src="/client-avatar.jpg" // Replace with your actual image name in the public folder
-          alt="Mr. L. Komaran"
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.target.src = "https://ui-avatars.com/api/?name=L+Komaran&background=ffedd5&color=ea580c";
-          }}
-        />
-      </div>
-      
-      <p className="font-semibold text-gray-900 text-base font-poppins">Mr. L. Komaran</p>
-      <p className="text-xs text-gray-500 font-poppins uppercase tracking-wider">
-        Correspondent - Minerva Public School
+    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 rounded-[2rem] max-w-3xl mx-auto shadow-2xl">
+      <p className="italic text-white mb-8 font-poppins text-xl md:text-2xl leading-relaxed">
+        “Brightnest Technologies Pvt Ltd, well experienced web developer
+        in Coimbatore, you guys are the best! Keep up the great work!”
       </p>
+
+      <div className="inline-flex flex-col items-center">
+        {/* Circular Image Container */}
+        <div className="w-24 h-24 rounded-full bg-orange-100 mb-4 overflow-hidden border-4 border-orange-500 shadow-lg">
+          <img 
+            src="/client-avatar.jpg" 
+            alt="Mr. L. Komaran"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.target.src = "https://ui-avatars.com/api/?name=L+Komaran&background=ffedd5&color=ea580c";
+            }}
+          />
+        </div>
+        
+        <p className="font-bold text-white text-xl font-poppins">Mr. L. Komaran</p>
+        <p className="text-sm text-orange-400 font-poppins uppercase tracking-[0.2em] font-semibold mt-1">
+          Correspondent - Minerva Public School
+        </p>
+      </div>
     </div>
   </motion.div>
 </section>
@@ -457,27 +472,22 @@ const Home = () => {
     </motion.div>
     
     {/* RIGHT SIDE: Image */}
-    <motion.div 
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="flex justify-center"
-    >
-      <div className="relative w-full max-w-md">
-        {/* Subtle background decorative shape */}
-        <div className="absolute -inset-4 bg-orange-200/30 rounded-full blur-3xl z-0" />
-        
-        <img 
-          src="/faq-image.jpg" // Ensure this image is in your public folder
-          alt="Frequently Asked Questions"
-          className="relative z-10 w-full h-auto rounded-3xl shadow-xl object-cover aspect-square md:aspect-auto"
-          onError={(e) => {
-            e.target.src = "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974";
-          }}
-        />
-      </div>
-    </motion.div>
+   <motion.div 
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Professional "Out-Quint" easing
+  className="flex justify-center items-center"
+>
+  <img 
+    src="/faq-home.png" 
+    alt="Frequently Asked Questions"
+    className="w-full h-auto max-w-lg object-contain"
+    onError={(e) => {
+      e.target.src = "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974";
+    }}
+  />
+</motion.div>
   </div>
 </section>
         {/* Pricing - Unique Animation: Right Slide Reveal */}
@@ -527,27 +537,23 @@ const Home = () => {
     </motion.div>
     
     {/* RIGHT SIDE: Image */}
-    <motion.div 
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="flex justify-center"
-    >
-      <div className="relative w-full max-w-md group">
-        {/* Background decorative glow */}
-        <div className="absolute inset-0 bg-orange-100 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-        
-        <img 
-          src="/pricing-details.jpg" // Replace with your actual image path in the public folder
-          alt="Web Design Pricing in Coimbatore"
-          className="relative z-10 w-full h-auto rounded-3xl shadow-xl object-cover"
-          onError={(e) => {
-            e.target.src = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2022";
-          }}
-        />
-      </div>
-    </motion.div>
+   <motion.div 
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="flex justify-center items-center"
+>
+  <img 
+    src="/last-home.png" 
+    alt="Web Design Pricing in Coimbatore"
+    className="w-full h-auto object-contain max-h-[500px]" 
+    // "object-contain" ensures no cropping, "max-h" keeps it professional
+    onError={(e) => {
+      e.target.src = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2022";
+    }}
+  />
+</motion.div>
   </div>
 </section>
       </main>
