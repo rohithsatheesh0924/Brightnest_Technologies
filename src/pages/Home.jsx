@@ -6,6 +6,7 @@ import LogoLoop from "../components/LogoLoop";
 import Aurora from "../components/Aurora";
 import Plasma from "../components/Plasma";
 import ColorBends from "../components/ColorBends";
+import GridScan from "../components/GridScan";
 
 
 const CountUp = ({ to }) => {
@@ -61,22 +62,22 @@ const Home = () => {
 /> */}
 
         {/* Hero Section - Unique Animation: Left Slide Reveal */}
-      <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
+   <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
   {/* Background Layer: ColorBends */}
   <div className="absolute inset-0 z-0">
-   <ColorBends 
-         speed={0.5}
-         amplitude={1.1}
-         color1="#EA580C" // Deep Orange
-         color2="#7C2D12" // Burnt Orange
-         color3="#000000" // Black for deep blending
-       />
-    <div className="absolute inset-0 bg-black/40 z-0" />
+    <ColorBends 
+  speed={0.3} 
+  amplitude={1.1} 
+  color1="#F97316" // Your Specific RGB(249, 115, 22) - Vibrant
+  color2="#F97316" // Deep Espresso/Burnt Orange - For Depth
+  color3="#F97316" // Pure Black - For High-Contrast Blending
+/>
+    {/* Radial Mask: Fades the animation toward the edges to keep focus on center text */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_85%)] z-[1]" />
   </div>
 
   <div className="container relative z-10 mx-auto px-4 md:px-8 lg:px-16 flex flex-col items-center">
-    
-    {/* Heading Section */}
+    {/* Content Wrapper */}
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +97,7 @@ const Home = () => {
         </span>
       </h1>
       
-      <p className="font-poppins text-gray-300 mb-10 leading-relaxed text-base md:text-lg max-w-2xl mx-auto">
+      <p className="font-poppins text-gray-300 mb-10 leading-relaxed text-base md:text-lg max-w-2xl mx-auto drop-shadow-sm">
         Brightnest Technologies delivers high-performance web ecosystems. We empower businesses in Coimbatore with stunning design and functional excellence tailored to your growth.
       </p>
 
@@ -121,6 +122,7 @@ const Home = () => {
     </motion.div>
   </div>
 </section>
+
  {/* CLIENT LOGOS / BOXES */}
 <section>
   
