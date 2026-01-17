@@ -25,6 +25,25 @@ const CountUp = ({ to }) => {
   return <motion.span ref={nodeRef}>{rounded}</motion.span>;
 };
 
+{/* 1. PLACE THIS SUB-COMPONENT OUTSIDE YOUR MAIN Home FUNCTION */}
+const ClientLogo = ({ client }) => (
+  <motion.div 
+    whileHover={{ scale: 1.1, y: -8 }}
+    whileTap={{ scale: 0.95 }}
+    className="w-44 h-24 flex items-center justify-center cursor-pointer group"
+  >
+    <img 
+      src={client.logo} 
+      alt={client.name} 
+      className="max-w-[140px] max-h-[55px] object-contain transition-all duration-500 
+                 /* LAYER 1: Default State - Black & Semi-Transparent */
+                 filter brightness-0 opacity-40 
+                 /* LAYER 2: Hover/Touch State - Original Color & Full Opacity */
+                 group-hover:filter-none group-hover:opacity-100" 
+    />
+  </motion.div>
+);
+
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -60,6 +79,7 @@ const Home = () => {
   color2="#FFA500"  // Radiant Orange
   color3="#FFD580"  // Soft Highlight Orange
 /> */}
+
 
         {/* Hero Section - Unique Animation: Left Slide Reveal */}
    <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
@@ -122,37 +142,60 @@ const Home = () => {
     </motion.div>
   </div>
 </section>
-
- {/* CLIENT LOGOS / BOXES */}
-<section>
-  
-  <motion.div 
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.5, duration: 0.8 }}
-  className="container mx-auto px-4 md:px-8 lg:px-16 mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-12"
->
-  {[
-    { id: 1, name: "Client 1", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-    { id: 2, name: "Client 2", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-    { id: 3, name: "Client 3", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-    { id: 4, name: "Client 4", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
-    { id: 5, name: "Client 5", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  ].map((client) => (
+<section className="w-full py-24 md:py-40 bg-transparent border-t border-white/5">
+  <div className="container mx-auto px-4 md:px-8">
+    
+    {/* Section Header */}
     <motion.div 
-      key={client.id}
-      whileHover={{ scale: 1.1 }}
-      className="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-20"
     >
-      <img 
-        src={client.logo} 
-        alt={client.name} 
-        className="max-w-full max-h-full object-contain filter drop-shadow-sm" 
-      />
+      <h2 className="font-montserrat text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        Our <span className="text-orange-500">Lovable Clients</span>
+      </h2>
+      <div className="w-16 h-1 bg-orange-500 mx-auto mt-4 rounded-full opacity-60" />
     </motion.div>
-  ))}
-</motion.div>
+
+    {/* Structured 3x2 Layout */}
+    <div className="flex flex-col gap-10 md:gap-16">
+      
+      {/* Row 1: 3 Logos */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="flex flex-wrap justify-center gap-12 md:gap-24"
+      >
+        {[
+          { id: 1, name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+          { id: 2, name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+          { id: 3, name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+        ].map((item) => (
+          <ClientLogo key={item.id} client={item} />
+        ))}
+      </motion.div>
+
+      {/* Row 2: 2 Logos */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="flex flex-wrap justify-center gap-12 md:gap-24"
+      >
+        {[
+          { id: 4, name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
+          { id: 5, name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+        ].map((item) => (
+          <ClientLogo key={item.id} client={item} />
+        ))}
+      </motion.div>
+
+    </div>
+  </div>
 </section>
 
         {/* Services grid - Unique Animation: Staggered Fade Up Cards */}
