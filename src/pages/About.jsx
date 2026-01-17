@@ -1,6 +1,6 @@
 // src/pages/About.jsx
-import React, { useEffect, useRef } from "react";
-import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react"; // Added useState here
+import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresence } from "framer-motion"; // Added AnimatePresence
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ColorBends from "../components/ColorBends";
@@ -57,7 +57,32 @@ const staggerContainer = {
   }
 };
 
+
 const About = () => {
+
+const [activeTab, setActiveTab] = useState("Igniting innovation");
+  const tabContent = {
+    "Igniting innovation": {
+      title: "Igniting innovation",
+      p1: "Every engagement starts with understanding your business deeply—your users, processes, and objectives. From there, Brightnest Technologies designs solutions that are not just visually polished but technically scalable.",
+      p2: "The team treats innovation as a discipline: rapid prototyping, quick feedback loops, and pragmatic use of technology to solve real problems, not create complexity."
+    },
+    "Hitting the mark": {
+      title: "Hitting the mark",
+      p1: "We focus on precision and performance. Our goal is to ensure that every digital product we launch meets the exact needs of your target audience and exceeds industry standards.",
+      p2: "By combining data-driven insights with creative execution, we hit the bullseye on every project, ensuring your ROI is maximized from day one."
+    },
+    "Web of possibilities": {
+      title: "Web of possibilities",
+      p1: "The digital landscape is vast, and we help you navigate it. Whether it's complex API integrations or custom-built e-commerce engines, we build the infrastructure for your success.",
+      p2: "We don't just build websites; we create digital ecosystems that allow your business to grow, adapt, and lead in an ever-changing market."
+    },
+    "From local to global": {
+      title: "From local to global",
+      p1: "Based in Coimbatore, we have the heart of a local partner with the reach of a global firm. We help local businesses scale their presence to reach international markets.",
+      p2: "Our architecture is built for scale. As your traffic grows from hundreds to millions, our cloud-ready solutions ensure your global users have a seamless experience."
+    }
+  };
   return (
     <main className="bg-[#FFF9F4] text-[#222]">
       {/* 1. Hero / Intro - Unique Animation: Slow Fade Down */}
@@ -132,26 +157,24 @@ const About = () => {
   <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
     
     {/* LEFT SIDE: Image Circle */}
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={fadeInLeft}
-      className="flex justify-center"
-    >
-      <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-orange-500/10 to-orange-500/30 flex items-center justify-center shadow-xl border-4 border-white overflow-hidden relative group">
-        <img 
-          src="/about-us-image.jpg" // Replace with your actual image path in the public folder
-          alt="Brightnest Technologies Team"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          onError={(e) => {
-            e.target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070";
-          }}
-        />
-        {/* Subtle overlay to make it look more professional */}
-        <div className="absolute inset-0 bg-orange-500/5 group-hover:bg-transparent transition-colors duration-300" />
-      </div>
-    </motion.div>
+   <motion.div 
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={fadeInLeft}
+  className="flex justify-center items-center"
+>
+  {/* Removed the group div and background shapes to show only the image */}
+  <img 
+    src="/about-top.jpg" 
+    alt="Brightnest Technologies Team"
+    className="w-full h-auto max-w-lg object-contain shadow-2xl transition-transform duration-700 hover:scale-105"
+    // object-contain ensures the full original image is visible without being cut off
+    onError={(e) => {
+      e.target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070";
+    }}
+  />
+</motion.div>
 
     {/* RIGHT SIDE: Content */}
     <motion.div
@@ -233,7 +256,7 @@ const About = () => {
           className="relative w-72 h-60 md:w-96 md:h-72 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white"
         >
           <img 
-            src="/agency-preview.jpg" // Replace with your image in the public folder
+            src="/about-tech.png" // Replace with your image in the public folder
             alt="Digital Agency Coimbatore"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={(e) => {
@@ -322,58 +345,79 @@ const About = () => {
     </section>
 
       {/* 5. Thrive with us - Unique Animation: Slide and Focus */}
+      
       <section className="w-full bg-white">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        
+        {/* Header */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          }}
+          className="text-center mb-10"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 font-montserrat">Thrive with us</h3>
+          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto font-poppins">
+            Partner with a team that treats every build as a product, not just a project—carefully planned, iterated, and improved for long‑term performance.
+          </p>
+        </motion.div>
+
+        {/* Interactive Grid */}
+        <div className="grid md:grid-cols-[260px,1fr] gap-8">
+          
+          {/* Left Sidebar: Buttons */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-10"
+            className="space-y-3"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">Thrive with us</h3>
-            <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-              Partner with a team that treats every build as a product, not just a project—carefully planned, iterated, and improved for long‑term performance.
-            </p>
+            {Object.keys(tabContent).map((item) => (
+              <button
+                key={item}
+                onClick={() => setActiveTab(item)}
+                className={`w-full text-left px-5 py-4 rounded-xl border text-sm font-bold transition-all duration-300 font-poppins 
+                  ${activeTab === item 
+                    ? "bg-orange-500 text-white border-orange-500 shadow-lg shadow-orange-200" 
+                    : "bg-white text-gray-700 border-gray-100 hover:border-orange-200 hover:bg-orange-50/30"
+                  }`}
+              >
+                {item}
+              </button>
+            ))}
           </motion.div>
 
-          <div className="grid md:grid-cols-[260px,1fr] gap-8">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="space-y-3"
-            >
-              {["Igniting innovation", "Hitting the mark", "Web of possibilities", "From local to global"].map((item, i) => (
-                <motion.button
-                  key={item}
-                  variants={fadeInLeft}
-                  className={`w-full text-left px-4 py-3 rounded-xl border text-sm font-semibold transition ${i === 0 ? "bg-orange-500 text-white border-orange-500 shadow-sm" : "bg-white text-gray-700 border-gray-200"}`}
-                >
-                  {item}
-                </motion.button>
-              ))}
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#FFF9F4] rounded-2xl shadow-sm p-6 md:p-8"
-            >
-              <h4 className="text-xl font-semibold mb-3">Igniting innovation</h4>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
-                Every engagement starts with understanding your business deeply—your users, processes, and objectives. From there, Brightnest Technologies designs solutions that are not just visually polished but technically scalable.
-              </p>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                The team treats innovation as a discipline: rapid prototyping, quick feedback loops, and pragmatic use of technology to solve real problems, not create complexity.
-              </p>
-            </motion.div>
+          {/* Right Content: Paragraphs */}
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeTab} // Unique key triggers animation on change
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                transition={{ duration: 0.4 }}
+                className="bg-[#FFF9F4] rounded-3xl shadow-sm p-8 md:p-12 border border-orange-50/50 min-h-[300px]"
+              >
+                <h4 className="text-2xl font-bold mb-5 font-montserrat text-gray-900">
+                  {tabContent[activeTab].title}
+                </h4>
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-poppins">
+                  {tabContent[activeTab].p1}
+                </p>
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed font-poppins">
+                  {tabContent[activeTab].p2}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 6. Process section - Unique Animation: Card Stagger */}
       <section className="w-full bg-[#FFF9F4]">
