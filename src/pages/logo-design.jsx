@@ -70,15 +70,22 @@ const LogoDesignPage = () => {
             </motion.button>
           </motion.div>
           <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="/images/logo-hero-illustration.png"
-              alt="Logo Design Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
+  className="lg:w-1/2 flex justify-center"
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+  <img
+    src="/logo-top.png"
+    alt="Logo Design Illustration"
+    className="max-w-full h-auto object-contain" 
+    /* removed rounded-xl and shadow-lg to remove the "box" */
+    onError={(e) => {
+      e.target.src = "https://images.unsplash.com/photo-1572044162444-ad60f128bde3?q=80&w=2070";
+    }}
+  />
+</motion.div>
         </div>
       </motion.section>
 
@@ -135,7 +142,7 @@ const LogoDesignPage = () => {
               variants={fadeInRight}
             >
               <img
-                src="/images/logo-services-illustration.png"
+                src="/logo-page2.png"
                 alt="Logo Designer"
                 className="max-w-full h-auto rounded-xl shadow-lg"
               />
