@@ -372,14 +372,14 @@ const Home = () => {
     </section>
 
         {/* Technologies - Unique Animation: Staggered Fade Up */}
-    <section className="w-full py-20 bg-[#FFF9F4] overflow-hidden">
+   {/* --- SECTION 1: TECHNOLOGIES (STAYS AS IS) --- */}
+<section className="relative w-full py-20 bg-[#FFF9F4] overflow-hidden z-20 shadow-xl">
   <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
-    
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={fadeInUp}
+      variants={fadeInUp} // Ensure fadeInUp is defined in your file
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-gray-900">
         Technologies we work with
@@ -393,11 +393,10 @@ const Home = () => {
 
     <div className="w-full">
       <LogoLoop 
-        speed={80}           // Adjust speed (pixels per second)
-        logoHeight={60}      // Increased size so logos are visible
-        gap={60}             // Spacing between logos
+        speed={80} 
+        logoHeight={60} 
+        gap={60} 
         pauseOnHover={true}
-              // Adds the nice fade effect on sides
         logos={[
           { src: "./ios.svg", alt: "iOS" },
           { src: "./android.svg", alt: "Android" },
@@ -416,45 +415,46 @@ const Home = () => {
   </div>
 </section>
 
-        {/* Testimonial - Unique Animation: Scale Up Focus */}
-       <section className="relative w-full py-24 overflow-hidden flex items-center justify-center min-h-[500px]">
-  {/* LAYER 1: Background Image */}
-  <div className="absolute inset-0 z-0">
-    <img 
-      src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" // Corporate office background
-      alt="Corporate Background" 
-      className="w-full h-full object-cover"
-    />
-  </div>
+{/* --- SECTION 2: TESTIMONIAL (3-LAYER WITH FIXED BG) --- */}
+<section className="relative w-full py-32 overflow-hidden flex items-center justify-center min-h-[600px] bg-black">
+  {/* LAYER 1: Fixed Background Image */}
+  <div 
+    className="absolute inset-0 z-0 bg-fixed bg-center bg-cover bg-no-repeat grayscale-[30%]"
+    style={{ 
+      backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069')`,
+      // bg-fixed creates the parallax effect where image doesn't move
+    }}
+  />
 
-  {/* LAYER 2: Black Overlay (20% Opacity) */}
-  <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-[2px]" />
+  {/* LAYER 2: Black Overlay (Higher contrast for fixed backgrounds) */}
+  <div className="absolute inset-0 z-10 bg-black/40 backdrop-blur-[1px]" />
 
-  {/* LAYER 3: Content Layer (Visible & Sharp) */}
+  {/* LAYER 3: Content Layer - Animating Bottom to Top */}
   <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
+    initial={{ opacity: 0, y: 100 }} // Starts further down
+    whileInView={{ opacity: 1, y: 0 }} // Animates to top
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 1, ease: "easeOut" }}
     className="container relative z-20 mx-auto px-4 md:px-8 lg:px-16 text-center"
   >
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-white drop-shadow-md">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-montserrat text-white drop-shadow-2xl">
       Client Voices, Web Design Excellence
     </h2>
-    <p className="text-gray-100 mb-12 font-poppins max-w-2xl mx-auto text-lg">
+    
+    <p className="text-gray-200 mb-12 font-poppins max-w-2xl mx-auto text-lg md:text-xl font-medium">
       Hear what our clients say about their experience partnering with
       Brightnestsoft for web design in Coimbatore.
     </p>
     
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 rounded-[2rem] max-w-3xl mx-auto shadow-2xl">
-      <p className="italic text-white mb-8 font-poppins text-xl md:text-2xl leading-relaxed">
+    <div className="bg-white/10 backdrop-blur-xl border border-white/30 p-8 md:p-14 rounded-[3rem] max-w-4xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <p className="italic text-white mb-10 font-poppins text-xl md:text-3xl leading-relaxed">
         “Brightnest Technologies Pvt Ltd, well experienced web developer
         in Coimbatore, you guys are the best! Keep up the great work!”
       </p>
 
       <div className="inline-flex flex-col items-center">
-        {/* Circular Image Container */}
-        <div className="w-24 h-24 rounded-full bg-orange-100 mb-4 overflow-hidden border-4 border-orange-500 shadow-lg">
+        {/* Avatar Container */}
+        <div className="w-24 h-24 rounded-full bg-orange-100 mb-4 overflow-hidden border-4 border-orange-500 shadow-xl">
           <img 
             src="/client-avatar.jpg" 
             alt="Mr. L. Komaran"
@@ -465,8 +465,8 @@ const Home = () => {
           />
         </div>
         
-        <p className="font-bold text-white text-xl font-poppins">Mr. L. Komaran</p>
-        <p className="text-sm text-orange-400 font-poppins uppercase tracking-[0.2em] font-semibold mt-1">
+        <p className="font-bold text-white text-2xl font-poppins">Mr. L. Komaran</p>
+        <p className="text-sm text-orange-400 font-poppins uppercase tracking-[0.3em] font-bold mt-2">
           Correspondent - Minerva Public School
         </p>
       </div>
