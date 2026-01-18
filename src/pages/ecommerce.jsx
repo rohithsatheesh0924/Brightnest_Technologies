@@ -36,52 +36,53 @@ const ECommercePage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
-      <motion.section 
-        className=" py-16 px-4 sm:px-6 lg:px-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer}
+     <motion.section 
+  className="py-16 px-4 sm:px-6 lg:px-8"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={staggerContainer}
+>
+  <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <motion.div 
+      className="lg:w-1/2"
+      variants={fadeInLeft}
+    >
+      <motion.h1 
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+        variants={staggerItem}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
-            >
-              Elevate Your Online Business with Brightnestsoft's Expert E-Commerce Website Development Services!
-            </motion.h1>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
-            >
-              Transform your vision into a stunning online store with our comprehensive E-Commerce website development services. 
-              Our expert team combines <span className="font-bold text-red-600">creative design</span>, seamless functionality, and user-friendly interfaces to deliver an engaging and profitable digital shopping experience.
-            </motion.p>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
-            >
-              Explore Pricing →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="/images/ecommerce-hero-illustration.png"
-              alt="E-Commerce Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
-        </div>
-      </motion.section>
+        Elevate Your Online Business with Brightnestsoft's Expert E-Commerce Website Development Services!
+      </motion.h1>
+      <motion.p 
+        className="text-lg mb-8 leading-relaxed"
+        variants={staggerItem}
+      >
+        Transform your vision into a stunning online store with our comprehensive E-Commerce website development services. 
+        Our expert team combines <span className="font-bold text-orange-500">creative design</span>, seamless functionality, and user-friendly interfaces to deliver an engaging and profitable digital shopping experience.
+      </motion.p>
+      <motion.button 
+        variants={staggerItem}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+      >
+        Explore Pricing →
+      </motion.button>
+    </motion.div>
+    <motion.div 
+      className="lg:w-1/2 flex justify-center"
+      variants={fadeInRight}
+    >
+      <img
+        src="./ecom.png"
+        alt="E-Commerce Illustration"
+        /* Removed rounded-xl and shadow-lg to strip the container box effect */
+        className="max-w-full h-auto" 
+      />
+    </motion.div>
+  </div>
+</motion.section>
 
       {/* ====== SERVICES GRID SECTION ====== */}
       <motion.section 
@@ -153,44 +154,46 @@ const ECommercePage = () => {
 
       {/* ====== CTA SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 "
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer}
+  className="py-16 px-4 sm:px-6 lg:px-8"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={staggerContainer}
+>
+  <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <motion.div 
+      className="lg:w-1/2"
+      variants={fadeInLeft}
+    >
+      <motion.h2 
+        className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+        variants={staggerItem}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
-            >
-              Empower Your Online Store: Partner with Brightnestsoft for Cutting-Edge E-Commerce
-            </motion.h2>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
-            >
-              Explore Pricing →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="/images/ecommerce-cta-illustration.png"
-              alt="Online Store Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
-        </div>
-      </motion.section>
+        Empower Your Online Store: Partner with Brightnestsoft for Cutting-Edge E-Commerce
+      </motion.h2>
+      <motion.button 
+        variants={staggerItem}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
+      >
+        Explore Pricing →
+      </motion.button>
+    </motion.div>
+
+    <motion.div 
+      className="lg:w-1/2 flex justify-center"
+      variants={fadeInRight}
+    >
+      <img
+        src="./ecom1.png"
+        alt="Online Store Illustration"
+        /* Removed rounded-xl and shadow-lg to remove the box effect */
+        className="max-w-full h-auto" 
+      />
+    </motion.div>
+  </div>
+</motion.section>
     </div>
   );
 };
