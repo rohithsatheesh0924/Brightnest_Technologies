@@ -1,6 +1,6 @@
 // src/pages/web-design.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react'; // Added useState here
+import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresence
 import { Link } from 'react-router-dom';
 
 // Animation Variants
@@ -33,6 +33,27 @@ const staggerItem = {
 };
 
 const WebDesignPage = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const faqData = [
+    { q: "What is website design?", a: "Website design is the process of planning, conceptualizing, and arranging content online. It involves creating the layout, visual elements, and user interface of a website." },
+    { q: "Why is website design important for my business?", a: "A well-designed website builds trust, enhances credibility, and improves user experience — directly impacting conversions and customer retention." },
+    { q: "What services does Brightnestsoft offer in website design?", a: "We offer custom website development, responsive design, UI/UX design, SEO optimization, e-commerce solutions, and ongoing maintenance." },
+    { q: "How long does it take to design and develop a website?", a: "Typically 2–6 weeks, depending on complexity, revisions, and content readiness." },
+    { q: "Can I have input in the website design process?", a: "Absolutely! Your feedback and vision are integral to our collaborative design process." },
+    { q: "Do you redesign existing websites?", a: "Yes, we specialize in modernizing and optimizing existing websites for better performance, design, and user experience." },
+    { q: "Will my website be mobile-friendly?", a: "Yes! All websites we design are fully responsive and tested across all device sizes." },
+    { q: "Can you optimize my website for search engines (SEO)?", a: "Yes, we build SEO-optimized websites with semantic HTML, fast loading speeds, and structured data to help you rank higher." },
+    { q: "Will my website be easy to update and maintain?", a: "We use modern CMS platforms or provide training so you can easily manage your site content." },
+    { q: "What about website hosting and domain registration?", a: "We offer domain registration and reliable hosting packages tailored to your project's needs." },
+    { q: "Can you provide ongoing support and maintenance after the website is launched?", a: "Yes! We offer monthly maintenance plans including updates, backups, security checks, and technical support." },
+    { q: "Types of website design", a: "We design static sites, dynamic sites, e-commerce stores, portfolios, blogs, and custom web applications." }
+  ];
+
+  // Defined these constants here to fix the "not defined" errors
+  const leftCol = faqData.slice(0, 6);
+  const rightCol = faqData.slice(6);
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
@@ -44,53 +65,32 @@ const WebDesignPage = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
-            >
+          <motion.div className="lg:w-1/2" variants={fadeInLeft}>
+            <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6" variants={staggerItem}>
               Affordable Choice for Web Design Company in Coimbatore
             </motion.h1>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
-            >
+            <motion.p className="text-lg mb-8 leading-relaxed" variants={staggerItem}>
               At Brightnestsoft, we are your premier and affordable choice for{" "}
-              <span className="text-red-600 font-semibold">web design services in Coimbatore</span>. 
+              <span className="text-orange-500 font-semibold">web design services in Coimbatore</span>. 
               Your premier destination for exceptional website design and top-tier web development services in Coimbatore! 
               We take immense pride in offering comprehensive web solutions that are not only budget-friendly but also guarantee top-notch quality and outstanding results. 
-              Our mission is clear: we create custom web solutions that are marked by excellence, innovation, and speed. 
-              As the best website design company in Coimbatore, we specialize in a wide range of services tailored to meet your specific needs.
             </motion.p>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
-              variants={staggerItem}
-            >
+            <motion.div className="flex flex-row items-center gap-4 mt-8" variants={staggerItem}>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
               >
                 Start Your Website Now →
               </motion.button>
-              <span className="text-gray-600 self-center">or</span>
-              <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline">
+              <span className="text-gray-600">or</span>
+              <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline whitespace-nowrap">
                 Call Us +91 9342570575
               </Link>
             </motion.div>
           </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="/images/hero-illustration.png"
-              alt="Web Design Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
-            />
+          <motion.div className="lg:w-1/2 flex justify-center" variants={fadeInRight}>
+            <img src="./web-top.png" alt="Web Design Illustration" className="max-w-full h-auto" />
           </motion.div>
         </div>
       </motion.section>
@@ -104,126 +104,38 @@ const WebDesignPage = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
-            variants={fadeInUp}
-          >
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-12" variants={fadeInUp}>
             Why We Are Considered the Best Web Design Company in Coimbatore
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              "We wear the badge of the <span class='font-bold text-red-600'>best web design Coimbatore company</span> with pride. This has been possible due to our relentless pursuit of excellence in ecommerce web development. We understand the nuances of digital representation, tailoring solutions that set your brand apart digitally.",
+              "We wear the badge of the <span class='font-bold text-orange-500'>best web design Coimbatore company</span> with pride. This has been possible due to our relentless pursuit of excellence in ecommerce web development.",
               "Our acumen goes beyond building visually appealing websites. We make sure they're designed to do business.",
-              "We consider various factors such as loading speed, UX design, SEO optimization, and so much more while developing your platform. We pride ourselves on our transparent communication and willingness to educate our partners.",
-              "It's crucial for us that you understand what you're investing in. Speaking of investment, our <span class='font-bold text-red-600'>website design pricing and packages</span> have been meticulously designed to offer value for money. They are neither hidden nor complex but laid out transparently.",
+              "We consider various factors such as loading speed, UX design, SEO optimization, and so much more while developing your platform.",
+              "It's crucial for us that you understand what you're investing in. Speaking of investment, our <span class='font-bold text-orange-500'>website design pricing and packages</span> have been laid out transparently.",
               "Our commitment extends to a fair pricing model that doesn't compromise on quality or service."
             ].map((content, index) => (
-              <motion.div 
-                key={index}
-                className="flex items-start space-x-3"
-                variants={staggerItem}
-              >
+              <motion.div key={index} className="flex items-start space-x-3" variants={staggerItem}>
                 <svg className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <div>
-                  <p className="mb-4" dangerouslySetInnerHTML={{ __html: content }} />
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: content }} />
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
-            variants={staggerItem}
-          >
+          <motion.div className="mt-12 flex flex-row items-center justify-center gap-4 flex-wrap" variants={staggerItem}>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+              className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-500 transition-all duration-300 shadow-md whitespace-nowrap"
             >
               Start Your Website Now →
             </motion.button>
-            <span className="text-gray-600 self-center">or</span>
-            <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline">
+            <span className="text-gray-600">or</span>
+            <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline whitespace-nowrap">
               Call Us +91 9342570575
             </Link>
           </motion.div>
-        </div>
-      </motion.section>
-
-      {/* ====== SERVICES GRID ====== */}
-      <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer}
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={fadeInUp}
-          >
-            We Offer Affordable Website Design Services
-          </motion.h2>
-          <motion.p 
-            className="text-center text-lg mb-12 max-w-3xl mx-auto"
-            variants={fadeInUp}
-          >
-            Are you looking for a website that adapts seamlessly to all devices? Look no further! 
-            Our expertise lies in crafting mobile-responsive websites that ensure a flawless user experience on every screen. 
-            But we don't stop there. We excel in creating active static websites, data-driven dynamic websites, portal web development, multimedia and open-source web development services. 
-            Your online presence is in good hands with us.
-          </motion.p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", 
-                title: "Custom Website Development",
-                desc: "We create bespoke websites tailored to your specific business needs and target audience. Our team ensures that your website reflects your brand identity, engages visitors, and provides seamless user experiences."
-              },
-              { 
-                icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15", 
-                title: "Responsive Web Design",
-                desc: "We optimize your website for seamless viewing across all devices and screen sizes. Our web responsive design techniques ensure a consistent and engaging user experience, whether your visitors access your site on desktop, mobile, or tablet."
-              },
-              { 
-                icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", 
-                title: "Web UI/UX Design",
-                desc: "Our web UI/UX design services focus on creating visually appealing and intuitive interfaces that captivate your audience. We prioritize user-centric design to enhance engagement, navigation, and overall user experience on your website."
-              },
-              { 
-                icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", 
-                title: "Website Maintenance and Support",
-                desc: "At Brightnestsoft, we provide ongoing maintenance and support services to ensure your e-commerce website operates flawlessly. We handle updates, security patches, bug fixes, and offer prompt technical assistance to keep your online store running smoothly."
-              },
-              { 
-                icon: "M13 10V3L4 14h7v7l9-11h-7z", 
-                title: "SEO Optimized Web Design",
-                desc: "In today's digital landscape, SEO is crucial. That's why we offer top-notch SEO services and SEO-optimized web designing to ensure that your website ranks high in search engine results and attracts the right audience."
-              },
-              { 
-                icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z", 
-                title: "E-Commerce Solutions",
-                desc: "We build robust, scalable, and secure e-commerce platforms that drive sales and customer loyalty. From product catalogs to checkout flows, we handle it all with precision."
-              }
-            ].map((service, index) => (
-              <motion.div 
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
-                variants={staggerItem}
-                whileHover={{ y: -5 }}
-              >
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </motion.section>
 
@@ -236,27 +148,20 @@ const WebDesignPage = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={fadeInUp}
-          >
-            Comprehensive Website Development Services in Coimbatore: HTML & PHP Solutions
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-6" variants={fadeInUp}>
+            Comprehensive Website Development Services in Coimbatore
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div variants={fadeInLeft}>
               <motion.ul className="space-y-4" variants={staggerContainer}>
                 {[
-                  "An insight into our services takes you through a labyrinth of <span class='font-bold text-red-600'>digital solutions</span>. We offer comprehensive web development services, specializing in both HTML and PHP solutions. These platforms give us the flexibility to deliver both dynamic and static websites.",
-                  "Our team is no ordinary web design Coimbatore company. We have domain experts who pose years of experience. They decode complex HTML and PHP codes to implement innovative design ideas, making your website functionally rich and visually stunning.",
-                  "Don't worry, our website design pricing and packages cater to every type of business. Be it a start-up or an established company, our pricing structure fits all, keeping the quality high and prices competitive.",
-                  "As you explore our service, know we are steadfast in providing an all-around solution. We don't define your needs; rather, the requirements of your business shape <span class='font-bold text-red-600'>our services</span>. The result is a website that resonates with your brand's vision and functionality.",
-                  "From the technicalities of comprehensive website development services in Coimbatore, let's dive into another crucial aspect - Responsive Web Designs. We're peeling back the layers on efficiency and aesthetics combined, that truly revolutionize the user experience."
+                  "An insight into our services takes you through a labyrinth of <span class='font-bold text-orange-500'>digital solutions</span>.",
+                  "Our team is no ordinary web design Coimbatore company. We have domain experts who pose years of experience.",
+                  "Don't worry, our website design pricing and packages cater to every type of business.",
+                  "We don't define your needs; rather, the requirements of your business shape <span class='font-bold text-orange-500'>our services</span>.",
+                  "From technicalities to aesthetics, we revolutionize the user experience."
                 ].map((content, index) => (
-                  <motion.li 
-                    key={index}
-                    className="flex items-start space-x-2"
-                    variants={staggerItem}
-                  >
+                  <motion.li key={index} className="flex items-start space-x-2" variants={staggerItem}>
                     <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -264,32 +169,22 @@ const WebDesignPage = () => {
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.div 
-                className="mt-8 flex flex-col sm:flex-row gap-4"
-                variants={staggerItem}
-              >
+              <motion.div className="mt-8 flex flex-row items-center gap-4" variants={staggerItem}>
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+                  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
                 >
                   Start Your Website Now →
                 </motion.button>
-                <span className="text-gray-600 self-center">or</span>
-                <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline">
+                <span className="text-gray-600">or</span>
+                <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline whitespace-nowrap">
                   Call Us +91 9342570575
                 </Link>
               </motion.div>
             </motion.div>
-            <motion.div 
-              className="flex justify-center"
-              variants={fadeInRight}
-            >
-              <img
-                src="/images/team-illustration.png"
-                alt="Team Working"
-                className="max-w-full h-auto rounded-xl shadow-lg"
-              />
+            <motion.div className="flex justify-center" variants={fadeInRight}>
+              <img src="./web-top2.png" alt="Team Working" className="max-w-full h-auto" />
             </motion.div>
           </div>
         </div>
@@ -304,63 +199,42 @@ const WebDesignPage = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={fadeInUp}
-          >
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-6" variants={fadeInUp}>
             Responsive Web Designs: Efficiency and Aesthetics Combined
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <motion.div 
-              className="flex justify-center order-2 md:order-1"
-              variants={fadeInLeft}
-            >
-              <img
-                src="/images/responsive-illustration.png"
-                alt="Responsive Design"
-                className="max-w-full h-auto rounded-xl shadow-lg"
-              />
+            <motion.div className="flex justify-center order-2 md:order-1" variants={fadeInLeft}>
+              <img src="./web-top3.png" alt="Responsive Design" className="max-w-full h-auto" />
             </motion.div>
-            <motion.div variants={fadeInRight}>
-              <motion.p 
-                className="mb-4"
-                variants={staggerItem}
-              >
-                What's a website without responsiveness? Our web development methods pivot around an essential element - responsiveness. 
-                A responsive website assures adaptability, making your site look good on any screen size.
+            <motion.div variants={fadeInRight} className="order-1 md:order-2">
+              <motion.p className="mb-4" variants={staggerItem}>
+                What's a website without responsiveness? Our methods pivot around essential responsiveness for any screen size.
               </motion.p>
               <motion.ul className="space-y-4" variants={staggerContainer}>
                 {[
-                  "Being a veteran web design Coimbatore company, we blend efficiency and aesthetics to deliver an unrivaled digital experience. Our designs not just look good, but also have smooth navigation, quick loading times, and, above all, a user-friendly interface.",
-                  "Investing in a website without burning holes in your pocket is what our website design pricing and packages promise. We provide cost-effective solutions without compromising on quality. Every penny you spend assures value in return.",
-                  "As you explore our service, we assure you won't be left with <span class='font-bold text-red-600'>unanswered website design questions</span>. Our team of experts is always ready to guide you. We ensure that you're not just purchasing a service, but a partnership with a team that's passionate about transforming your digital presence.",
-                  "Pioneering the art of blending efficiency and aesthetics with web design is merely the surface of our expertise. Prepare to dive deep with us as we peel back the layers and reveal why we are reputed as the finest web design company in Coimbatore."
+                  "We blend efficiency and aesthetics to deliver an unrivaled digital experience.",
+                  "Cost-effective solutions without compromising on quality.",
+                  "A partnership with a team passionate about your digital presence.",
+                  "The finest web design company in Coimbatore."
                 ].map((content, index) => (
-                  <motion.li 
-                    key={index}
-                    className="flex items-start space-x-2"
-                    variants={staggerItem}
-                  >
+                  <motion.li key={index} className="flex items-start space-x-2" variants={staggerItem}>
                     <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span dangerouslySetInnerHTML={{ __html: content }} />
+                    <span>{content}</span>
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.div 
-                className="mt-8 flex flex-col sm:flex-row gap-4"
-                variants={staggerItem}
-              >
+              <motion.div className="mt-8 flex flex-row items-center gap-4 flex-wrap" variants={staggerItem}>
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+                  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
                 >
                   Start Your Website Now →
                 </motion.button>
-                <span className="text-gray-600 self-center">or</span>
-                <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline">
+                <span className="text-gray-600">or</span>
+                <Link to="tel:+919342570575" className="text-orange-500 font-semibold hover:underline whitespace-nowrap">
                   Call Us +91 9342570575
                 </Link>
               </motion.div>
@@ -378,33 +252,17 @@ const WebDesignPage = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={fadeInUp}
-          >
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-6" variants={fadeInUp}>
             Transform Your Online Business
           </motion.h2>
-          <motion.p 
-            className="text-center text-lg mb-12 max-w-3xl mx-auto"
-            variants={fadeInUp}
-          >
+          <motion.p className="text-center text-lg mb-12 max-w-3xl mx-auto" variants={fadeInUp}>
             Discover Brightnestsoft's Professional Website Solutions
           </motion.p>
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <motion.div 
-              className="lg:w-1/2"
-              variants={fadeInLeft}
-            >
-              <img
-                src="/images/business-illustration.png"
-                alt="Transform Business"
-                className="max-w-full h-auto rounded-xl shadow-lg"
-              />
+            <motion.div className="lg:w-1/2" variants={fadeInLeft}>
+              <img src="./web-top4.png" alt="Transform Business" className="max-w-full h-auto" />
             </motion.div>
-            <motion.div 
-              className="lg:w-1/2"
-              variants={fadeInRight}
-            >
+            <motion.div className="lg:w-1/2" variants={fadeInRight}>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -412,12 +270,8 @@ const WebDesignPage = () => {
               >
                 Explore Pricing →
               </motion.button>
-              <motion.p 
-                className="text-gray-600 mt-4"
-                variants={staggerItem}
-              >
-                Looking for quality digital solutions for your business? Brightnestsoft digital agency is the best in India, USA, UAE, and Singapore. 
-                We offer a range of services, including web and logo design, web app development, SEO, and digital marketing.
+              <motion.p className="text-gray-600 mt-4" variants={staggerItem}>
+                Looking for quality digital solutions for your business? Brightnestsoft is the best in India, USA, UAE, and Singapore.
               </motion.p>
             </motion.div>
           </div>
@@ -426,108 +280,57 @@ const WebDesignPage = () => {
 
       {/* ====== FAQ SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF2EA]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={fadeInUp}
-          >
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-6" variants={fadeInUp}>
             FAQ's Web Design Services
           </motion.h2>
-          <motion.p 
-            className="text-center text-lg mb-12 max-w-3xl mx-auto"
-            variants={fadeInUp}
-          >
+          <motion.p className="text-center text-lg mb-12 max-w-3xl mx-auto" variants={fadeInUp}>
             Unlock the Power of Creativity: Your Web Design FAQs Answered!
           </motion.p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <motion.div className="space-y-4" variants={fadeInLeft}>
-              {[
-                "What is website design?",
-                "Why is website design important for my business?",
-                "What services does Brightnestsoft offer in website design?",
-                "How long does it take to design and develop a website?",
-                "Can I have input in the website design process?",
-                "Do you redesign existing websites?"
-              ].map((question, index) => (
-                <motion.details 
-                  key={index}
-                  className="group border-b border-gray-200 pb-4"
-                  variants={staggerItem}
-                  whileHover={{ y: -2 }}
-                >
-                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                    <span>{question}</span>
-                    <span className="transition group-open:rotate-180">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <motion.p 
-                    className="mt-4 text-gray-600"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {[
-                      "Website design is the process of planning, conceptualizing, and arranging content online. It involves creating the layout, visual elements, and user interface of a website.",
-                      "A well-designed website builds trust, enhances credibility, and improves user experience — directly impacting conversions and customer retention.",
-                      "We offer custom website development, responsive design, UI/UX design, SEO optimization, e-commerce solutions, and ongoing maintenance.",
-                      "Typically 2–6 weeks, depending on complexity, revisions, and content readiness.",
-                      "Absolutely! Your feedback and vision are integral to our collaborative design process.",
-                      "Yes, we specialize in modernizing and optimizing existing websites for better performance, design, and user experience."
-                    ][index]}
-                  </motion.p>
-                </motion.details>
-              ))}
-            </motion.div>
-            <motion.div className="space-y-4" variants={fadeInRight}>
-              {[
-                "Will my website be mobile-friendly?",
-                "Can you optimize my website for search engines (SEO)?",
-                "Will my website be easy to update and maintain?",
-                "What about website hosting and domain registration?",
-                "Can you provide ongoing support and maintenance after the website is launched?",
-                "Types of website design"
-              ].map((question, index) => (
-                <motion.details 
-                  key={index}
-                  className="group border-b border-gray-200 pb-4"
-                  variants={staggerItem}
-                  whileHover={{ y: -2 }}
-                >
-                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                    <span>{question}</span>
-                    <span className="transition group-open:rotate-180">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <motion.p 
-                    className="mt-4 text-gray-600"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {[
-                      "Yes! All websites we design are fully responsive and tested across all device sizes.",
-                      "Yes, we build SEO-optimized websites with semantic HTML, fast loading speeds, and structured data to help you rank higher.",
-                      "We use modern CMS platforms or provide training so you can easily manage your site content.",
-                      "We offer domain registration and reliable hosting packages tailored to your project's needs.",
-                      "Yes! We offer monthly maintenance plans including updates, backups, security checks, and technical support.",
-                      "We design static sites, dynamic sites, e-commerce stores, portfolios, blogs, and custom web applications."
-                    ][index]}
-                  </motion.p>
-                </motion.details>
-              ))}
-            </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[leftCol, rightCol].map((column, colIdx) => (
+              <motion.div key={colIdx} className="space-y-4" variants={colIdx === 0 ? fadeInLeft : fadeInRight}>
+                {column.map((item, i) => {
+                  const globalIndex = colIdx === 0 ? i : i + 6;
+                  const isOpen = activeIndex === globalIndex;
+                  return (
+                    <div key={globalIndex} className="border-b border-gray-200 pb-4">
+                      <button
+                        onClick={() => setActiveIndex(isOpen ? -1 : globalIndex)}
+                        className="w-full flex justify-between items-center font-medium cursor-pointer text-left py-2"
+                      >
+                        <span className={isOpen ? "text-orange-500" : "text-gray-900"}>{item.q}</span>
+                        <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden mt-2 pr-2 text-gray-600"
+                          >
+                            <p className="pb-4">{item.a}</p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
