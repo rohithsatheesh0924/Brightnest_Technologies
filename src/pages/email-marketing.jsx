@@ -22,9 +22,9 @@ const EmailMarketingPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/email-hero-illustration.png"
+              src="./email.png"
               alt="Email Marketing Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </div>
         </div>

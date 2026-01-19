@@ -22,9 +22,9 @@ const SocialMediaPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/smo-hero-illustration.png"
+              src="./social.png"
               alt="SMO Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -48,9 +48,9 @@ const SocialMediaPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/smo-team-illustration.png"
+              src="./social1.png"
               alt="Team Working"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -70,9 +70,9 @@ const SocialMediaPage = () => {
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <img
-                src="/images/smo-cta-illustration.png"
+                src="./social2.png"
                 alt="SMO CTA"
-                className="max-w-full h-auto rounded-xl shadow-lg"
+                 className="max-w-full h-auto"
               />
             </div>
           </div>

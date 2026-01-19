@@ -1,8 +1,62 @@
 // src/pages/google-ads.jsx
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const GoogleAdsPage = () => {
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const faqData = [
+    {
+      question: "What are Google Search Ads and how do they work?",
+      answer: "Google Search Ads are text-based ads that appear on Google’s search results pages when users search for specific keywords. Advertisers bid on keywords and pay only when someone clicks on their ad (PPC model)."
+    },
+    {
+      question: "How can Google Search Ads help businesses reach their target audience?",
+      answer: "By targeting specific keywords, businesses can show their ads to users who are actively searching for products or services related to their business, ensuring high intent and relevance."
+    },
+    {
+      question: "What factors determine the ranking of Google Search Ads on the search results page?",
+      answer: "Google uses a combination of bid amount, ad quality, and landing page experience to determine ad rank and position."
+    },
+    {
+      question: "What are the benefits of using Google Search Ads for online advertising?",
+      answer: "Benefits include precise targeting, measurable ROI, immediate visibility, and the ability to adjust campaigns in real-time based on performance."
+    },
+    {
+      question: "How does the bidding system work in Google Search Ads?",
+      answer: "Advertisers set a maximum bid for each keyword. Google runs an auction to determine which ads appear and in what order, considering bid amount, ad quality, and landing page experience."
+    },
+    {
+      question: "What is the importance of keyword selection in Google Search Ads?",
+      answer: "Keyword selection is crucial as it determines when and where your ads appear. Proper keyword research ensures your ads are shown to the right audience at the right time."
+    },
+    {
+      question: "Can Google Search Ads be targeted to specific locations or demographics?",
+      answer: "Yes, Google Ads allows targeting by location, language, device, and even demographic factors like age and gender."
+    },
+    {
+      question: "What are some best practices for creating compelling ad headlines and descriptions?",
+      answer: "Best practices include using strong CTAs, highlighting unique selling points, including keywords, and keeping text concise and clear."
+    },
+    {
+      question: "How can businesses track the performance and effectiveness of their Google Search Ads?",
+      answer: "Businesses can use Google Ads’ built-in analytics to track metrics like clicks, impressions, conversion rates, and ROI. They can also integrate with Google Analytics for deeper insights."
+    },
+    {
+      question: "Are there any limitations or restrictions for running Google Search Ads?",
+      answer: "Yes, Google has policies on prohibited content, ad format, and landing page quality. Ads must comply with these guidelines to be approved."
+    },
+    {
+      question: "How does Google ensure the relevance and quality of the ads displayed in search results?",
+      answer: "Google uses Quality Score, which considers ad relevance, landing page experience, and expected click-through rate to ensure high-quality ads."
+    }
+  ];
+
+  // Split into columns
+  const leftCol = faqData.slice(0, 6);
+  const rightCol = faqData.slice(6);
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
@@ -21,9 +75,9 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/google-ads-hero-illustration.png"
+              src="./googleads.png"
               alt="Google Ads Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -43,9 +97,9 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/google-ads-overview-illustration.png"
+              src="./googleads1.png"
               alt="Google Ads Overview"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -142,174 +196,69 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/google-ads-cta-illustration.png"
+              src="./googleads2.jpg"
               alt="Google Ads CTA"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </div>
         </div>
       </section>
 
       {/* ====== FAQ SECTION ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            FAQ's Google Search Ads Campaign
-          </h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
-            Maximize Your Online Success with Brightnestsoft - The Best SEO Company in Coimbatore
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What are Google Search Ads and how do they work?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Google Search Ads are text-based ads that appear on Google’s search results pages when users search for specific keywords. Advertisers bid on keywords and pay only when someone clicks on their ad (PPC model).
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How can Google Search Ads help businesses reach their target audience?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  By targeting specific keywords, businesses can show their ads to users who are actively searching for products or services related to their business, ensuring high intent and relevance.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What factors determine the ranking of Google Search Ads on the search results page?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Google uses a combination of bid amount, ad quality, and landing page experience to determine ad rank and position.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What are the benefits of using Google Search Ads for online advertising?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Benefits include precise targeting, measurable ROI, immediate visibility, and the ability to adjust campaigns in real-time based on performance.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How does the bidding system work in Google Search Ads?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Advertisers set a maximum bid for each keyword. Google runs an auction to determine which ads appear and in what order, considering bid amount, ad quality, and landing page experience.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What is the importance of keyword selection in Google Search Ads?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Keyword selection is crucial as it determines when and where your ads appear. Proper keyword research ensures your ads are shown to the right audience at the right time.
-                </p>
-              </details>
+     <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+          FAQ's Google Search Ads Campaign
+        </h2>
+        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-gray-600">
+          Maximize Your Online Success with Brightnestsoft - The Best SEO Company in Coimbatore
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {[leftCol, rightCol].map((column, colIdx) => (
+            <div key={colIdx} className="space-y-4">
+              {column.map((faq, i) => {
+                // Unique index calculation
+                const globalIndex = colIdx === 0 ? i : i + 6;
+                const isOpen = activeIndex === globalIndex;
+
+                return (
+                  <div key={globalIndex} className="border-b border-gray-200 pb-4">
+                    <button
+                      onClick={() => setActiveIndex(isOpen ? -1 : globalIndex)}
+                      className="w-full flex justify-between items-center font-medium cursor-pointer text-left py-2"
+                    >
+                      <span className={isOpen ? "text-orange-600 transition-colors" : "text-gray-900"}>
+                        {faq.question}
+                      </span>
+                      <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 100, opacity: 1 }} // FIXED HEIGHT
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-y-auto mt-2 pr-2 text-gray-600 text-sm leading-relaxed custom-scrollbar"
+                        >
+                          <p className="pb-2">{faq.answer}</p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can Google Search Ads be targeted to specific locations or demographics?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes, Google Ads allows targeting by location, language, device, and even demographic factors like age and gender.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>What are some best practices for creating compelling ad headlines and descriptions?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Best practices include using strong CTAs, highlighting unique selling points, including keywords, and keeping text concise and clear.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How can businesses track the performance and effectiveness of their Google Search Ads?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Businesses can use Google Ads’ built-in analytics to track metrics like clicks, impressions, conversion rates, and ROI. They can also integrate with Google Analytics for deeper insights.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Are there any limitations or restrictions for running Google Search Ads?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes, Google has policies on prohibited content, ad format, and landing page quality. Ads must comply with these guidelines to be approved.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How does Google ensure the relevance and quality of the ads displayed in search results?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Google uses Quality Score, which considers ad relevance, landing page experience, and expected click-through rate to ensure high-quality, relevant ads are shown to users.
-                </p>
-              </details>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
     </div>
   );
