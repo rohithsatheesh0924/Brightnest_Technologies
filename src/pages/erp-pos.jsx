@@ -75,9 +75,9 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/erp-pos-hero-illustration.png"
+              src="./erp.jpg"
               alt="ERP & POS Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -116,9 +116,9 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/erp-pos-team-illustration.png"
+              src="./erp1.png"
               alt="Team Working"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -225,9 +225,9 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/erp-pos-cta-illustration.png"
+              src="./erp2.png"
               alt="ERP & POS CTA"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </motion.div>
         </div>

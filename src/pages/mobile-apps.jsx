@@ -76,9 +76,9 @@ const MobileAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/mobile-app-hero-illustration.png"
+              src="./mobile.png"
               alt="Mobile App Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -118,9 +118,9 @@ const MobileAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/mobile-app-agency-illustration.png"
+              src="./mobile1.png"
               alt="Agency Team"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -223,15 +223,16 @@ const MobileAppsPage = () => {
             </motion.button>
           </motion.div>
           <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="/images/mobile-app-cta-illustration.png"
-              alt="Mobile App CTA"
-              className="max-w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
+  className="lg:w-1/2 flex justify-center"
+  variants={fadeInRight}
+>
+  <img
+    src="./mobile2.png"
+    alt="Mobile App CTA"
+    /* Removed rounded-xl and shadow-lg to eliminate the box/container appearance */
+    className="max-w-full h-auto" 
+  />
+</motion.div>
         </div>
       </motion.section>
     </div>

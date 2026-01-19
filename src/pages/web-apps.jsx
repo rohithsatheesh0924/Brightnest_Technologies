@@ -76,9 +76,9 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/web-app-hero-illustration.png"
+              src="./mobileapp.png"
               alt="Web App Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+               className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -116,9 +116,9 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/web-app-team-illustration.png"
+              src="./mobileapp1.png"
               alt="Team Working"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+               className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -225,9 +225,9 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="/images/web-app-cta-illustration.png"
+              src="./mobileapp2.png"
               alt="Web App CTA"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+               className="max-w-full h-auto"
             />
           </motion.div>
         </div>
