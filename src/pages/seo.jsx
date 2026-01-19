@@ -1,8 +1,64 @@
 // src/pages/seo.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const SEOPage = () => {
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const faqData = [
+    {
+      q: "Why is SEO important for my business?",
+      a: "SEO helps your website rank higher in search engine results, driving more organic traffic and potential customers to your site."
+    },
+    {
+      q: "How long does it take to see results from SEO?",
+      a: "Results typically take 3–6 months, depending on competition, industry, and current website health."
+    },
+    {
+      q: "Can SEO help my local business in Coimbatore?",
+      a: "Absolutely! Local SEO helps your business appear in local searches, attracting nearby customers."
+    },
+    {
+      q: "Is it necessary to hire an SEO company for my business?",
+      a: "While you can do SEO yourself, hiring experts saves time and ensures best practices are followed for optimal results."
+    },
+    {
+      q: "How does Brightnestsoft’s SEO service work?",
+      a: "We start with an audit, then create a custom strategy, implement optimizations, and provide ongoing reporting and adjustments."
+    },
+    {
+      q: "Can SEO really make a difference for my local business in Coimbatore?",
+      a: "Yes! SEO increases visibility, drives targeted traffic, and boosts conversions — essential for local business growth."
+    },
+    {
+      q: "How long does it take to see results from SEO efforts?",
+      a: "Most clients see measurable improvements within 3–6 months, with continued growth over time."
+    },
+    {
+      q: "Can you optimize my website for search engines (SEO)?",
+      a: "Yes! We optimize on-page elements, technical structure, and content to align with search engine guidelines."
+    },
+    {
+      q: "How does SEO contribute to my website’s overall user experience?",
+      a: "Good SEO improves site speed, mobile-friendliness, and content clarity — all of which enhance user experience."
+    },
+    {
+      q: "Can Brightnestsoft help with content creation for SEO purposes?",
+      a: "Yes! We create high-quality, keyword-optimized content that engages users and ranks well in search engines."
+    },
+    {
+      q: "How will Brightnestsoft measure the success of my SEO campaign?",
+      a: "We use analytics tools to track traffic, rankings, conversions, and ROI — providing clear, actionable insights."
+    }
+  ];
+
+  // Divide data into two columns
+  const leftCol = faqData.slice(0, 6);
+  const rightCol = faqData.slice(6);
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
@@ -22,9 +78,9 @@ const SEOPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/seo-hero-illustration.png"
+              src="./seo.png"
               alt="SEO Illustration"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+              className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -45,9 +101,9 @@ const SEOPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/seo-team-illustration.png"
+              src="./seo1.png"
               alt="Team Working"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+             className="max-w-full h-auto"
             />
           </div>
         </div>
@@ -149,171 +205,65 @@ const SEOPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/seo-cta-illustration.png"
+              src="./seo2.png"
               alt="SEO CTA"
-              className="max-w-full h-auto rounded-xl shadow-lg"
+            className="max-w-full h-auto"
             />
           </div>
         </div>
       </section>
 
       {/* ====== FAQ SECTION ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
+    <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#FFF9F4]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
             FAQ's SEO Services
           </h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-gray-700">
             Maximize Your Online Success with Brightnestsoft - The Best SEO Company in Coimbatore
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Why is SEO important for my business?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  SEO helps your website rank higher in search engine results, driving more organic traffic and potential customers to your site.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How long does it take to see results from SEO?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Results typically take 3–6 months, depending on competition, industry, and current website health.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can SEO help my local business in Coimbatore?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Absolutely! Local SEO helps your business appear in local searches, attracting nearby customers.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Is it necessary to hire an SEO company for my business?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  While you can do SEO yourself, hiring experts saves time and ensures best practices are followed for optimal results.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How does Brightnestsoft’s SEO service work?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  We start with an audit, then create a custom strategy, implement optimizations, and provide ongoing reporting and adjustments.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can SEO really make a difference for my local business in Coimbatore?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes! SEO increases visibility, drives targeted traffic, and boosts conversions — essential for local business growth.
-                </p>
-              </details>
-            </div>
-            <div className="space-y-4">
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How long does it take to see results from SEO efforts?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Most clients see measurable improvements within 3–6 months, with continued growth over time.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can you optimize my website for search engines (SEO)?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes! We optimize on-page elements, technical structure, and content to align with search engine guidelines.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How does SEO contribute to my website’s overall user experience?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Good SEO improves site speed, mobile-friendliness, and content clarity — all of which enhance user experience.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>Can Brightnestsoft help with content creation for SEO purposes?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  Yes! We create high-quality, keyword-optimized content that engages users and ranks well in search engines.
-                </p>
-              </details>
-              <details className="group border-b border-gray-200 pb-4">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <span>How will Brightnestsoft measure the success of my SEO campaign?</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 text-gray-600">
-                  We use analytics tools to track traffic, rankings, conversions, and ROI — providing clear, actionable insights.
-                </p>
-              </details>
-            </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[leftCol, rightCol].map((column, colIdx) => (
+              <div key={colIdx} className="space-y-4">
+                {column.map((faq, i) => {
+                  const globalIndex = colIdx === 0 ? i : i + 6;
+                  const isOpen = activeIndex === globalIndex;
+
+                  return (
+                    <div key={globalIndex} className="border-b border-gray-200 pb-4">
+                      <button
+                        onClick={() => setActiveIndex(isOpen ? -1 : globalIndex)}
+                        className="w-full flex justify-between items-center font-medium cursor-pointer text-left py-2 outline-none"
+                      >
+                        <span className={isOpen ? "text-orange-600" : "text-gray-900"}>
+                          {faq.q}
+                        </span>
+                        <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </motion.span>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 80, opacity: 1 }} // Fixed height
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-y-auto mt-2 pr-2 text-gray-600 custom-scrollbar"
+                          >
+                            <p className="pb-2">{faq.a}</p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
