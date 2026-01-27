@@ -75,7 +75,7 @@ const PWAAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./pwa.png"
+              src="./pwa-app.png"
               alt="PWA Illustration"
                className="max-w-full h-auto"
             />
@@ -115,7 +115,7 @@ const PWAAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./pwa1.png"
+              src="./teamwork.svg"
               alt="Team Working"
               className="max-w-full h-auto"
             />
@@ -224,7 +224,7 @@ const PWAAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./pwa2.png"
+              src="./pqa-app-developer.png"
               alt="PWA CTA"
                className="max-w-full h-auto"
             />

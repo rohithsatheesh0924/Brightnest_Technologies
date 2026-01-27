@@ -76,7 +76,7 @@ const MobileAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./mobile.png"
+              src="./mobile-app.png"
               alt="Mobile App Illustration"
              className="max-w-full h-auto"
             />
@@ -118,7 +118,7 @@ const MobileAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./mobile1.png"
+              src="./app-development.png"
               alt="Agency Team"
              className="max-w-full h-auto"
             />
@@ -227,7 +227,7 @@ const MobileAppsPage = () => {
   variants={fadeInRight}
 >
   <img
-    src="./mobile2.png"
+    src="./mobile-app-developer.png"
     alt="Mobile App CTA"
     /* Removed rounded-xl and shadow-lg to eliminate the box/container appearance */
     className="max-w-full h-auto" 

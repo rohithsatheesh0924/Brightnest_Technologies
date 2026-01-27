@@ -166,9 +166,9 @@ const [activeTab, setActiveTab] = useState("Igniting innovation");
 >
   {/* Removed the group div and background shapes to show only the image */}
   <img 
-    src="/about-top.jpg" 
+    src="/about-2.avif" 
     alt="Brightnest Technologies Team"
-    className="w-full h-auto max-w-lg object-contain shadow-2xl transition-transform duration-700 hover:scale-105"
+    className="w-full h-auto max-w-lg "
     // object-contain ensures the full original image is visible without being cut off
     onError={(e) => {
       e.target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070";
@@ -256,7 +256,7 @@ const [activeTab, setActiveTab] = useState("Igniting innovation");
           className="relative w-72 h-60 md:w-96 md:h-72 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white"
         >
           <img 
-            src="/about-tech.png" // Replace with your image in the public folder
+            src="/web-des.png" // Replace with your image in the public folder
             alt="Digital Agency Coimbatore"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={(e) => {

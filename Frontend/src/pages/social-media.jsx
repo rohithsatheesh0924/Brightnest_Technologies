@@ -6,7 +6,7 @@ const SocialMediaPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
-      <section className="bg-[#FFF9F4] py-16 px-4 md:px-8 lg:px-16">
+      <section className="bg-[#FFF9F4] py-4 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -22,7 +22,7 @@ const SocialMediaPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./social.png"
+              src="./social-media.png"
               alt="SMO Illustration"
               className="max-w-full h-auto"
             />
@@ -48,7 +48,7 @@ const SocialMediaPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./social1.png"
+              src="./teamwork.svg"
               alt="Team Working"
               className="max-w-full h-auto"
             />
@@ -70,7 +70,7 @@ const SocialMediaPage = () => {
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <img
-                src="./social2.png"
+                src="./digital-marketing.png"
                 alt="SMO CTA"
                  className="max-w-full h-auto"
               />

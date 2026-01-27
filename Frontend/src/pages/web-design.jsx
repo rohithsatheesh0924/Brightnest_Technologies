@@ -90,7 +90,7 @@ const WebDesignPage = () => {
             </motion.div>
           </motion.div>
           <motion.div className="lg:w-1/2 flex justify-center" variants={fadeInRight}>
-            <img src="./web-top.png" alt="Web Design Illustration" className="max-w-full h-auto" />
+            <img src="./web-des.png" alt="Web Design Illustration" className="max-w-full h-auto" />
           </motion.div>
         </div>
       </motion.section>
@@ -184,7 +184,7 @@ const WebDesignPage = () => {
               </motion.div>
             </motion.div>
             <motion.div className="flex justify-center" variants={fadeInRight}>
-              <img src="./web-top2.png" alt="Team Working" className="max-w-full h-auto" />
+              <img src="./developers.svg" alt="Team Working" className="max-w-full h-auto" />
             </motion.div>
           </div>
         </div>
@@ -204,7 +204,7 @@ const WebDesignPage = () => {
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div className="flex justify-center order-2 md:order-1" variants={fadeInLeft}>
-              <img src="./web-top3.png" alt="Responsive Design" className="max-w-full h-auto" />
+              <img src="./teamwork.svg" alt="Responsive Design" className="max-w-full h-auto" />
             </motion.div>
             <motion.div variants={fadeInRight} className="order-1 md:order-2">
               <motion.p className="mb-4" variants={staggerItem}>

@@ -151,7 +151,7 @@ const LogoDesignPage = () => {
               variants={fadeInRight}
             >
               <img
-                src="/logo-page2.png"
+                src="/designer.png"
                 alt="Logo Designer"
                 className="max-w-full h-auto object-contain drop-shadow-lg"
                 onError={(e) => {

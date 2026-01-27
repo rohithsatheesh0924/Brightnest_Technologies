@@ -37,7 +37,7 @@ const WebAppsPage = () => {
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="bg-[#FFF9F4] py-16 px-4 sm:px-6 lg:px-8"
+        className="bg-[#FFF9F4] py-8 px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -76,7 +76,7 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./mobileapp.png"
+              src="./webapp.png"
               alt="Web App Illustration"
                className="max-w-full h-auto"
             />
@@ -116,7 +116,7 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./mobileapp1.png"
+              src="./teamwork.svg"
               alt="Team Working"
                className="max-w-full h-auto"
             />
@@ -225,7 +225,7 @@ const WebAppsPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./mobileapp2.png"
+              src="./webapp1.png"
               alt="Web App CTA"
                className="max-w-full h-auto"
             />

@@ -75,7 +75,7 @@ const ECommercePage = () => {
       variants={fadeInRight}
     >
       <img
-        src="./ecom.png"
+        src="./ecm.png"
         alt="E-Commerce Illustration"
         /* Removed rounded-xl and shadow-lg to strip the container box effect */
         className="max-w-full h-auto" 

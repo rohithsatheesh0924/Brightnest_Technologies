@@ -62,7 +62,7 @@ const SEOPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
-      <section className="bg-[#FFF9F4] py-16 px-4 md:px-8 lg:px-16">
+      <section className="bg-[#FFF9F4] py-4 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -76,13 +76,14 @@ const SEOPage = () => {
               Let’s discuss →
             </button>
           </div>
-          <div className="lg:w-1/2 flex justify-center">
-            <img
-              src="./seo.png"
-              alt="SEO Illustration"
-              className="max-w-full h-auto"
-            />
-          </div>
+         <div className="lg:w-1/2 w-full flex items-center">
+  <img
+    src="./seo.png"
+    alt="SEO Illustration"
+    /* Removed max-w-full and added w-full to ensure it fills the 50% column width */
+    className="w-full h-auto " 
+  />
+</div>
         </div>
       </section>
 
@@ -101,9 +102,9 @@ const SEOPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./seo1.png"
+              src="./teamwork.svg"
               alt="Team Working"
-             className="max-w-full h-auto"
+             className="w-full h-auto" 
             />
           </div>
         </div>
@@ -193,7 +194,7 @@ const SEOPage = () => {
       </section>
 
       {/* ====== CTA SECTION ====== */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+      <section className=" px-4 md:px-8 lg:px-16 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -205,7 +206,7 @@ const SEOPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./seo2.png"
+              src="./seo2 (2).png"
               alt="SEO CTA"
             className="max-w-full h-auto"
             />

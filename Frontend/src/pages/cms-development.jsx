@@ -67,7 +67,7 @@ const CMSDevelopmentPage = () => {
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8"
+        className="py-8 px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -106,7 +106,7 @@ const CMSDevelopmentPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./cms.png"
+              src="./cms-website.png"
               alt="CMS Illustration"
               className="max-w-full h-auto" 
             />
@@ -207,7 +207,7 @@ const CMSDevelopmentPage = () => {
           </motion.div>
           
           <motion.div className="lg:w-1/2 flex justify-center" variants={fadeInRight}>
-            <img src="./cms1.png" alt="CMS Development Illustration" className="max-w-full h-auto" />
+            <img src="./cms.png" alt="CMS Development Illustration" className="max-w-full h-auto" />
           </motion.div>
         </div>
       </motion.section>

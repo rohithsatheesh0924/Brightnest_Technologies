@@ -37,7 +37,7 @@ const ERPPOSPage = () => {
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="bg-[#FFF9F4] py-16 px-4 sm:px-6 lg:px-8"
+        className="bg-[#FFF9F4] py-8 px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -75,7 +75,7 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./erp.jpg"
+              src="./pos-billing.png"
               alt="ERP & POS Illustration"
              className="max-w-full h-auto"
             />
@@ -116,7 +116,7 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./erp1.png"
+              src="./teamwork.svg"
               alt="Team Working"
              className="max-w-full h-auto"
             />
@@ -225,7 +225,7 @@ const ERPPOSPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./erp2.png"
+              src="./billing-software.png"
               alt="ERP & POS CTA"
               className="max-w-full h-auto"
             />

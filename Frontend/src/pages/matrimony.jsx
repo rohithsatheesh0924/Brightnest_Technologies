@@ -118,7 +118,7 @@ const MatrimonyPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./matry.png"
+              src="./matrimony-web-development.png"
               alt="Matrimony Illustration"
               className="max-w-full h-auto" 
             />
@@ -178,7 +178,7 @@ const MatrimonyPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./matry1.png"
+              src="./developers.svg "
               alt="Team Working"
               className="max-w-full h-auto" 
             />
@@ -218,7 +218,7 @@ const MatrimonyPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./matry2.png"
+              src="./teamwork.svg"
               alt="Agency Team"
               className="max-w-full h-auto" 
             />
@@ -322,7 +322,7 @@ const MatrimonyPage = () => {
             variants={fadeInRight}
           >
             <img
-              src="./matry3.png"
+              src="./coding.png"
               alt="Matrimony CTA"
               className="max-w-full h-auto" 
             />

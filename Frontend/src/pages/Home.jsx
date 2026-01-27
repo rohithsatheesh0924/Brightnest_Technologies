@@ -588,7 +588,7 @@ const Home = () => {
   className="flex justify-center items-center"
 >
   <img 
-    src="/last-home.png" 
+    src="/team-support.svg" 
     alt="Web Design Pricing in Coimbatore"
     className="w-full h-auto object-contain max-h-[500px]" 
     // "object-contain" ensures no cropping, "max-h" keeps it professional

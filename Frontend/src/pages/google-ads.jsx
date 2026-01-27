@@ -60,7 +60,7 @@ const GoogleAdsPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
-      <section className="bg-[#FFF9F4] py-16 px-4 md:px-8 lg:px-16">
+      <section className="bg-[#FFF9F4] py-8 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -75,7 +75,7 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./googleads.png"
+              src="./google-ads.png"
               alt="Google Ads Illustration"
              className="max-w-full h-auto"
             />
@@ -97,7 +97,7 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./googleads1.png"
+              src="./ads.png"
               alt="Google Ads Overview"
               className="max-w-full h-auto"
             />
@@ -196,7 +196,7 @@ const GoogleAdsPage = () => {
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="./googleads2.jpg"
+              src="./digital-marketing.png"
               alt="Google Ads CTA"
               className="max-w-full h-auto"
             />
