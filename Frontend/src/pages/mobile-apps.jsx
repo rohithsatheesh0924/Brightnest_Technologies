@@ -1,7 +1,7 @@
 // src/pages/mobile-apps.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Animation Variants
 const fadeInUp = {
@@ -33,6 +33,20 @@ const staggerItem = {
 };
 
 const MobileAppsPage = () => {
+  const navigate = useNavigate();
+
+  const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
@@ -66,7 +80,8 @@ const MobileAppsPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
+              onClick={scrollToContactForm}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md"
             >
               Let's discuss →
             </motion.button>
@@ -78,7 +93,7 @@ const MobileAppsPage = () => {
             <img
               src="./mobile-app.png"
               alt="Mobile App Illustration"
-             className="max-w-full h-auto"
+              className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -120,7 +135,7 @@ const MobileAppsPage = () => {
             <img
               src="./app-development.png"
               alt="Agency Team"
-             className="max-w-full h-auto"
+              className="max-w-full h-auto"
             />
           </motion.div>
         </div>
@@ -217,22 +232,22 @@ const MobileAppsPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
+              onClick={scrollToContactForm}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md mt-4"
             >
               Let's Talk Now →
             </motion.button>
           </motion.div>
           <motion.div 
-  className="lg:w-1/2 flex justify-center"
-  variants={fadeInRight}
->
-  <img
-    src="./mobile-app-developer.png"
-    alt="Mobile App CTA"
-    /* Removed rounded-xl and shadow-lg to eliminate the box/container appearance */
-    className="max-w-full h-auto" 
-  />
-</motion.div>
+            className="lg:w-1/2 flex justify-center"
+            variants={fadeInRight}
+          >
+            <img
+              src="./mobile-app-developer.png"
+              alt="Mobile App CTA"
+              className="max-w-full h-auto"
+            />
+          </motion.div>
         </div>
       </motion.section>
     </div>

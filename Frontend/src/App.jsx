@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 
 import Navbar from "./components/Navbar";
@@ -9,24 +9,35 @@ import Footer from "./components/Footer";
 // Import all service pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import WebDesign from "./pages/web-design";        // Website Design
-import LogoDesignPage from "./pages/logo-design";  // Logo Design
-import ECommercePage from "./pages/ecommerce";    // E-Commerce
-import CMSDevelopmentPage from "./pages/cms-development"; // CMS Development
-import MatrimonyPage from "./pages/matrimony";    // Matrimony
-import MobileAppsPage from "./pages/mobile-apps"; // Mobile Apps
-import PWAAppsPage from "./pages/pwa-apps";       // PWA Apps
-import WebAppsPage from "./pages/web-apps";       // Web Apps
-import ERPPOSPage from "./pages/erp-pos";         // ERP & POS
-import SEOPage from "./pages/seo";               // SEO
-import SocialMediaPage from "./pages/social-media"; // Social Media Optimization
-import GoogleAdsPage from "./pages/google-ads";   // Google Ads
-import EmailMarketingPage from "./pages/email-marketing"; // Email Marketing
+import WebDesign from "./pages/web-design";
+import LogoDesignPage from "./pages/logo-design";
+import ECommercePage from "./pages/ecommerce";
+import CMSDevelopmentPage from "./pages/cms-development";
+import MatrimonyPage from "./pages/matrimony";
+import MobileAppsPage from "./pages/mobile-apps";
+import PWAAppsPage from "./pages/pwa-apps";
+import WebAppsPage from "./pages/web-apps";
+import ERPPOSPage from "./pages/erp-pos";
+import SEOPage from "./pages/seo";
+import SocialMediaPage from "./pages/social-media";
+import GoogleAdsPage from "./pages/google-ads";
+import EmailMarketingPage from "./pages/email-marketing";
 import ContactPage from "./pages/contact";
-
+import ServicePage from "./pages/services";
 
 import "aos/dist/aos.css";
 import "./App.css";
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   useEffect(() => {
@@ -40,6 +51,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black/90 overflow-x-hidden">
         <Navbar />
 
@@ -63,6 +75,7 @@ function App() {
             <Route path="/social-media" element={<SocialMediaPage />} />
             <Route path="/google-ads" element={<GoogleAdsPage />} />
             <Route path="/email-marketing" element={<EmailMarketingPage />} />
+            <Route path="/all-services" element={<ServicePage />} />
            
 
             {/* Fallbacks */}

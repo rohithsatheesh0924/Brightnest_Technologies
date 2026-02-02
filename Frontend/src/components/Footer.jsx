@@ -14,10 +14,10 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black/95 backdrop-blur-xl border-t border-orange-500/10 py-10 lg:py-12">
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-        {/* 👇 Flex container with items-start for perfect top alignment */}
+        {/*  Flex container with items-start for perfect top alignment */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-6 lg:gap-8 -mx-4">
           
-          {/* 🎨 BRAND */}
+          {/*  BRAND */}
           <div className="sm:w-1/2 lg:w-1/4 px-4">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
@@ -37,9 +37,9 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* 🧭 COMPANY */}
+          {/*  COMPANY */}
           <div className="sm:w-1/2 lg:w-1/4 px-4">
-            <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10">
+            <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10 ">
               Company
             </h5>
             <div className="space-y-2.5">
@@ -58,12 +58,12 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 💼 SERVICES */}
-          <div className="sm:w-1/2 lg:w-1/4 px-4">
-            <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10">
+          {/*  SERVICES */}
+          <div className="sm:w-1/2 lg:w-1/4 px-4 ">
+            <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10 ">
               Services
             </h5>
-            <div className="space-y-2.5">
+            <div className="space-y-2.5 ">
               {["Web Design", "Web Development", "E-Commerce", "SEO", "Digital Marketing", "Mobile Apps"].map((item, idx) => (
                 <a 
                   key={idx}
@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 📍 CONTACT */}
+          {/*  CONTACT */}
           <div className="sm:w-1/2 lg:w-1/4 px-4">
             <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10">
               Contact
@@ -141,7 +141,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* 📜 COPYRIGHT */}
+        {/*  COPYRIGHT */}
         <div className="border-t border-white/10 pt-6 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm font-medium">

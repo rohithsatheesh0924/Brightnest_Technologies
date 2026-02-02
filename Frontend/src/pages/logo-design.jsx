@@ -2,6 +2,7 @@
 import React, { useState } from 'react'; 
 import { motion, AnimatePresence } from 'framer-motion'; 
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
 const fadeInUp = {
@@ -34,7 +35,19 @@ const staggerItem = {
 
 const LogoDesignPage = () => {
   // Hooks must be inside the component body
+  const navigate = useNavigate(); 
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const faqData = [
     { q: "What is logo design?", a: "Logo design is the process of creating a visual symbol or emblem that represents a brand, company, or product. It should be simple, memorable, and scalable." },
@@ -77,13 +90,15 @@ const LogoDesignPage = () => {
               Get professional logo design services at affordable prices. Stand out with a unique and memorable logo for your business.
             </motion.p>
             <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
-            >
-              Let's discuss →
-            </motion.button>
+  variants={staggerItem}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+   onClick={scrollToContactForm}
+  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg shadow-orange-200 font-poppins"
+>
+  Let's discuss →
+</motion.button>
+
           </motion.div>
           <motion.div 
             className="lg:w-1/2 flex justify-center"
@@ -93,7 +108,7 @@ const LogoDesignPage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <img
-              src="/logo-top.png"
+              src="/logo-design.png"
               alt="Logo Design Illustration"
               className="max-w-full h-auto object-contain" 
               onError={(e) => {

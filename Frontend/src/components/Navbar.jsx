@@ -243,7 +243,7 @@ const Navbar = () => {
           {/* 🎯 CTA & Mobile Button */}
           <div className="flex items-center space-x-3">
             <Link
-              to="/contact"
+              to="/contact#contact-form"
               className="hidden xl:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-black font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl hover:from-orange-600 hover:to-orange-700 hover:scale-105 transition-all duration-300 border border-orange-500/30"
             >
               Get Quote

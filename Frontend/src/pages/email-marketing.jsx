@@ -1,6 +1,7 @@
 // src/pages/email-marketing.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const EmailMarketingPage = () => {
   return (
@@ -16,9 +17,11 @@ const EmailMarketingPage = () => {
               Welcome to Brightnestsoft's Trusted Email Marketing Agency, where we specialize in helping businesses connect and engage with their target audience through the power of email marketing. 
               With our expertise and proven strategies, we are committed to driving results and maximizing your return on investment.
             </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Let’s discuss →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg">
+                Let’s discuss →
+              </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
@@ -40,9 +43,11 @@ const EmailMarketingPage = () => {
             Build lasting relationships, drive conversions, and boost ROI with personalized, targeted email campaigns designed for your business.
           </p>
           <div className="flex justify-center">
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Get Started Today →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg">
+                Get Started Today →
+              </button>
+            </Link>
           </div>
         </div>
       </section>

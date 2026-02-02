@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
 const fadeInUp = {
@@ -33,6 +34,18 @@ const staggerItem = {
 };
 
 const ERPPOSPage = () => {
+    const navigate = useNavigate();
+    const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
@@ -65,6 +78,7 @@ const ERPPOSPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+               onClick={scrollToContactForm}
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
             >
               Let's discuss →
@@ -215,6 +229,7 @@ const ERPPOSPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+               onClick={scrollToContactForm}
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
             >
               Build Now! →

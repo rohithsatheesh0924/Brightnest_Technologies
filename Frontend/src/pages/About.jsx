@@ -1,11 +1,13 @@
 // src/pages/About.jsx
-import React, { useState, useEffect, useRef } from "react"; // Added useState here
-import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresence } from "framer-motion"; // Added AnimatePresence
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresence } from "framer-motion";
+import { useNavigate } from 'react-router-dom';  
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ColorBends from "../components/ColorBends";
+import ColorBends from "../components/ColorBends"; 
 
 const Counter = ({ value }) => {
+   
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const ref = useRef(null);
@@ -24,6 +26,7 @@ const Counter = ({ value }) => {
       return controls.stop;
     }
   }, [inView, numericValue, count]);
+
 
   return (
     <span ref={ref}>
@@ -59,6 +62,7 @@ const staggerContainer = {
 
 
 const About = () => {
+   const navigate = useNavigate(); 
 
 const [activeTab, setActiveTab] = useState("Igniting innovation");
   const tabContent = {
@@ -166,7 +170,7 @@ const [activeTab, setActiveTab] = useState("Igniting innovation");
 >
   {/* Removed the group div and background shapes to show only the image */}
   <img 
-    src="/about-2.avif" 
+    src="/coding.png" 
     alt="Brightnest Technologies Team"
     className="w-full h-auto max-w-lg "
     // object-contain ensures the full original image is visible without being cut off
@@ -510,12 +514,13 @@ const [activeTab, setActiveTab] = useState("Igniting innovation");
             </p>
           </div>
           <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-6 py-3 rounded-full bg-orange-500 text-black text-sm font-semibold shadow hover:bg-orange-400 transition"
-          >
-            Talk to our team
-          </motion.button>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate('/contact')}
+  className="inline-flex items-center px-6 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold  hover:bg-orange-600 transition-all duration-300 font-poppins"
+>
+  Talk to our team
+</motion.button>
         </motion.div>
       </section>
     </main>

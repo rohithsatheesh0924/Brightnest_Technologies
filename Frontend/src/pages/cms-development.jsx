@@ -2,6 +2,7 @@
 import React, { useState } from 'react'; // Added useState import
 import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresence import
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
 const fadeInUp = {
@@ -35,6 +36,18 @@ const staggerItem = {
 const CMSDevelopmentPage = () => {
   // Logic for the accordion state
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate(); 
+  const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const faqData = [
     {
@@ -95,6 +108,7 @@ const CMSDevelopmentPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+               onClick={scrollToContactForm}
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
             >
               Explore Pricing →
@@ -200,6 +214,7 @@ const CMSDevelopmentPage = () => {
               variants={staggerItem}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+               onClick={scrollToContactForm}
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
             >
               Explore Pricing →

@@ -2,6 +2,7 @@
 import React, { useState } from 'react'; // Added useState here
 import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresence
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
 const fadeInUp = {
@@ -33,7 +34,19 @@ const staggerItem = {
 };
 
 const WebDesignPage = () => {
+  const navigate = useNavigate(); 
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const faqData = [
     { q: "What is website design?", a: "Website design is the process of planning, conceptualizing, and arranging content online. It involves creating the layout, visual elements, and user interface of a website." },
@@ -79,6 +92,7 @@ const WebDesignPage = () => {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                 onClick={scrollToContactForm}
                 className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
               >
                 Start Your Website Now →
@@ -127,6 +141,7 @@ const WebDesignPage = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
               className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-500 transition-all duration-300 shadow-md whitespace-nowrap"
             >
               Start Your Website Now →
@@ -173,6 +188,7 @@ const WebDesignPage = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                   onClick={scrollToContactForm}
                   className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
                 >
                   Start Your Website Now →
@@ -229,6 +245,7 @@ const WebDesignPage = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                    onClick={scrollToContactForm}
                   className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md whitespace-nowrap"
                 >
                   Start Your Website Now →
@@ -266,6 +283,7 @@ const WebDesignPage = () => {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                 onClick={scrollToContactForm}
                 className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mb-6"
               >
                 Explore Pricing →

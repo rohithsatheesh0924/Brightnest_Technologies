@@ -2,11 +2,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; 
 
 
 const SEOPage = () => {
 
+
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const faqData = [
     {
@@ -72,9 +85,11 @@ const SEOPage = () => {
               Brightnestsoft, the leading SEO company in Coimbatore! Our team of expert professionals is dedicated to helping your business reach new heights by implementing effective SEO strategies. 
               As the top SEO company in Coimbatore, we have a proven track record of delivering exceptional results to businesses of all sizes.
             </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Let’s discuss →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+  <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg">
+    Let’s discuss →
+  </button>
+</Link>
           </div>
          <div className="lg:w-1/2 w-full flex items-center">
   <img
@@ -200,9 +215,10 @@ const SEOPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Unlock Your Website’s Potential with Brightnestsoft - The Top SEO Company in Coimbatore
             </h2>
+            <Link to="/contact#contact-form" className="inline-block">
             <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4">
               Explore Pricing →
-            </button>
+            </button></Link>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
 const fadeInUp = {
@@ -33,11 +34,23 @@ const staggerItem = {
 };
 
 const ECommercePage = () => {
+   const navigate = useNavigate();
+   const scrollToContactForm = () => {
+    navigate('/contact#contact-form');
+    
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  }; 
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
      <motion.section 
-  className="py-16 px-4 sm:px-6 lg:px-8"
+  className="py-10 px-4 sm:px-6 lg:px-8"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.3 }}
@@ -48,12 +61,12 @@ const ECommercePage = () => {
       className="lg:w-1/2"
       variants={fadeInLeft}
     >
-      <motion.h1 
+      <motion.h2
         className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
         variants={staggerItem}
       >
         Elevate Your Online Business with Brightnestsoft's Expert E-Commerce Website Development Services!
-      </motion.h1>
+      </motion.h2>
       <motion.p 
         className="text-lg mb-8 leading-relaxed"
         variants={staggerItem}
@@ -65,6 +78,7 @@ const ECommercePage = () => {
         variants={staggerItem}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+          onClick={scrollToContactForm}
         className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
       >
         Explore Pricing →
@@ -175,6 +189,7 @@ const ECommercePage = () => {
         variants={staggerItem}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+         onClick={scrollToContactForm}
         className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
       >
         Explore Pricing →

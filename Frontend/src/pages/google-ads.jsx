@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const GoogleAdsPage = () => {
 
@@ -69,9 +70,11 @@ const GoogleAdsPage = () => {
             <p className="text-lg mb-8 leading-relaxed">
               Maximize Your Online Visibility with Google Pay-Per-Click Search Ads - Unleash the Power of Targeted Advertising!
             </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Let’s discuss →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg">
+                Let’s discuss →
+              </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
@@ -190,9 +193,11 @@ const GoogleAdsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Looking for Google Search Ads Campaign Services? Choose Us for Expert Assistance!
             </h2>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4">
-              Let’s discuss →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md mt-4">
+                Let’s discuss →
+              </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img

@@ -1,6 +1,7 @@
 // src/pages/social-media.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const SocialMediaPage = () => {
   return (
@@ -16,9 +17,11 @@ const SocialMediaPage = () => {
               Welcome to Brightnestsoft, your trusted destination for top-notch Social Media Optimization (SMO) services in Coimbatore. 
               With our expert team of digital marketing professionals, we specialize in boosting your online presence and driving unparalleled success through optimized social media strategies.
             </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
-              Let’s discuss →
-            </button>
+            <Link to="/contact#contact-form" className="inline-block">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg">
+                Let’s discuss →
+              </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <img
@@ -64,9 +67,10 @@ const SocialMediaPage = () => {
           </h2>
           <div className="flex flex-col lg:flex-row items-center gap-12 mt-8">
             <div className="lg:w-1/2">
+            <Link to="/contact#contact-form" className="inline-block">
               <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md">
                 Explore Now! →
-              </button>
+              </button></Link>
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <img
