@@ -22,11 +22,11 @@ const Footer = () => {
            <div className="flex items-center mb-4">
   <img 
     src="/b png.png" 
-    alt="Brightnestsoft" 
-    className="h-6 w-auto mr-3" 
+    alt="Brightnest" 
+    className="h-8 w-auto mr-3" 
   />
   <div>
-    <h4 className="text-xl font-bold text-white tracking-tight">
+    <h4 className="text-xl font-bold text-white tracking-tight whitespace-nowrap">
       Brightnest Technologies
     </h4>
     <p className="text-orange-400 text-xs font-medium tracking-wide mt-0.5">
@@ -147,7 +147,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-6 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm font-medium">
-              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved.
+              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved. | Developed By Surya,Rohith,Akash
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
