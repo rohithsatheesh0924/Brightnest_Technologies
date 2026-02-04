@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// 🔥 Updated Services Structure to Match Your Image
+//  Updated Services Structure to Match Your Image
 const navItems = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
@@ -100,7 +100,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between h-full">
           
-          {/* 🏢 Logo */}
+          {/*  Logo */}
           <Link 
             to="/" 
             className="flex items-center group hover:no-underline"
@@ -109,13 +109,15 @@ const Navbar = () => {
               setSelectedCategory(null);
             }}
           >
-            <div className={`bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 ${
-              scrolled ? 'w-11 h-11 mr-3' : 'w-14 h-14 mr-4'
-            }`}>
-              <span className={`font-black text-white ${
-                scrolled ? 'text-lg' : 'text-2xl'
-              }`}>B</span>
-            </div>
+            <div className={`rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 ${
+  scrolled ? 'w-11 h-11 mr-3' : 'w-14 h-14 mr-4'
+}`}>
+  <img 
+    src="/b png.png" 
+    alt="Brightnest Technologies"
+    className="h-full w-full object-contain"
+  />
+</div>
             <div>
               <span className={`font-bold tracking-tight block text-white ${
                 scrolled 

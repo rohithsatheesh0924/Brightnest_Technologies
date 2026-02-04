@@ -19,19 +19,21 @@ const Footer = () => {
           
           {/*  BRAND */}
           <div className="sm:w-1/2 lg:w-1/4 px-4">
-            <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-white tracking-tight">
-                  Brightnest Technologies
-                </h4>
-                <p className="text-orange-400 text-xs font-medium tracking-wide mt-0.5">
-                  Coimbatore
-                </p>
-              </div>
-            </div>
+           <div className="flex items-center mb-4">
+  <img 
+    src="/b png.png" 
+    alt="Brightnestsoft" 
+    className="h-6 w-auto mr-3" 
+  />
+  <div>
+    <h4 className="text-xl font-bold text-white tracking-tight">
+      Brightnest Technologies
+    </h4>
+    <p className="text-orange-400 text-xs font-medium tracking-wide mt-0.5">
+      Coimbatore
+    </p>
+  </div>
+</div>
             <p className="text-white/60 text-sm leading-relaxed">
               Leading web design & development agency delivering enterprise-grade digital solutions.
             </p>
