@@ -312,10 +312,10 @@ const navigate = useNavigate();
             What we can do for your business
           </p>
           <h2 className="text-2xl md:text-3xl font-bold font-montserrat">
-            Brightnestsoft: Your Trusted Partner for Web Development Services
+            Brightnest: Your Trusted Partner for Web Development Services
           </h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto font-poppins leading-relaxed">
-            Brightnestsoft is a creative website design company in Coimbatore,
+            Brightnest is a creative website design company in Coimbatore,
             Tamilnadu that focuses on delivering effective digital solutions
             for businesses of all sizes. From custom website design to
             comprehensive ecommerce development, our team ensures your online
@@ -365,7 +365,7 @@ const navigate = useNavigate();
         {/* CTA - NAVIGATION ADDED */}
         <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-gray-700 font-poppins text-lg">
-            Elevate your business with <strong>Brightnestsoft</strong> and transform your
+            Elevate your business with <strong>Brightnest</strong> and transform your
             website into a powerful marketing asset.
           </p>
           <motion.button 
@@ -399,7 +399,7 @@ const navigate = useNavigate();
             Introducing the Leading Web Design Company in Coimbatore
           </h2>
           <p className="text-gray-600 mb-3 font-poppins">
-            Brightnestsoft is recognized as one of the leading web design
+            Brightnest is recognized as one of the leading web design
             companies in Coimbatore, offering tailored solutions that blend
             creativity with functionality. Our experienced team builds
             responsive, SEO‑friendly websites that help businesses stand out
@@ -424,7 +424,7 @@ const navigate = useNavigate();
 
         <div className="grid grid-cols-2 gap-4">
           {[
-            { target: 60, title: "60+", label: "Projects", desc: "Brightnestsoft delivered more than 60 successful projects across the globe. [web:3]" },
+            { target: 60, title: "60+", label: "Projects", desc: "Brightnest delivered more than 60 successful projects across the globe. [web:3]" },
             { target: 60, title: "60+", label: "Clients", desc: "Clients worldwide trust our quality, processes, and timely delivery. [web:3]" },
             { target: 20, title: "20+", label: "Team", desc: "A strong team of passionate designers, developers, and strategists. [web:3]" },
             { target: 5, title: "5+", label: "Years", desc: "Over 5 years of experience building digital solutions for diverse industries. [web:3]" },
@@ -463,7 +463,7 @@ const navigate = useNavigate();
       </h2>
       <p className="text-gray-600 mb-12 max-w-2xl mx-auto font-poppins leading-relaxed text-lg">
         From modern frontend frameworks to robust backend platforms,
-        Brightnestsoft uses reliable technologies to build secure, scalable,
+        Brightnest uses reliable technologies to build secure, scalable,
         and high‑performance web solutions.
       </p>
     </motion.div>
@@ -524,7 +524,7 @@ const navigate = useNavigate();
   </h2>
   
   <p className="text-white mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
-    For over 15 years, global enterprises have partnered with Brightnestsoft to transform their digital presence and drive measurable business outcomes.
+    For over 15 years, global enterprises have partnered with Brightnest to transform their digital presence and drive measurable business outcomes.
   </p>
   
   <div className="bg-white border border-gray-200 p-8 md:p-12 rounded-2xl max-w-4xl mx-auto shadow-sm hover:shadow-lg transition-shadow duration-300">
@@ -535,7 +535,7 @@ const navigate = useNavigate();
     </div>
     
     <p className="italic text-gray-800 mb-10 text-xl md:text-2xl leading-relaxed font-medium">
-      "Brightnestsoft has been our strategic digital partner for over 8 years. Their enterprise-grade solutions have consistently delivered ROI and technical excellence that exceeds industry standards."
+      "Brightnest has been our strategic digital partner for over 8 years. Their enterprise-grade solutions have consistently delivered ROI and technical excellence that exceeds industry standards."
     </p>
 
     <div className="inline-flex items-center gap-6">
@@ -637,14 +637,14 @@ const navigate = useNavigate();
       </h2>
       <p className="text-gray-600 mb-6 font-poppins leading-relaxed">
         Website design questions often arise when businesses start their
-        digital journey. At Brightnestsoft, we answer your queries and
+        digital journey. At Brightnest, we answer your queries and
         guide you with clear, transparent information.
       </p>
       
       <ul className="space-y-4 text-sm text-gray-700 font-luciole">
         <li className="flex gap-2">
           <span className="text-orange-500 font-bold">•</span>
-          <span><strong>What is Brightnestsoft?</strong> A full‑service web, app, and digital marketing company based in Coimbatore, India.</span>
+          <span><strong>What is Brightnest?</strong> A full‑service web, app, and digital marketing company based in Coimbatore, India.</span>
         </li>
         <li className="flex gap-2">
           <span className="text-orange-500 font-bold">•</span>
@@ -698,7 +698,7 @@ const navigate = useNavigate();
         Web Designing Charges in Coimbatore
       </h2>
       <p className="text-gray-600 mb-3 font-poppins leading-relaxed">
-        Brightnestsoft offers affordable website design pricing in
+        Brightnest offers affordable website design pricing in
         Coimbatore with clear packages that include responsive design,
         SEO‑friendly pages, contact forms, and more.
       </p>

@@ -14,7 +14,7 @@ const EmailMarketingPage = () => {
               Trusted Email Marketing Agency in Coimbatore
             </h1>
             <p className="text-lg mb-8 leading-relaxed">
-              Welcome to Brightnestsoft's Trusted Email Marketing Agency, where we specialize in helping businesses connect and engage with their target audience through the power of email marketing. 
+              Welcome to Brightnest's Trusted Email Marketing Agency, where we specialize in helping businesses connect and engage with their target audience through the power of email marketing. 
               With our expertise and proven strategies, we are committed to driving results and maximizing your return on investment.
             </p>
             <Link to="/contact#contact-form" className="inline-block">

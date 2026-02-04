@@ -119,7 +119,7 @@ const ContactPage = () => {
               <span className="text-orange-500">Website Support</span>
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Brightnestsoft is a creative website design company in Coimbatore, Tamilnadu that focuses on delivering effective digital solutions for businesses of all sizes.
+              Brightnest is a creative website design company in Coimbatore, Tamilnadu that focuses on delivering effective digital solutions for businesses of all sizes.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ const ContactPage = () => {
               },
               { 
                 label: 'Corporate Mail', 
-                value: 'info@brightnestsoft.com',
+                value: 'info@brightnest.com',
                 icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -353,7 +353,7 @@ const ContactPage = () => {
                       required 
                     />
                     <label htmlFor="terms" className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.1em] cursor-pointer leading-tight">
-                      I acknowledge the <span className="text-slate-900 underline font-black">Brightnestsoft Privacy Protocol</span> and Data Policy.
+                      I acknowledge the <span className="text-slate-900 underline font-black">Brightnest Privacy Protocol</span> and Data Policy.
                     </label>
                   </div>
 

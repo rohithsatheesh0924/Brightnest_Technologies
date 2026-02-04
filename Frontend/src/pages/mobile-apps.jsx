@@ -99,7 +99,7 @@ const MobileAppsPage = () => {
         </div>
       </motion.section>
 
-      {/* ====== SECTION 2: Brightnestsoft Mobile App Development Agency ====== */}
+      {/* ====== SECTION 2: Brightnest Mobile App Development Agency ====== */}
       <motion.section 
         className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
@@ -116,13 +116,13 @@ const MobileAppsPage = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Brightnestsoft Mobile App Development Agency
+              Brightnest Mobile App Development Agency
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we are a premier mobile app development agency based in Coimbatore. 
+              At Brightnest, we are a premier mobile app development agency based in Coimbatore. 
               Our passion lies in leveraging the latest technologies and trends to transform ideas into innovative mobile applications. 
               With a dedicated team of experts and a customer-centric approach, we strive to deliver exceptional results that drive business growth. 
               Our focus on quality, reliability, and user experience sets us apart as a trusted partner for businesses looking to harness the power of mobile technology.
@@ -172,7 +172,7 @@ const MobileAppsPage = () => {
               { 
                 icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
                 title: "App Testing and Quality Assurance",
-                desc: "At Brightnestsoft, we prioritize the quality and performance of our mobile apps. Our dedicated testing and quality assurance team conducts rigorous testing to identify any potential issues or bugs. By implementing comprehensive testing strategies, we guarantee that your app functions flawlessly across different devices and platforms, providing a seamless user experience."
+                desc: "At Brightnest, we prioritize the quality and performance of our mobile apps. Our dedicated testing and quality assurance team conducts rigorous testing to identify any potential issues or bugs. By implementing comprehensive testing strategies, we guarantee that your app functions flawlessly across different devices and platforms, providing a seamless user experience."
               },
               { 
                 icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
@@ -226,7 +226,7 @@ const MobileAppsPage = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Transforming Ideas into Innovative Mobile Apps — Brightnestsoft Coimbatore
+              Transforming Ideas into Innovative Mobile Apps — Brightnest Coimbatore
             </motion.h2>
             <motion.button 
               variants={staggerItem}

@@ -51,7 +51,7 @@ const WebDesignPage = () => {
   const faqData = [
     { q: "What is website design?", a: "Website design is the process of planning, conceptualizing, and arranging content online. It involves creating the layout, visual elements, and user interface of a website." },
     { q: "Why is website design important for my business?", a: "A well-designed website builds trust, enhances credibility, and improves user experience — directly impacting conversions and customer retention." },
-    { q: "What services does Brightnestsoft offer in website design?", a: "We offer custom website development, responsive design, UI/UX design, SEO optimization, e-commerce solutions, and ongoing maintenance." },
+    { q: "What services does Brightnest offer in website design?", a: "We offer custom website development, responsive design, UI/UX design, SEO optimization, e-commerce solutions, and ongoing maintenance." },
     { q: "How long does it take to design and develop a website?", a: "Typically 2–6 weeks, depending on complexity, revisions, and content readiness." },
     { q: "Can I have input in the website design process?", a: "Absolutely! Your feedback and vision are integral to our collaborative design process." },
     { q: "Do you redesign existing websites?", a: "Yes, we specialize in modernizing and optimizing existing websites for better performance, design, and user experience." },
@@ -83,7 +83,7 @@ const WebDesignPage = () => {
               Affordable Choice for Web Design Company in Coimbatore
             </motion.h1>
             <motion.p className="text-lg mb-8 leading-relaxed" variants={staggerItem}>
-              At Brightnestsoft, we are your premier and affordable choice for{" "}
+              At Brightnest, we are your premier and affordable choice for{" "}
               <span className="text-orange-500 font-semibold">web design services in Coimbatore</span>. 
               Your premier destination for exceptional website design and top-tier web development services in Coimbatore! 
               We take immense pride in offering comprehensive web solutions that are not only budget-friendly but also guarantee top-notch quality and outstanding results. 
@@ -273,7 +273,7 @@ const WebDesignPage = () => {
             Transform Your Online Business
           </motion.h2>
           <motion.p className="text-center text-lg mb-12 max-w-3xl mx-auto" variants={fadeInUp}>
-            Discover Brightnestsoft's Professional Website Solutions
+            Discover Brightnest's Professional Website Solutions
           </motion.p>
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <motion.div className="lg:w-1/2" variants={fadeInLeft}>
@@ -289,7 +289,7 @@ const WebDesignPage = () => {
                 Explore Pricing →
               </motion.button>
               <motion.p className="text-gray-600 mt-4" variants={staggerItem}>
-                Looking for quality digital solutions for your business? Brightnestsoft is the best in India, USA, UAE, and Singapore.
+                Looking for quality digital solutions for your business? Brightnest is the best in India, USA, UAE, and Singapore.
               </motion.p>
             </motion.div>
           </div>

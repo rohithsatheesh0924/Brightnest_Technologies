@@ -115,13 +115,13 @@ const WebAppsPage = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Brightnestsoft Experience Seamless User Journeys with Customized Web App Design in Coimbatore
+              Brightnest Experience Seamless User Journeys with Customized Web App Design in Coimbatore
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we embrace design innovation and constantly explore new techniques and trends. 
+              At Brightnest, we embrace design innovation and constantly explore new techniques and trends. 
               Our aim is to create web app designs that not only meet industry standards but also push creative boundaries.
             </motion.p>
           </motion.div>

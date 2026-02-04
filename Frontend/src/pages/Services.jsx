@@ -23,7 +23,7 @@ const ServicesPage = () => {
             Digital & Creative Solutions for Global Enterprises
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
-            Brightnestsoft delivers enterprise-grade digital solutions that drive growth, efficiency, and innovation. Our expertise spans web development, mobile applications, and strategic digital marketing—tailored for businesses with global ambitions.
+            Brightnest delivers enterprise-grade digital solutions that drive growth, efficiency, and innovation. Our expertise spans web development, mobile applications, and strategic digital marketing—tailored for businesses with global ambitions.
           </p>
 
           {/* Stats Cards - No routing needed (static info) */}

@@ -71,7 +71,7 @@ const ERPPOSPage = () => {
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              BrightnestSoft, the leading provider of comprehensive ERP (Enterprise Resource Planning) and POS (Point of Sale) solutions. 
+              Brightnest, the leading provider of comprehensive ERP (Enterprise Resource Planning) and POS (Point of Sale) solutions. 
               We specialize in empowering businesses of all sizes with robust software that streamlines operations and enhances productivity.
             </motion.p>
             <motion.button 
@@ -114,13 +114,13 @@ const ERPPOSPage = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Boost Efficiency and Productivity with Brightnestsoft's Cutting-Edge ERP and POS Solutions
+              Boost Efficiency and Productivity with Brightnest's Cutting-Edge ERP and POS Solutions
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              Brightnestsoft is a leading provider of innovative ERP and POS solutions. 
+              Brightnest is a leading provider of innovative ERP and POS solutions. 
               We have a proven track record of helping businesses streamline their operations, improve efficiency, and achieve sustainable growth. 
               Our team of experienced professionals is committed to delivering top-notch software solutions and exceptional customer service.
             </motion.p>
@@ -157,7 +157,7 @@ const ERPPOSPage = () => {
             className="text-center text-lg mb-12 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            Streamline Your Business Operations with Brightnestsoft
+            Streamline Your Business Operations with Brightnest
           </motion.p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[

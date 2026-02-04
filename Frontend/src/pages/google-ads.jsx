@@ -216,7 +216,7 @@ const GoogleAdsPage = () => {
           FAQ's Google Search Ads Campaign
         </h2>
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-gray-600">
-          Maximize Your Online Success with Brightnestsoft - The Best SEO Company in Coimbatore
+          Maximize Your Online Success with Brightnest - The Best SEO Company in Coimbatore
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">

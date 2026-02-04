@@ -71,7 +71,7 @@ const PWAAppsPage = () => {
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we specialize in providing top-notch PWA development services that take your business to new heights. 
+              At Brightnest, we specialize in providing top-notch PWA development services that take your business to new heights. 
               Our skilled team of experts combines cutting-edge technologies and industry best practices to deliver exceptional web experiences.
             </motion.p>
             <motion.button 
@@ -97,7 +97,7 @@ const PWAAppsPage = () => {
         </div>
       </motion.section>
 
-      {/* ====== SECTION 2: Brightnestsoft Unleashing the Potential of PWA ====== */}
+      {/* ====== SECTION 2: Brightnest Unleashing the Potential of PWA ====== */}
       <motion.section 
         className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
@@ -114,13 +114,13 @@ const PWAAppsPage = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Brightnestsoft Unleashing the Potential of PWA for Unforgettable Experiences
+              Brightnest Unleashing the Potential of PWA for Unforgettable Experiences
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we embrace innovation and stay at the forefront of the latest trends and technologies. 
+              At Brightnest, we embrace innovation and stay at the forefront of the latest trends and technologies. 
               We bring fresh ideas and creative solutions to every project, ensuring your PWA stands out.
             </motion.p>
           </motion.div>
@@ -150,7 +150,7 @@ const PWAAppsPage = () => {
             className="text-3xl md:text-4xl font-bold text-center mb-6"
             variants={fadeInUp}
           >
-            Unlock the Power of Progressive Web Apps with Brightnestsoft: Your Trusted PWA Development Company
+            Unlock the Power of Progressive Web Apps with Brightnest: Your Trusted PWA Development Company
           </motion.h2>
           <motion.p 
             className="text-center text-lg mb-12 max-w-3xl mx-auto"

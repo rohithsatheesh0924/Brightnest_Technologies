@@ -65,7 +65,7 @@ const ECommercePage = () => {
         className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
         variants={staggerItem}
       >
-        Elevate Your Online Business with Brightnestsoft's Expert E-Commerce Website Development Services!
+        Elevate Your Online Business with Brightnest's Expert E-Commerce Website Development Services!
       </motion.h2>
       <motion.p 
         className="text-lg mb-8 leading-relaxed"
@@ -111,13 +111,13 @@ const ECommercePage = () => {
             className="text-3xl md:text-4xl font-bold text-center mb-6"
             variants={fadeInUp}
           >
-            Unleash Your E-Commerce Potential with Brightnestsoft
+            Unleash Your E-Commerce Potential with Brightnest
           </motion.h2>
           <motion.p 
             className="text-center text-lg mb-12 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            Experience Seamless E-Commerce Growth: Discover Brightnestsoft's Expert Website Development Services
+            Experience Seamless E-Commerce Growth: Discover Brightnest's Expert Website Development Services
           </motion.p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -144,7 +144,7 @@ const ECommercePage = () => {
               { 
                 icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
                 title: "Website Maintenance and Support",
-                desc: "At Brightnestsoft, we provide ongoing maintenance and support services to ensure your e-commerce website operates flawlessly. We handle updates, security patches, bug fixes, and offer prompt technical assistance to keep your online store running smoothly."
+                desc: "At Brightnest, we provide ongoing maintenance and support services to ensure your e-commerce website operates flawlessly. We handle updates, security patches, bug fixes, and offer prompt technical assistance to keep your online store running smoothly."
               }
             ].map((service, index) => (
               <motion.div 
@@ -183,7 +183,7 @@ const ECommercePage = () => {
         className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
         variants={staggerItem}
       >
-        Empower Your Online Store: Partner with Brightnestsoft for Cutting-Edge E-Commerce
+        Empower Your Online Store: Partner with Brightnest for Cutting-Edge E-Commerce
       </motion.h2>
       <motion.button 
         variants={staggerItem}

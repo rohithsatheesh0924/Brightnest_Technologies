@@ -163,7 +163,7 @@ const MatrimonyPage = () => {
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we understand the importance of creating a platform where hearts meet and relationships blossom. 
+              At Brightnest, we understand the importance of creating a platform where hearts meet and relationships blossom. 
               Our mission is to help you in your endeavor to bring together individuals searching for love and companionship. 
               We stand out among matrimony website design companies in Coimbatore with our commitment to excellence. 
             </motion.p>
@@ -260,7 +260,7 @@ const MatrimonyPage = () => {
             className="text-center text-lg mb-12 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            Discover Brightnestsoft's Professional Website Solutions
+            Discover Brightnest's Professional Website Solutions
           </motion.p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[

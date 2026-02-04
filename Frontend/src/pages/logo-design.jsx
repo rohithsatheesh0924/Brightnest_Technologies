@@ -53,7 +53,7 @@ const LogoDesignPage = () => {
     { q: "What is logo design?", a: "Logo design is the process of creating a visual symbol or emblem that represents a brand, company, or product. It should be simple, memorable, and scalable." },
     { q: "Why is a logo important for my business?", a: "A strong logo builds brand recognition, conveys professionalism, and helps customers identify and remember your business." },
     { q: "How can a professionally designed logo benefit my business?", a: "A professionally designed logo enhances credibility, attracts customers, and differentiates your brand from competitors." },
-    { q: "What is the process of getting a logo designed by Brightnestsoft?", a: "We start with a consultation to understand your brand, then create multiple concepts, refine based on feedback, and deliver final files in all formats." },
+    { q: "What is the process of getting a logo designed by Brightnest?", a: "We start with a consultation to understand your brand, then create multiple concepts, refine based on feedback, and deliver final files in all formats." },
     { q: "How long does it take to design a logo?", a: "Typically 5–10 days, depending on complexity and revision rounds." },
     { q: "Will I own the copyright for the logo design?", a: "Yes, once payment is completed, you receive full ownership and copyright of the final logo design." },
     { q: "Can I request revisions to the logo design?", a: "Absolutely! We offer up to 3 rounds of revisions to ensure you're 100% satisfied with your logo." },
@@ -140,7 +140,7 @@ const LogoDesignPage = () => {
                 className="mb-6 font-poppins leading-relaxed"
                 variants={staggerItem}
               >
-                At Brightnestsoft, we specialize in creating captivating and memorable logo designs that represent your brand's identity and leave a lasting impression on your audience. 
+                At Brightnest, we specialize in creating captivating and memorable logo designs that represent your brand's identity and leave a lasting impression on your audience. 
                 Our team of talented designers combines artistic vision with strategic thinking to craft logos that truly stand out.
               </motion.p>
               <motion.div 

@@ -39,7 +39,7 @@ const SEOPage = () => {
       a: "While you can do SEO yourself, hiring experts saves time and ensures best practices are followed for optimal results."
     },
     {
-      q: "How does Brightnestsoft’s SEO service work?",
+      q: "How does Brightnest’s SEO service work?",
       a: "We start with an audit, then create a custom strategy, implement optimizations, and provide ongoing reporting and adjustments."
     },
     {
@@ -59,11 +59,11 @@ const SEOPage = () => {
       a: "Good SEO improves site speed, mobile-friendliness, and content clarity — all of which enhance user experience."
     },
     {
-      q: "Can Brightnestsoft help with content creation for SEO purposes?",
+      q: "Can Brightnest help with content creation for SEO purposes?",
       a: "Yes! We create high-quality, keyword-optimized content that engages users and ranks well in search engines."
     },
     {
-      q: "How will Brightnestsoft measure the success of my SEO campaign?",
+      q: "How will Brightnest measure the success of my SEO campaign?",
       a: "We use analytics tools to track traffic, rankings, conversions, and ROI — providing clear, actionable insights."
     }
   ];
@@ -82,7 +82,7 @@ const SEOPage = () => {
               Leading SEO Company in Coimbatore
             </h1>
             <p className="text-lg mb-8 leading-relaxed">
-              Brightnestsoft, the leading SEO company in Coimbatore! Our team of expert professionals is dedicated to helping your business reach new heights by implementing effective SEO strategies. 
+              Brightnest, the leading SEO company in Coimbatore! Our team of expert professionals is dedicated to helping your business reach new heights by implementing effective SEO strategies. 
               As the top SEO company in Coimbatore, we have a proven track record of delivering exceptional results to businesses of all sizes.
             </p>
             <Link to="/contact#contact-form" className="inline-block">
@@ -110,7 +110,7 @@ const SEOPage = () => {
               Comprehensive SEO Services
             </h2>
             <p className="text-lg mb-8 leading-relaxed">
-              At Brightnestsoft, we understand that search engine optimization is crucial for visibility and driving targeted traffic to your website. 
+              At Brightnest, we understand that search engine optimization is crucial for visibility and driving targeted traffic to your website. 
               Our comprehensive SEO services are tailored to meet your specific needs and goals. 
               Whether you’re a local business in Coimbatore or looking to expand your reach globally, we have the expertise to help you achieve your objectives.
             </p>
@@ -186,7 +186,7 @@ const SEOPage = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Ethical Practices</h3>
               <p className="text-gray-600">
-                Brightnestsoft strictly adheres to white hat SEO practices. 
+                Brightnest strictly adheres to white hat SEO practices. 
                 We prioritize ethical strategies that comply with search engine guidelines, ensuring long-term success for your website.
               </p>
             </div>
@@ -213,7 +213,7 @@ const SEOPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Unlock Your Website’s Potential with Brightnestsoft - The Top SEO Company in Coimbatore
+              Unlock Your Website’s Potential with Brightnest - The Top SEO Company in Coimbatore
             </h2>
             <Link to="/contact#contact-form" className="inline-block">
             <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4">
@@ -237,7 +237,7 @@ const SEOPage = () => {
             FAQ's SEO Services
           </h2>
           <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-gray-700">
-            Maximize Your Online Success with Brightnestsoft - The Best SEO Company in Coimbatore
+            Maximize Your Online Success with Brightnest - The Best SEO Company in Coimbatore
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">

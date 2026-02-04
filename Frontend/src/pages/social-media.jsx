@@ -14,7 +14,7 @@ const SocialMediaPage = () => {
               Boost Your Online Presence with Expert Social Media Optimization Services in Coimbatore
             </h1>
             <p className="text-lg mb-8 leading-relaxed">
-              Welcome to Brightnestsoft, your trusted destination for top-notch Social Media Optimization (SMO) services in Coimbatore. 
+              Welcome to Brightnest, your trusted destination for top-notch Social Media Optimization (SMO) services in Coimbatore. 
               With our expert team of digital marketing professionals, we specialize in boosting your online presence and driving unparalleled success through optimized social media strategies.
             </p>
             <Link to="/contact#contact-form" className="inline-block">
@@ -41,7 +41,7 @@ const SocialMediaPage = () => {
               Drive Social Media Success with Proven Optimization Services in Coimbatore
             </h2>
             <p className="text-lg mb-8 leading-relaxed">
-              At Brightnestsoft, we understand the significance of social media in today's digital landscape. 
+              At Brightnest, we understand the significance of social media in today's digital landscape. 
               Our goal is to empower businesses like yours to maximize their reach, engage with the target audience, and establish a strong brand presence across various social media platforms. 
               Through our comprehensive SMO services, we ensure that your brand shines brightly amidst the competitive market in Coimbatore. 
               Our approach to SMO revolves around leveraging cutting-edge techniques and industry best practices. 

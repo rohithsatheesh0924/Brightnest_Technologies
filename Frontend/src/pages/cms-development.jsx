@@ -55,15 +55,15 @@ const CMSDevelopmentPage = () => {
       answer: "CMS Website Development Services involve creating and customizing websites using Content Management Systems like WordPress, Drupal, or Joomla, allowing easy content updates without coding."
     },
     {
-      question: "Which CMS platforms does Brightnestsoft specialize in?",
+      question: "Which CMS platforms does Brightnest specialize in?",
       answer: "We specialize in WordPress, Drupal, Joomla, and other popular CMS platforms tailored to your business needs."
     },
     {
-      question: "Can Brightnestsoft customize the design and layout of a CMS website?",
+      question: "Can Brightnest customize the design and layout of a CMS website?",
       answer: "Yes! We offer full theme and template customization to match your brand identity and design preferences."
     },
     {
-      question: "Does Brightnestsoft provide CMS website maintenance and support?",
+      question: "Does Brightnest provide CMS website maintenance and support?",
       answer: "Absolutely! We offer ongoing maintenance, security updates, and technical support to keep your site running smoothly."
     },
     {
@@ -95,13 +95,13 @@ const CMSDevelopmentPage = () => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
-              Streamline Your Online Presence with Brightnestsoft Professional CMS Website Development
+              Streamline Your Online Presence with Brightnest Professional CMS Website Development
             </motion.h1>
             <motion.p 
               className="text-lg mb-8 leading-relaxed"
               variants={staggerItem}
             >
-              At Brightnestsoft, we specialize in providing professional CMS (Content Management System) website development services that empower businesses to effectively manage and showcase their online content. 
+              At Brightnest, we specialize in providing professional CMS (Content Management System) website development services that empower businesses to effectively manage and showcase their online content. 
               Our team of skilled developers and designers are experienced in creating dynamic and user-friendly CMS websites.
             </motion.p>
             <motion.button 
@@ -141,7 +141,7 @@ const CMSDevelopmentPage = () => {
             className="text-3xl md:text-4xl font-bold text-center mb-6"
             variants={fadeInUp}
           >
-            Transform Your Digital Experience with Brightnestsoft Custom CMS Website Solutions
+            Transform Your Digital Experience with Brightnest Custom CMS Website Solutions
           </motion.h2>
           <motion.p 
             className="text-center text-lg mb-12 max-w-3xl mx-auto"
@@ -165,7 +165,7 @@ const CMSDevelopmentPage = () => {
               { 
                 icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
                 title: "Theme and Template Customization",
-                desc: "Brightnestsoft offers theme and template customization services to ensure your CMS website stands out from the crowd."
+                desc: "Brightnest offers theme and template customization services to ensure your CMS website stands out from the crowd."
               },
               { 
                 icon: "M13 10V3L4 14h7v7l9-11h-7z",
@@ -175,7 +175,7 @@ const CMSDevelopmentPage = () => {
               { 
                 icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
                 title: "Training and Support",
-                desc: "Brightnestsoft provides comprehensive training and ongoing support to ensure you can effectively manage your CMS."
+                desc: "Brightnest provides comprehensive training and ongoing support to ensure you can effectively manage your CMS."
               }
             ].map((service, index) => (
               <motion.div 
@@ -208,7 +208,7 @@ const CMSDevelopmentPage = () => {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <motion.div className="lg:w-1/2" variants={fadeInLeft}>
             <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6" variants={staggerItem}>
-              Choose Brightnestsoft for Professional CMS Website Development
+              Choose Brightnest for Professional CMS Website Development
             </motion.h2>
             <motion.button 
               variants={staggerItem}
