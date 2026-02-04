@@ -9,7 +9,7 @@ import Plasma from "../components/Plasma";
 import ColorBends from "../components/ColorBends";
 import GridScan from "../components/GridScan";
 import Hyperspeed from "../components/Hyperspeed";
-
+import TextType from "../components/TextType";
 
 const CountUp = ({ to }) => {
   const nodeRef = useRef(null);
@@ -70,6 +70,32 @@ const staggerContainer = {
   }
 };
 
+const TypewriterText = ({ text, delay = 0, className }) => {
+  const [displayText, setDisplayText] = React.useState('');
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(text.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text]);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayText('');
+      setCurrentIndex(0);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay, text]);
+
+  return <span className={className}>{displayText}</span>;
+};
+
+
 const Home = () => {
 const navigate = useNavigate(); 
 
@@ -87,6 +113,7 @@ const navigate = useNavigate();
       }
     }, 100);
   };
+
 
   const serviceRoutes = {
     "Website Design and Development": "/web-design",
@@ -275,62 +302,6 @@ const navigate = useNavigate();
   </div>
 </section>
 
-        {/* Clients Section - Unique Animation: Hover Pop for Logos */}
-<section className="w-full py-24 md:py-40 bg-transparent border-t border-white/5">
-  <div className="container mx-auto px-4 md:px-8">
-    
-    {/* Section Header */}
-    <motion.div 
-      initial={{ opacity: 0, y: -10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-20"
-    >
-      <h2 className="font-montserrat text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-        Our <span className="text-orange-500">Lovable Clients</span>
-      </h2>
-      <div className="w-16 h-1 bg-orange-500 mx-auto mt-4 rounded-full opacity-60" />
-    </motion.div>
-
-    {/* Structured 3x2 Layout */}
-    <div className="flex flex-col gap-10 md:gap-16">
-      
-      {/* Row 1: 3 Logos */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-12 md:gap-24"
-      >
-        {[
-          { id: 1, name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-          { id: 2, name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-          { id: 3, name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        ].map((item) => (
-          <ClientLogo key={item.id} client={item} />
-        ))}
-      </motion.div>
-
-      {/* Row 2: 2 Logos */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="flex flex-wrap justify-center gap-12 md:gap-24"
-      >
-        {[
-          { id: 4, name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
-          { id: 5, name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-        ].map((item) => (
-          <ClientLogo key={item.id} client={item} />
-        ))}
-      </motion.div>
-
-    </div>
-  </div>
-</section>
 
         {/* Services grid - Unique Animation: Staggered Fade Up Cards */}
          <section className="w-full py-16 bg-[#FFF2EA]">
@@ -589,6 +560,65 @@ const navigate = useNavigate();
     </div>
   </div>
 </motion.div>
+</section>
+
+
+
+        {/* Clients Section - Unique Animation: Hover Pop for Logos */}
+<section className="w-full py-24 md:py-40 bg-transparent border-t border-white/5">
+  <div className="container mx-auto px-4 md:px-8">
+    
+    {/* Section Header */}
+    <motion.div 
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-20"
+    >
+      <h2 className="font-montserrat text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        Our <span className="text-orange-500">Lovable Clients</span>
+      </h2>
+      <div className="w-16 h-1 bg-orange-500 mx-auto mt-4 rounded-full opacity-60" />
+    </motion.div>
+
+    {/* Structured 3x2 Layout */}
+    <div className="flex flex-col gap-10 md:gap-16">
+      
+      {/* Row 1: 3 Logos */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="flex flex-wrap justify-center gap-12 md:gap-24"
+      >
+        {[
+          { id: 1, name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+          { id: 2, name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+          { id: 3, name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+        ].map((item) => (
+          <ClientLogo key={item.id} client={item} />
+        ))}
+      </motion.div>
+
+      {/* Row 2: 2 Logos */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="flex flex-wrap justify-center gap-12 md:gap-24"
+      >
+        {[
+          { id: 4, name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
+          { id: 5, name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+        ].map((item) => (
+          <ClientLogo key={item.id} client={item} />
+        ))}
+      </motion.div>
+
+    </div>
+  </div>
 </section>
 
         {/* FAQ - Unique Animation: Bottom Slide Up */}
