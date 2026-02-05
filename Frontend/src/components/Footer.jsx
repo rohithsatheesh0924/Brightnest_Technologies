@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { 
   Phone, 
   Mail, 
@@ -40,25 +41,30 @@ const Footer = () => {
           </div>
 
           {/*  COMPANY */}
-          <div className="sm:w-1/2 lg:w-1/4 px-4">
-            <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10 ">
-              Company
-            </h5>
-            <div className="space-y-2.5">
-              {["About", "Team", "Careers", "Services"].map((item, idx) => (
-                <a 
-                  key={idx}
-                  href={`/${item.toLowerCase()}`}
-                  className="group flex items-center text-white/70 hover:text-orange-400 text-sm font-medium py-1 transition-all duration-300"
-                >
-                  <ChevronRight 
-                    className="w-3.5 h-3.5 text-orange-400 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
-                  />
-                  <span>{item}</span>
-                </a>
-              ))}
-            </div>
-          </div>
+         <div className="sm:w-1/2 lg:w-1/4 px-4">
+  <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10">
+    Company
+  </h5>
+  <div className="space-y-2.5">
+    {[
+      { label: "About", path: "/about" },
+      { label: "Team", path: "/about#team" }, // Optional: scroll to team section
+      { label: "Careers", path: "/careers" },
+      { label: "Services", path: "/all-services" } // 👈 Main services page
+    ].map((item, idx) => (
+      <Link 
+        key={idx}
+        to={item.path}
+        className="group flex items-center text-white/70 hover:text-orange-400 text-sm font-medium py-1 transition-all duration-300"
+      >
+        <ChevronRight 
+          className="w-3.5 h-3.5 text-orange-400 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+        />
+        <span>{item.label}</span>
+      </Link>
+    ))}
+  </div>
+</div>
 
           {/*  SERVICES */}
           <div className="sm:w-1/2 lg:w-1/4 px-4 ">
@@ -86,12 +92,13 @@ const Footer = () => {
   <h5 className="text-lg font-semibold text-orange-400 mb-3 pb-2 border-b border-orange-500/10">
     Contact
   </h5>
-  <div className="space-y-3.5">
+  <div className="space-y-4">
+    {/* Phone */}
     <a 
       href="tel:+918778731912" 
-      className="group flex items-start p-0.5 transition-colors"
+      className="group flex items-center p-0.5 transition-colors"
     >
-      <div className="mt-0.5 w-8 h-8 bg-orange-500/20 rounded-md flex items-center justify-center flex-shrink-0 mr-3">
+      <div className="w-8 h-8 bg-orange-500/20 rounded-md flex items-center justify-center flex-shrink-0 mr-3">
         <Phone className="w-4 h-4 text-orange-400" />
       </div>
       <span className="text-white/80 text-sm group-hover:text-orange-400 transition-colors">
@@ -99,31 +106,35 @@ const Footer = () => {
       </span>
     </a>
     
+    {/* Email */}
     <a 
-      href="mailto:info@brightnestsoft.com" 
-      className="group flex items-start p-0.5 transition-colors"
+      href="mailto:info@brightnesttechnologies.in" 
+      className="group flex items-center p-0.5 transition-colors"
     >
-      <div className="mt-0.5 w-8 h-8 bg-orange-500/20 rounded-md flex items-center justify-center flex-shrink-0 mr-3">
+      <div className="w-8 h-8 bg-orange-500/20 rounded-md flex items-center justify-center flex-shrink-0 mr-3">
         <Mail className="w-4 h-4 text-orange-400" />
       </div>
       <span className="text-white/80 text-sm group-hover:text-orange-400 transition-colors truncate">
-        info@brightnestsoft.com
+        info@brightnesttechnologies.in
       </span>
     </a>
     
+    {/* Address */}
     <div className="flex items-start p-0.5">
-      <div className="mt-0.5 w-8 h-8 bg-orange-500/20 rounded-md flex items-center justify-center flex-shrink-0 mr-3">
-        <MapPin className="w-4 h-4 text-orange-400" />
+      <div className="w-8 h-8 bg-orange-500/20 rounded-md flex items-start justify-center pt-0.5 flex-shrink-0 mr-3">
+        <MapPin className="w-4 h-4 text-orange-400 mt-0.5" />
       </div>
       <div className="text-white/80 text-sm leading-relaxed">
-        Peelamedu,<br />
-        Coimbatore, Tamil Nadu - 641004
+        1/174 F, Vinobaji Nagar<br />
+        Naripallam Road, Odanthurai,<br />
+        Mettupalayam, Coimbatore,<br />
+        Tamil Nadu - 641301
       </div>
     </div>
   </div>
 
   {/* Social Icons - Centered */}
-  <div className="flex space-x-3 mt-4 justify-center">
+  <div className="flex space-x-3 mt-6 justify-center">
     {[
       { icon: Linkedin, href: "https://linkedin.com/company/brightnestsoft" },
       { icon: Twitter, href: "https://twitter.com/brightnestsoft" },
@@ -135,6 +146,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="w-9 h-9 bg-black/30 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-orange-500 hover:border-orange-500/50 hover:text-white transition-all duration-300"
+        aria-label={`Follow us on ${['LinkedIn', 'Twitter', 'Instagram'][idx]}`}
       >
         <Icon className="w-4 h-4" />
       </a>
@@ -147,7 +159,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-6 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm font-medium">
-              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved. | Developed By Surya,Rohith,Akash
+              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved. | Developed By Surya,Rohith,Aakash
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
