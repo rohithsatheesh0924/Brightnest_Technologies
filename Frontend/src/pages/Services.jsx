@@ -1,12 +1,12 @@
 // src/pages/Services.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ServicesPage = () => {
+  const navigate = useNavigate();
+  
   const scrollToContactForm = () => {
     navigate('/contact#contact-form');
-    
-    // Scroll to form after navigation
     setTimeout(() => {
       const formSection = document.getElementById('contact-form');
       if (formSection) {
@@ -14,20 +14,21 @@ const ServicesPage = () => {
       }
     }, 100);
   };
+
   return (
     <div className="bg-white">
       {/* Header Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Digital & Creative Solutions for Global Enterprises
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-3xl mx-auto mb-12 md:mb-16 text-base md:text-lg leading-relaxed">
             Brightnest delivers enterprise-grade digital solutions that drive growth, efficiency, and innovation. Our expertise spans web development, mobile applications, and strategic digital marketing—tailored for businesses with global ambitions.
           </p>
 
           {/* Stats Cards - No routing needed (static info) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               { value: "4+", label: "Mobile Applications", icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,13 +48,13 @@ const ServicesPage = () => {
             ].map((item, idx) => (
               <div 
                 key={idx} 
-                className="bg-white p-7 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white p-6 md:p-7 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-orange-50 rounded-full mb-5 mx-auto text-orange-600">
+                <div className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-orange-50 rounded-full mb-4 md:mb-5 mx-auto text-orange-600">
                   {item.icon}
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{item.value}</div>
-                <div className="text-gray-600 font-medium">{item.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{item.value}</div>
+                <div className="text-gray-600 text-sm md:text-base font-medium">{item.label}</div>
               </div>
             ))}
           </div>
@@ -61,15 +62,15 @@ const ServicesPage = () => {
       </section>
 
       {/* Website & Graphic Design */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-4">Digital Excellence</span>
-            <h2 className="text-4xl font-bold text-gray-900 mb-5">Website & Brand Identity</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">Strategic design that aligns with your business vision.</p>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-orange-50 text-orange-700 rounded-full text-xs md:text-sm font-medium mb-4">Digital Excellence</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Website & Brand Identity</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Strategic design that aligns with your business vision.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 title: "Logo & Brand Identity",
@@ -115,13 +116,13 @@ const ServicesPage = () => {
               <Link 
                 key={idx} 
                 to={item.path}
-                className="group p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
+                className="group p-6 md:p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
               >
-                <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4 md:mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
               </Link>
             ))}
           </div>
@@ -129,15 +130,15 @@ const ServicesPage = () => {
       </section>
 
       {/* App Development */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-4">Technology Innovation</span>
-            <h2 className="text-4xl font-bold text-gray-900 mb-5">Application Development</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">End-to-end development of scalable, secure, and future-ready applications.</p>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-orange-50 text-orange-700 rounded-full text-xs md:text-sm font-medium mb-4">Technology Innovation</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Application Development</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">End-to-end development of scalable, secure, and future-ready applications.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 title: "Mobile Application Development",
@@ -183,13 +184,13 @@ const ServicesPage = () => {
               <Link 
                 key={idx} 
                 to={item.path}
-                className="group p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
+                className="group p-6 md:p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
               >
-                <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4 md:mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
               </Link>
             ))}
           </div>
@@ -197,15 +198,15 @@ const ServicesPage = () => {
       </section>
 
       {/* Marketing Services */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-4">Growth Strategy</span>
-            <h2 className="text-4xl font-bold text-gray-900 mb-5">Digital Marketing</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">Data-driven strategies that accelerate market penetration and ROI.</p>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-orange-50 text-orange-700 rounded-full text-xs md:text-sm font-medium mb-4">Growth Strategy</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Digital Marketing</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Data-driven strategies that accelerate market penetration and ROI.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 title: "Search Engine Optimization (SEO)",
@@ -251,13 +252,13 @@ const ServicesPage = () => {
               <Link 
                 key={idx} 
                 to={item.path}
-                className="group p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
+                className="group p-6 md:p-8 border border-gray-200 rounded-xl hover:border-orange-300 transition-all duration-300 block"
               >
-                <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4 md:mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
               </Link>
             ))}
           </div>
@@ -265,18 +266,18 @@ const ServicesPage = () => {
       </section>
 
       {/* Process & Industries */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-4">Methodology</span>
-            <h2 className="text-4xl font-bold text-gray-900 mb-5">Our Enterprise Delivery Framework</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-orange-50 text-orange-700 rounded-full text-xs md:text-sm font-medium mb-4">Methodology</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Our Enterprise Delivery Framework</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg">
               A proven agile methodology refined through hundreds of successful global engagements.
             </p>
           </div>
 
           {/* Process Steps - Static content (no routing) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-20">
             {[
               { title: "Discovery", desc: "Stakeholder alignment and solution scoping." },
               { title: "Design", desc: "UX research and interactive prototyping." },
@@ -289,23 +290,23 @@ const ServicesPage = () => {
             ].map((item, idx) => (
               <div 
                 key={idx} 
-                className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-orange-300 transition-all duration-300"
+                className="bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center hover:border-orange-300 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-600 font-bold mb-4 mx-auto">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-600 font-bold mb-3 md:mb-4 mx-auto text-sm md:text-base">
                   {idx + 1}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-xs md:text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Industry Solutions - Static content (no routing) */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-gray-900 text-center mb-3">Industry-Specific Expertise</h3>
-            <p className="text-gray-600 text-center mb-10">Solutions tailored to your sector’s unique challenges</p>
+          <div className="mb-16 md:mb-20">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center mb-3 md:mb-4">Industry-Specific Expertise</h3>
+            <p className="text-gray-600 text-center mb-6 md:mb-10 text-sm md:text-base">Solutions tailored to your sector’s unique challenges</p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
               {[
                 "Real Estate", "Travel & Hospitality", "Education", "Logistics",
                 "Events", "Retail & E-Commerce", "Healthcare", "Financial Services",
@@ -313,21 +314,21 @@ const ServicesPage = () => {
               ].map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="p-4 rounded-lg border border-gray-200 text-center hover:border-orange-300 transition-colors"
+                  className="p-3 md:p-4 rounded-lg border border-gray-200 text-center hover:border-orange-300 transition-colors"
                 >
-                  <span className="text-gray-700 text-sm">{item}</span>
+                  <span className="text-gray-700 text-xs md:text-sm">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* CTA - Routes to contact page */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-10 text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Enterprise Pricing Solutions</h3>
-            <p className="text-orange-600 font-semibold mb-6">Custom quotes based on your business requirements</p>
+          <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-10 text-center max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Enterprise Pricing Solutions</h3>
+            <p className="text-orange-600 font-semibold mb-4 md:mb-6 text-sm md:text-base">Custom quotes based on your business requirements</p>
             <Link 
               to="/contact" 
-              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-10 rounded-lg transition-colors duration-300 inline-block"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2.5 md:py-3 px-6 md:px-10 rounded-lg transition-colors duration-300 inline-block text-sm md:text-base"
             >
               Request Proposal
             </Link>

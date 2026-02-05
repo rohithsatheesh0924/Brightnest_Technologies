@@ -1,7 +1,6 @@
 // src/pages/logo-design.jsx
 import React, { useState } from 'react'; 
 import { motion, AnimatePresence } from 'framer-motion'; 
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 
 // Animation Variants
@@ -34,13 +33,11 @@ const staggerItem = {
 };
 
 const LogoDesignPage = () => {
-  // Hooks must be inside the component body
   const navigate = useNavigate(); 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
+  
   const scrollToContactForm = () => {
     navigate('/contact#contact-form');
-    
-    // Scroll to form after navigation
     setTimeout(() => {
       const formSection = document.getElementById('contact-form');
       if (formSection) {
@@ -66,62 +63,64 @@ const LogoDesignPage = () => {
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="bg-[#FFF9F4] py-16 px-4 sm:px-6 lg:px-8"
+        className="bg-[#FFF9F4] py-6 md:py-16 px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-montserrat"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Professional Business Logo Design Service
-            </motion.h1>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed font-poppins"
-              variants={staggerItem}
+              <motion.h1 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-montserrat"
+                variants={staggerItem}
+              >
+                Professional Business Logo Design Service
+              </motion.h1>
+              <motion.p 
+                className="text-lg mb-8 leading-relaxed font-poppins mx-auto lg:mx-0 max-w-2xl"
+                variants={staggerItem}
+              >
+                Get professional logo design services at affordable prices. Stand out with a unique and memorable logo for your business.
+              </motion.p>
+              <motion.button 
+                variants={staggerItem}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg shadow-orange-200 font-poppins w-full sm:w-auto mx-auto lg:mx-0"
+              >
+                Let's discuss →
+              </motion.button>
+            </motion.div>
+            
+            <motion.div 
+              className="lg:w-1/2 flex justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Get professional logo design services at affordable prices. Stand out with a unique and memorable logo for your business.
-            </motion.p>
-            <motion.button 
-  variants={staggerItem}
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-   onClick={scrollToContactForm}
-  className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg shadow-orange-200 font-poppins"
->
-  Let's discuss →
-</motion.button>
-
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <img
-              src="/logo-design.png"
-              alt="Logo Design Illustration"
-              className="max-w-full h-auto object-contain" 
-              onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1572044162444-ad60f128bde3?q=80&w=2070";
-              }}
-            />
-          </motion.div>
+              <img
+                src="/logo-design.png"
+                alt="Logo Design Illustration"
+                className="max-w-full h-auto object-contain w-64 md:w-80 lg:w-full"
+                onError={(e) => {
+                  e.target.src = "https://images.unsplash.com/photo-1572044162444-ad60f128bde3?q=80&w=2070";
+                }}
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* ====== SERVICES SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -129,22 +128,26 @@ const LogoDesignPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6 font-montserrat"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 font-montserrat"
             variants={fadeInUp}
           >
             We Offer Affordable Logo Design Services
           </motion.h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <motion.div variants={fadeInLeft}>
+          
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center">
+            <motion.div 
+              className="lg:w-1/2 order-2 lg:order-1"
+              variants={fadeInLeft}
+            >
               <motion.p 
-                className="mb-6 font-poppins leading-relaxed"
+                className="mb-6 font-poppins leading-relaxed text-base"
                 variants={staggerItem}
               >
                 At Brightnest, we specialize in creating captivating and memorable logo designs that represent your brand's identity and leave a lasting impression on your audience. 
                 Our team of talented designers combines artistic vision with strategic thinking to craft logos that truly stand out.
               </motion.p>
               <motion.div 
-                className="space-y-3"
+                className="space-y-4"
                 variants={staggerContainer}
               >
                 {[
@@ -152,23 +155,24 @@ const LogoDesignPage = () => {
                   { label: "Logo Redesign", path: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
                   { label: "Brand Logo Development", path: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" }
                 ].map((item, idx) => (
-                  <motion.div key={idx} className="flex items-start space-x-2" variants={staggerItem}>
-                    <svg className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <motion.div key={idx} className="flex items-start space-x-3" variants={staggerItem}>
+                    <svg className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.path} />
                     </svg>
-                    <span className="font-poppins">{item.label}</span>
+                    <span className="font-poppins text-base">{item.label}</span>
                   </motion.div>
                 ))}
               </motion.div>
             </motion.div>
+            
             <motion.div 
-              className="flex justify-center"
+              className="lg:w-1/2 order-1 lg:order-2 flex justify-center"
               variants={fadeInRight}
             >
               <img
                 src="/designer.png"
                 alt="Logo Designer"
-                className="max-w-full h-auto object-contain drop-shadow-lg"
+                className="max-w-full h-auto object-contain w-64 md:w-80 lg:w-full"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1572044162444-ad60f128bde3?q=80&w=2070";
                 }}
@@ -179,72 +183,67 @@ const LogoDesignPage = () => {
       </motion.section>
 
       {/* ====== FAQ SECTION ====== */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4] overflow-hidden">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4] overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold font-montserrat text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-montserrat text-gray-900 mb-4 md:mb-6">
               FAQ's <span className="text-orange-500">Logo Design</span> Services
             </h2>
-            <p className="text-gray-600 text-lg font-poppins max-w-2xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg font-poppins max-w-2xl mx-auto">
               Unlock the Power of Creativity: Your Logo Design FAQs Answered!
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-4 items-start min-h-[500px]">
-            {[0, 1].map((colIndex) => (
-              <div key={colIndex} className="space-y-4">
-                {faqData.slice(colIndex * 5, (colIndex + 1) * 5).map((faq, i) => {
-                  const actualIndex = colIndex * 5 + i;
-                  const isOpen = activeIndex === actualIndex;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+            {faqData.map((faq, index) => (
+              <motion.div 
+                key={index}
+                className={`border-b border-orange-100 pb-4 ${
+                  activeIndex === index ? 'bg-orange-50/50 rounded-t-xl' : ''
+                }`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <button
+                  onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                  className="w-full flex justify-between items-start py-4 px-2 text-left font-bold font-poppins text-gray-800 transition-all"
+                >
+                  <span className={`text-base md:text-lg ${activeIndex === index ? 'text-orange-600' : 'text-gray-800'}`}>
+                    {faq.q}
+                  </span>
+                  <motion.span
+                    animate={{ rotate: activeIndex === index ? 180 : 0 }}
+                    className="text-orange-500 mt-1 flex-shrink-0"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </motion.span>
+                </button>
 
-                  return (
-                    <motion.div 
-                      key={actualIndex}
-                      className={`border-b border-orange-100 transition-colors duration-300 ${
-                        isOpen ? 'bg-orange-50/50 rounded-t-xl' : ''
-                      }`}
+                <AnimatePresence>
+                  {activeIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
                     >
-                      <button
-                        onClick={() => setActiveIndex(isOpen ? null : actualIndex)}
-                        className="w-full flex justify-between items-center py-5 px-4 text-left font-bold font-poppins text-gray-800 transition-all"
-                      >
-                        <span className={isOpen ? 'text-orange-600' : 'text-gray-800'}>
-                          {faq.q}
-                        </span>
-                        <motion.span
-                          animate={{ rotate: isOpen ? 180 : 0 }}
-                          className="text-orange-500"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </motion.span>
-                      </button>
-
-                      <AnimatePresence>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="overflow-hidden"
-                          >
-                            <p className="px-4 pb-6 text-gray-600 leading-relaxed font-poppins text-sm md:text-base">
-                              {faq.a}
-                            </p>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <p className="px-2 pb-4 text-gray-600 leading-relaxed font-poppins text-sm md:text-base">
+                        {faq.a}
+                      </p>
                     </motion.div>
-                  );
-                })}
-              </div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>

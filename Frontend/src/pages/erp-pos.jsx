@@ -1,10 +1,9 @@
 // src/pages/erp-pos.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
-// Animation Variants
+// Animation Variants (unchanged)
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -34,11 +33,10 @@ const staggerItem = {
 };
 
 const ERPPOSPage = () => {
-    const navigate = useNavigate();
-    const scrollToContactForm = () => {
+  const navigate = useNavigate();
+  
+  const scrollToContactForm = () => {
     navigate('/contact#contact-form');
-    
-    // Scroll to form after navigation
     setTimeout(() => {
       const formSection = document.getElementById('contact-form');
       if (formSection) {
@@ -46,101 +44,106 @@ const ERPPOSPage = () => {
       }
     }, 100);
   };
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="bg-[#FFF9F4] py-8 px-4 sm:px-6 lg:px-8"
+        className="py-12 md:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Unified Business Management with ERP and POS Integration
-            </motion.h1>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
+              <motion.h1 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                Unified Business Management with ERP and POS Integration
+              </motion.h1>
+              <motion.p 
+                className="text-base md:text-lg mb-8 leading-relaxed"
+                variants={staggerItem}
+              >
+                Brightnest, the leading provider of comprehensive ERP (Enterprise Resource Planning) and POS (Point of Sale) solutions. 
+                We specialize in empowering businesses of all sizes with robust software that streamlines operations and enhances productivity.
+              </motion.p>
+              <motion.button 
+                variants={staggerItem}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md w-full sm:w-auto mx-auto lg:mx-0"
+              >
+                Let's discuss →
+              </motion.button>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              Brightnest, the leading provider of comprehensive ERP (Enterprise Resource Planning) and POS (Point of Sale) solutions. 
-              We specialize in empowering businesses of all sizes with robust software that streamlines operations and enhances productivity.
-            </motion.p>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-               onClick={scrollToContactForm}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
-            >
-              Let's discuss →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./pos-billing.png"
-              alt="ERP & POS Illustration"
-             className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./pos-billing.png"
+                alt="ERP & POS Illustration"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* ====== SECTION 2: Boost Efficiency and Productivity ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Boost Efficiency and Productivity with Brightnest's Cutting-Edge ERP and POS Solutions
-            </motion.h2>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
+              <motion.h2 
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                Boost Efficiency and Productivity with Brightnest's Cutting-Edge ERP and POS Solutions
+              </motion.h2>
+              <motion.p 
+                className="text-base md:text-lg mb-8 leading-relaxed"
+                variants={staggerItem}
+              >
+                Brightnest is a leading provider of innovative ERP and POS solutions. 
+                We have a proven track record of helping businesses streamline their operations, improve efficiency, and achieve sustainable growth. 
+                Our team of experienced professionals is committed to delivering top-notch software solutions and exceptional customer service.
+              </motion.p>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              Brightnest is a leading provider of innovative ERP and POS solutions. 
-              We have a proven track record of helping businesses streamline their operations, improve efficiency, and achieve sustainable growth. 
-              Our team of experienced professionals is committed to delivering top-notch software solutions and exceptional customer service.
-            </motion.p>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./teamwork.svg"
-              alt="Team Working"
-             className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./teamwork.svg"
+                alt="Team Working"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* ====== SECTION 3: Transforming Businesses with ERP and POS Solutions ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -148,18 +151,18 @@ const ERPPOSPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6"
             variants={fadeInUp}
           >
             Transforming Businesses with ERP and POS Solutions
           </motion.h2>
           <motion.p 
-            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            className="text-center text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto"
             variants={fadeInUp}
           >
             Streamline Your Business Operations with Brightnest
           </motion.p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { 
                 icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
@@ -198,8 +201,8 @@ const ERPPOSPage = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -208,43 +211,45 @@ const ERPPOSPage = () => {
 
       {/* ====== CTA SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              A leading provider of innovative ERP and POS solutions
-            </motion.h2>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-               onClick={scrollToContactForm}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
+              <motion.h2 
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                A leading provider of innovative ERP and POS solutions
+              </motion.h2>
+              <motion.button 
+                variants={staggerItem}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md w-full sm:w-auto mx-auto lg:mx-0"
+              >
+                Build Now! →
+              </motion.button>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              Build Now! →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./billing-software.png"
-              alt="ERP & POS CTA"
-              className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./billing-software.png"
+                alt="ERP & POS CTA"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
     </div>

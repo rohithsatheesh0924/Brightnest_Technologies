@@ -722,7 +722,7 @@ const navigate = useNavigate();
   whileHover={{ scale: 1.05 }} 
   whileTap={{ scale: 0.95 }}
   onClick={() => {
-    window.open('https://wa.me/919750565041', '_blank');
+    window.open('https://wa.me/918778731912', '_blank');
   }}
   className="px-6 py-3 rounded-full bg-green-500 text-white text-sm font-semibold shadow-lg shadow-green-200 hover:bg-green-600 transition-all duration-300 font-poppins flex items-center gap-2"
 >

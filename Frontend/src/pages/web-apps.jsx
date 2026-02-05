@@ -1,10 +1,9 @@
 // src/pages/web-apps.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
-// Animation Variants
+// Animation Variants (unchanged)
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -34,11 +33,10 @@ const staggerItem = {
 };
 
 const WebAppsPage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  
   const scrollToContactForm = () => {
     navigate('/contact#contact-form');
-    
-    // Scroll to form after navigation
     setTimeout(() => {
       const formSection = document.getElementById('contact-form');
       if (formSection) {
@@ -46,101 +44,106 @@ const WebAppsPage = () => {
       }
     }, 100);
   };
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* ====== HERO SECTION ====== */}
       <motion.section 
-        className="bg-[#FFF9F4] py-8 px-4 sm:px-6 lg:px-8"
+        className="py-16 md:py-10 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Elevate Your Web Experience with Creative Web App Design in Coimbatore
-            </motion.h1>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
+              <motion.h1 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                Elevate Your Web Experience with Creative Web App Design in Coimbatore
+              </motion.h1>
+              <motion.p 
+                className="text-base md:text-lg mb-8 leading-relaxed"
+                variants={staggerItem}
+              >
+                At Brightnestsoft, we are passionate about pushing the boundaries of web app design in Coimbatore. 
+                With a team of highly skilled professionals and a wealth of experience, we strive to deliver exceptional digital solutions that make a lasting impact. 
+                We believe in combining creativity, technical expertise, and strategic thinking to create web apps that stand out in the competitive online landscape.
+              </motion.p>
+              <motion.button 
+                variants={staggerItem}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md w-full sm:w-auto mx-auto lg:mx-0"
+              >
+                Let's discuss →
+              </motion.button>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              At Brightnestsoft, we are passionate about pushing the boundaries of web app design in Coimbatore. 
-              With a team of highly skilled professionals and a wealth of experience, we strive to deliver exceptional digital solutions that make a lasting impact. 
-              We believe in combining creativity, technical expertise, and strategic thinking to create web apps that stand out in the competitive online landscape.
-            </motion.p>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-               onClick={scrollToContactForm}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md"
-            >
-              Let's discuss →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./webapp.png"
-              alt="Web App Illustration"
-               className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./webapp.png"
+                alt="Web App Illustration"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* ====== SECTION 2: Brightnestsoft Experience Seamless User Journeys ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Brightnest Experience Seamless User Journeys with Customized Web App Design in Coimbatore
-            </motion.h2>
-            <motion.p 
-              className="text-lg mb-8 leading-relaxed"
-              variants={staggerItem}
+              <motion.h2 
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                Brightnest Experience Seamless User Journeys with Customized Web App Design in Coimbatore
+              </motion.h2>
+              <motion.p 
+                className="text-base md:text-lg mb-8 leading-relaxed"
+                variants={staggerItem}
+              >
+                At Brightnest, we embrace design innovation and constantly explore new techniques and trends. 
+                Our aim is to create web app designs that not only meet industry standards but also push creative boundaries.
+              </motion.p>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              At Brightnest, we embrace design innovation and constantly explore new techniques and trends. 
-              Our aim is to create web app designs that not only meet industry standards but also push creative boundaries.
-            </motion.p>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./teamwork.svg"
-              alt="Team Working"
-               className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./teamwork.svg"
+                alt="Team Working"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* ====== SECTION 3: Unleash Your Business Potential ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F4]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -148,18 +151,18 @@ const WebAppsPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6"
             variants={fadeInUp}
           >
             Unleash Your Business Potential with Innovative Web App Design in Coimbatore
           </motion.h2>
           <motion.p 
-            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            className="text-center text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto"
             variants={fadeInUp}
           >
             Transforming Ideas into Engaging Web Apps
           </motion.p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { 
                 icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
@@ -198,8 +201,8 @@ const WebAppsPage = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -208,43 +211,45 @@ const WebAppsPage = () => {
 
       {/* ====== CTA SECTION ====== */}
       <motion.section 
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <motion.div 
-            className="lg:w-1/2"
-            variants={fadeInLeft}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              variants={staggerItem}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="lg:w-1/2 text-center lg:text-left"
+              variants={fadeInLeft}
             >
-              Stand Out from the Crowd with Cutting-Edge Web App Design in Coimbatore
-            </motion.h2>
-            <motion.button 
-              variants={staggerItem}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-               onClick={scrollToContactForm}
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-md mt-4"
+              <motion.h2 
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
+                variants={staggerItem}
+              >
+                Stand Out from the Crowd with Cutting-Edge Web App Design in Coimbatore
+              </motion.h2>
+              <motion.button 
+                variants={staggerItem}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToContactForm}
+                className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-md w-full sm:w-auto mx-auto lg:mx-0"
+              >
+                Build Now! →
+              </motion.button>
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 flex justify-center mt-8 lg:mt-0"
+              variants={fadeInRight}
             >
-              Build Now! →
-            </motion.button>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInRight}
-          >
-            <img
-              src="./webapp1.png"
-              alt="Web App CTA"
-               className="max-w-full h-auto"
-            />
-          </motion.div>
+              <img
+                src="./webapp1.png"
+                alt="Web App CTA"
+                className="max-w-full h-auto w-64 md:w-80 lg:w-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
     </div>
