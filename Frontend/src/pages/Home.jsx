@@ -170,17 +170,16 @@ const navigate = useNavigate();
 
 
         {/* Hero Section - Unique Animation: Left Slide Reveal */}
-  <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
+ <section className="relative w-full min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden bg-black text-center">
   {/* Background Layer: ColorBends */}
   <div className="absolute inset-0 z-0">
     <ColorBends 
       speed={0.5}
       amplitude={1.1}
-      color1="#EA580C" // Deep Orange
-      color2="#7C2D12" // Burnt Orange
-      color3="#000000" // Black for deep blending
+      color1="#EA580C"
+      color2="#7C2D12"
+      color3="#000000"
     />
-    {/* Radial Mask: Fades the animation toward the edges to keep focus on center text */}
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_85%)] z-[1]" />
   </div>
 
@@ -197,14 +196,14 @@ const navigate = useNavigate();
         Premier Digital Solutions
       </p>
       
-      <motion.h1 
+      <motion.h2 
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-montserrat text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-8 text-white tracking-tighter mx-auto"
       >
-        {/* Line 1: "Website Design &" */}
-        <span className="block opacity-90 mb-2">
+        {/* Mobile: Single line | Desktop: Two lines */}
+        <span className="hidden sm:block opacity-90 mb-2">
           {["W", "e", "b", "s", "i", "t", "e", "\u00A0", "D", "e", "s", "i", "g", "n", "\u00A0", "&"].map((char, idx) => (
             <motion.span
               key={idx}
@@ -218,12 +217,44 @@ const navigate = useNavigate();
           ))}
         </span>
         
-        {/* Line 2: "Development Company" */}
+       {/* Mobile: Two-line layout */}
+<span className="sm:hidden block">
+  {/* Line 1: "Website Design &" */}
+  <span className="block opacity-90 mb-2 text-xl">
+    {["W", "e", "b", "s", "i", "t", "e", "\u00A0", "D", "e", "s", "i", "g", "n", "\u00A0", "&"].map((char, idx) => (
+      <motion.span
+        key={idx}
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: idx * 0.02, duration: 0.4, ease: "easeOut" }}
+        className="inline-block"
+      >
+        {char === "\u00A0" ? "\u00A0" : char}
+      </motion.span>
+    ))}
+  </span>
+  
+  {/* Line 2: "Development Company" */}
+  <span className="block opacity-90 mb-2 text-xl">
+    {["D", "e", "v", "e", "l", "o", "p", "m", "e", "n", "t", "\u00A0", "C", "o", "m", "p", "a", "n", "y"].map((char, idx) => (
+      <motion.span
+        key={idx + 100} // Unique key for second line
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4 + idx * 0.02, duration: 0.4, ease: "easeOut" }}
+        className="inline-block"
+      >
+        {char === "\u00A0" ? "\u00A0" : char}
+      </motion.span>
+    ))}
+  </span>
+</span>
+        
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.7 }}
-          className="block mb-2"
+          className="hidden sm:block mb-2"
         >
           {["D", "e", "v", "e", "l", "o", "p", "m", "e", "n", "t", "\u00A0", "C", "o", "m", "p", "a", "n", "y"].map((char, idx) => (
             <motion.span
@@ -238,7 +269,6 @@ const navigate = useNavigate();
           ))}
         </motion.span>
 
-        {/* Line 3: "in Coimbatore" */}
         <motion.span 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -273,7 +303,7 @@ const navigate = useNavigate();
             </motion.span>
           ))}
         </motion.span>
-      </motion.h1>
+      </motion.h2>
       
       <p className="font-poppins text-gray-300 mb-10 leading-relaxed text-base md:text-lg max-w-2xl mx-auto drop-shadow-sm">
         Brightnest Technologies delivers high-performance web ecosystems. We empower businesses in Coimbatore with stunning design and functional excellence tailored to your growth.
@@ -302,83 +332,105 @@ const navigate = useNavigate();
   </div>
 </section>
 
-
         {/* Services grid - Unique Animation: Staggered Fade Up Cards */}
          <section className="w-full py-16 bg-[#FFF2EA]">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16">
-        {/* Header - UNCHANGED */}
-        <div className="text-center mb-12">
-          <p className="text-xs uppercase tracking-wide text-orange-500 mb-2 font-bold font-poppins">
-            What we can do for your business
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold font-montserrat">
-            Brightnest: Your Trusted Partner for Web Development Services
-          </h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto font-poppins leading-relaxed">
-            Brightnest is a creative website design company in Coimbatore,
-            Tamilnadu that focuses on delivering effective digital solutions
-            for businesses of all sizes. From custom website design to
-            comprehensive ecommerce development, our team ensures your online
-            presence is professional, responsive, and results‑driven.
-          </p>
-        </div>
+  <div className="container mx-auto px-4 md:px-8 lg:px-16">
+    {/* Header - With Entry Animation */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-12"
+    >
+      <p className="text-xs uppercase tracking-wide text-orange-500 mb-2 font-bold font-poppins">
+        What we can do for your business
+      </p>
+      <h2 className="text-2xl md:text-3xl font-bold font-montserrat">
+        Brightnest: Your Trusted Partner for Web Development Services
+      </h2>
+      <p className="mt-3 text-gray-600 max-w-2xl mx-auto font-poppins leading-relaxed">
+        Brightnest is a creative website design company in Coimbatore,
+        Tamilnadu that focuses on delivering effective digital solutions
+        for businesses of all sizes. From custom website design to
+        comprehensive ecommerce development, our team ensures your online
+        presence is professional, responsive, and results‑driven.
+      </p>
+    </motion.div>
 
-        {/* Cards Grid - NAVIGATION ADDED */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
-            >
-              {/* Circular Image Container */}
-              <div className="w-16 h-16 rounded-full bg-orange-50 mb-6 flex items-center justify-center overflow-hidden border border-orange-100 
-                            group-hover:bg-orange-500 
-                            group-hover:shadow-lg 
-                            group-hover:shadow-orange-200 
-                            transition-all duration-300">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-10 h-10 object-contain" 
-                />
-              </div>
-
-              <h3 className="font-bold text-lg mb-3 font-montserrat text-gray-800">{item.title}</h3>
-              <p className="text-sm text-gray-600 flex-1 font-poppins leading-relaxed">
-                {item.desc}
-              </p>
-              
-              {/*  NAVIGATION BUTTON WITH MOTION */}
-              <motion.button 
-                whileHover={{ scale: 1.05, x: 4 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => navigate(serviceRoutes[item.title])}
-                className="mt-6 text-sm text-orange-600 font-bold text-left flex items-center gap-2 hover:gap-3 transition-all group-hover:text-orange-500"
-              >
-                Get started today
-                <span className="text-lg">→</span>
-              </motion.button>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA - NAVIGATION ADDED */}
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-gray-700 font-poppins text-lg">
-            Elevate your business with <strong>Brightnest</strong> and transform your
-            website into a powerful marketing asset.
-          </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/all-services')}
-            className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 hover:scale-105 transition-all whitespace-nowrap"
+    {/* Cards Grid - With Staggered Entry Animation */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+    >
+      <div className="grid md:grid-cols-3 gap-6">
+        {services.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
           >
-            Explore Now
-          </motion.button>
-        </div>
+            {/* Circular Image Container */}
+            <div className="w-16 h-16 rounded-full bg-orange-50 mb-6 flex items-center justify-center overflow-hidden border border-orange-100 
+                          group-hover:bg-orange-500 
+                          group-hover:shadow-lg 
+                          group-hover:shadow-orange-200 
+                          transition-all duration-300">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-10 h-10 object-contain" 
+              />
+            </div>
+
+            <h3 className="font-bold text-lg mb-3 font-montserrat text-gray-800">{item.title}</h3>
+            <p className="text-sm text-gray-600 flex-1 font-poppins leading-relaxed">
+              {item.desc}
+            </p>
+            
+            {/* Navigation Button with Motion */}
+            <motion.button 
+              whileHover={{ scale: 1.05, x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate(serviceRoutes[item.title])}
+              className="mt-6 text-sm text-orange-600 font-bold text-left flex items-center gap-2 hover:gap-3 transition-all group-hover:text-orange-500"
+            >
+              Get started today
+              <span className="text-lg">→</span>
+            </motion.button>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </motion.div>
+
+    {/* CTA - With Entry Animation */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6"
+    >
+      <p className="text-gray-700 font-poppins text-lg">
+        Elevate your business with <strong>Brightnest</strong> and transform your
+        website into a powerful marketing asset.
+      </p>
+      <motion.button 
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => navigate('/all-services')}
+        className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 hover:scale-105 transition-all whitespace-nowrap"
+      >
+        Explore Now
+      </motion.button>
+    </motion.div>
+  </div>
+</section>
 
         {/* Intro stats section - Unique Animation: Individual Item Pop-in */}
        <section className="w-full py-16 bg-white">

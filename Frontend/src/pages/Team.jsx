@@ -19,8 +19,17 @@ const TeamPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Surya Chinnraj",
-      role: "Chief Executive Officer",
+      name: "Vijaya Chinnaraj",
+      role: "Managing Partner",
+      image: "/images/team/vijaya.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/vijaya-chinnaraj"
+      }
+    },
+    {
+      id: 2,
+      name: "Surya Chinnaraj",
+      role: "Founder",
       image: "/images/team/surya.jpg",
       social: {
         linkedin: "https://linkedin.com/in/surya-kumar",
@@ -28,53 +37,51 @@ const TeamPage = () => {
       }
     },
     {
-      id: 2,
-      name: "Dhinakar Chinnraj",
-      role: "Client Success Manager",
-      image: "/images/team/rohith.jpg",
-      social: {
-        linkedin: "https://linkedin.com/in/rohith-raj",
-        email: "rohith@brightnesttechnologies.in"
-      }
-    },
-    {
       id: 3,
-      name: "Aakash",
-      role: "Client Success Manager",
-      image: "/images/team/akash.jpg",
+      name: "Dhinakaran Chinnaraj",
+      role: "CEO",
+      image: "/images/team/dhinakaran.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/akash-venkatesh",
-        email: "akash@brightnesttechnologies.in"
+        linkedin: "https://linkedin.com/in/dhinakaran-chinnaraj"
       }
     },
     {
       id: 4,
-      name: "Dharshan",
-      role: "Senior UI/UX Designer",
-      image: "/images/team/priya.jpg",
+      name: "Vimal Vaibhav",
+      role: "CDO",
+      image: "/images/team/vimal.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/priya-sharma",
-        dribbble: "https://dribbble.com/priyadesigns"
+        linkedin: "https://linkedin.com/in/vimal-vaibhav"
       }
     },
     {
       id: 5,
-      name: "Rohith",
-      role: "Frontend Developer",
-      image: "/images/team/arjun.jpg",
+      name: "Aakash Rajan",
+      role: "Jr. Web Developer",
+      image: "/images/team/aakash.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/arjun-patel",
-        github: "https://github.com/arjunpatel"
+        linkedin: "https://linkedin.com/in/aakash-rajan",
+        github: "https://github.com/aakashrajan"
       }
     },
     {
       id: 6,
-      name: "Vikram Singh",
-      role: "Backend Developer",
-      image: "/images/team/vikram.jpg",
+      name: "Rohith Satheesh Kumar",
+      role: "Jr. Web Developer",
+      image: "/images/team/rohith-satheesh.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/vikram-singh",
-        github: "https://github.com/vikramsingh"
+        linkedin: "https://linkedin.com/in/rohith-satheesh-kumar",
+        github: "https://github.com/rohithsatheesh"
+      }
+    },
+    {
+      id: 7,
+      name: "Dharshan Senthil Kumar",
+      role: "Jr. UI/UX Designer",
+      image: "/images/team/dharshan.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/dharshan-senthil-kumar",
+        dribbble: "https://dribbble.com/dharshansenthil"
       }
     }
   ];
@@ -131,7 +138,7 @@ const TeamPage = () => {
                   {Object.entries(member.social).map(([platform, url]) => (
                     <SocialLink 
                       key={platform} 
-                      href={url} 
+                      href={url.trim()} 
                       platform={platform} 
                     />
                   ))}
