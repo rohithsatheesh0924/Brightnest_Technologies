@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ColorBends from "../components/ColorBends"; 
+import CircularGallery from "../components/CircularGallery";
 
 const Counter = ({ value }) => {
    
@@ -462,41 +463,71 @@ const [activeTab, setActiveTab] = useState("Igniting innovation");
       </section>
 
       {/* 7. Clients - Unique Animation: Scale-in Grid */}
-      <section className="w-full bg-white">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-8"
-          >
-            <p className="text-xs uppercase tracking-[0.22em] text-orange-500 mb-2">Our clients & partners</p>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">We have built solutions for…</h3>
-            <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-              From local brands to international businesses, Brightnest Technologies supports teams who expect reliable execution and thoughtful design.
-            </p>
-          </motion.div>
+     <section className="w-full bg-white py-16 md:py-20">
+  <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-12 md:mb-16"
+    >
+      <p className="text-xs uppercase tracking-[0.22em] text-orange-500 font-semibold mb-2">OUR CLIENTS & PARTNERS</p>
+      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">We have built solutions for…</h3>
+      <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+        From local brands to international businesses, Brightnest Technologies supports teams who expect reliable execution and thoughtful design.
+      </p>
+    </motion.div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 items-center justify-items-center"
-          >
-            {Array.from({ length: 18 }).map((_, i) => (
-              <motion.div
-                key={i}
-                variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } }}
-                className="w-20 h-10 sm:w-24 sm:h-12 bg-[#FFF9F4] border border-gray-100 rounded-xl flex items-center justify-center shadow-sm"
-              >
-                <span className="text-gray-400 text-[11px] sm:text-xs">Logo {i + 1}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    {/* Simple Responsive Grid Gallery */}
+    <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+      {[
+        "/c1.webp",
+        "/c2.jpg",
+        "/c3.webp",
+        "/c4.webp",
+        "/c5.webp",
+        "/c6.png",
+        "/c7.png",
+        "/c8.png",
+        "/c9.webp",
+        "/c10.png",
+        "/c11.png",
+        "/c12.webp",
+        "/c13.webp",
+        "/c14.png",
+        "/c15.webp",
+        "/c16.png",
+        "/c17.webp",
+        "/c18.webp",
+        "/c19.png"
+      ].map((src, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.05 }}
+          className="w-16 h-16 md:w-20 md:h-20 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden border border-gray-200 hover:border-orange-300 transition-colors"
+        >
+          <img
+            src={src}
+            alt={`Client ${index + 1}`}
+            className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              // Optional: show fallback icon
+              const parent = e.target.parentElement;
+              if (parent) {
+                parent.innerHTML = `<div class="text-gray-400 text-xs">Logo ${index + 1}</div>`;
+              }
+            }}
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 8. CTA strip - Unique Animation: Bottom Pop */}
       <section className="w-full bg-[#101018] text-white">

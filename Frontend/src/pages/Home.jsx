@@ -565,61 +565,72 @@ const navigate = useNavigate();
 
 
         {/* Clients Section - Unique Animation: Hover Pop for Logos */}
-<section className="w-full py-24 md:py-40 bg-transparent border-t border-white/5">
-  <div className="container mx-auto px-4 md:px-8">
+    <section className="w-full bg-white py-16 md:py-20">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <p className="text-xs uppercase tracking-[0.22em] text-orange-500 font-semibold mb-2">OUR CLIENTS & PARTNERS</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">We have built solutions for…</h3>
+          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            From local brands to international businesses, Brightnest Technologies supports teams who expect reliable execution and thoughtful design.
+          </p>
+        </motion.div>
     
-    {/* Section Header */}
-    <motion.div 
-      initial={{ opacity: 0, y: -10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-20"
-    >
-      <h2 className="font-montserrat text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-        Our <span className="text-orange-500">Lovable Clients</span>
-      </h2>
-      <div className="w-16 h-1 bg-orange-500 mx-auto mt-4 rounded-full opacity-60" />
-    </motion.div>
+        {/* Simple Responsive Grid Gallery */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+          {[
+            "/c1.webp",
+            "/c2.jpg",
+            "/c3.webp",
+            "/c4.webp",
+            "/c5.webp",
+            "/c6.png",
+            "/c7.png",
+            "/c8.png",
+            "/c9.webp",
+            "/c10.png",
+            "/c11.png",
+            "/c12.webp",
+            "/c13.webp",
+            "/c14.png",
+            "/c15.webp",
+            "/c16.png",
+            "/c17.webp",
+            "/c18.webp",
+            "/c19.png"
+          ].map((src, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="w-16 h-16 md:w-20 md:h-20 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden border border-gray-200 hover:border-orange-300 transition-colors"
+            >
+              <img
+                src={src}
+                alt={`Client ${index + 1}`}
+                className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  // Optional: show fallback icon
+                  const parent = e.target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `<div class="text-gray-400 text-xs">Logo ${index + 1}</div>`;
+                  }
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    {/* Structured 3x2 Layout */}
-    <div className="flex flex-col gap-10 md:gap-16">
-      
-      {/* Row 1: 3 Logos */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-12 md:gap-24"
-      >
-        {[
-          { id: 1, name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-          { id: 2, name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-          { id: 3, name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        ].map((item) => (
-          <ClientLogo key={item.id} client={item} />
-        ))}
-      </motion.div>
-
-      {/* Row 2: 2 Logos */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="flex flex-wrap justify-center gap-12 md:gap-24"
-      >
-        {[
-          { id: 4, name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Adobe_Systems_logo_and_wordmark.svg" },
-          { id: 5, name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-        ].map((item) => (
-          <ClientLogo key={item.id} client={item} />
-        ))}
-      </motion.div>
-
-    </div>
-  </div>
-</section>
 
         {/* FAQ - Unique Animation: Bottom Slide Up */}
       <section className="w-full py-16 bg-[#FFF2EA]">

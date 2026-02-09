@@ -170,48 +170,86 @@ const ContactPage = () => {
             
             {/* Left Column: Trust & Testimonials */}
             <motion.div 
-              className="lg:col-span-2 space-y-8 md:space-y-10"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div>
-                <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 md:mb-4 tracking-tighter leading-tight">
-                  Trusted by <span className="text-orange-500">Industry Leaders.</span>
-                </h2>
-                <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-sm font-medium">
-                  Join an elite global network. We transform complex enterprise requirements into high-performance digital legacy.
-                </p>
-              </div>
+  className="lg:col-span-2 space-y-8 md:space-y-10"
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+>
+  <div>
+    <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 md:mb-4 tracking-tighter leading-tight">
+      Trusted by <span className="text-orange-500">Industry Leaders.</span>
+    </h2>
+    <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-sm font-medium">
+      Join an elite global network. We transform complex enterprise requirements into high-performance digital legacy.
+    </p>
+  </div>
 
-              {/* Client Logos Grid - Smaller & Clean */}
-              <div className="grid grid-cols-3 gap-4 md:gap-6 opacity-30 grayscale hover:opacity-60 transition-opacity duration-700">
-                {[1, 2, 3, 4, 5].map(i => (
-                  <img key={i} src={`/images/client-logo-${i}.png`} alt="MNC Client" className="h-5 md:h-6 w-auto object-contain" />
-                ))}
-              </div>
+  {/* Client Logos Grid - Using your public folder images */}
+ <div className="grid grid-cols-3 gap-4 md:gap-6">
+  {[
+    "/c1.webp",
+    "/c2.jpg", 
+    "/c3.webp",
+    "/c4.webp",
+    "/c5.webp",
+    "/c6.png"
+  ].map((src, i) => (
+    <img 
+      key={i} 
+      src={src} 
+      alt={`Client ${i + 1}`} 
+      className="h-5 md:h-6 w-auto object-contain" 
+      onError={(e) => {
+        e.target.style.display = 'none';
+      }}
+    />
+  ))}
+</div>
 
-              {/* Testimonials - Minimalist MNC Style */}
-              <div className="space-y-3 md:space-y-4">
-                {[
-                  { name: "Mr. L. Kannan", role: "Correspondent • Minerva Public", text: "Consistent excellence and technical depth.", img: "1" },
-                  { name: "Mr. Male Ramarao", role: "MD • Showrya BioHydro", text: "Strategic partners for commercial scale.", img: "2" }
-                ].map((t, idx) => (
-                  <div key={idx} className="p-4 md:p-6 bg-slate-50 rounded-2xl border border-slate-100/50 hover:bg-white hover:shadow-xl hover:shadow-slate-100 transition-all duration-500 group">
-                    <p className="text-slate-600 italic mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">"{t.text}"</p>
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 md:w-8 h-7 md:h-8 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all">
-                        <img src={`/images/testimonial-avatar-${t.img}.png`} alt={t.name} className="w-full h-full object-cover" />
-                      </div>
-                      <div>
-                        <h4 className="text-[10px] md:text-xs font-black text-slate-900 uppercase tracking-widest">{t.name}</h4>
-                        <p className="text-[8px] md:text-[10px] font-bold text-orange-500 uppercase tracking-tight">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+  {/* Testimonials - With Online Avatar Images */}
+  <div className="space-y-3 md:space-y-4">
+    {[
+      { 
+        name: "Mr. L. Kannan", 
+        role: "Correspondent • Minerva Public", 
+        text: "Consistent excellence and technical depth.", 
+        avatar: "https://ui-avatars.com/api/?name=L.+Kannan&background=ffedd5&color=ea580c&size=64" 
+      },
+      { 
+        name: "Mr. Male Ramarao", 
+        role: "MD • Showrya BioHydro", 
+        text: "Strategic partners for commercial scale.", 
+        avatar: "https://ui-avatars.com/api/?name=Male+Ramarao&background=ffedd5&color=ea580c&size=64" 
+      }
+    ].map((t, idx) => (
+      <div 
+        key={idx} 
+        className="p-4 md:p-6 bg-slate-50 rounded-2xl border border-slate-100/50 hover:bg-white hover:shadow-xl hover:shadow-slate-100 transition-all duration-500 group"
+      >
+        <p className="text-slate-600 italic mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">
+          "{t.text}"
+        </p>
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="w-7 md:w-8 h-7 md:h-8 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all">
+            <img 
+              src={t.avatar} 
+              alt={t.name} 
+              className="w-full h-full object-cover" 
+            />
+          </div>
+          <div>
+            <h4 className="text-[10px] md:text-xs font-black text-slate-900 uppercase tracking-widest">
+              {t.name}
+            </h4>
+            <p className="text-[8px] md:text-[10px] font-bold text-orange-500 uppercase tracking-tight">
+              {t.role}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</motion.div>
 
             {/* Right Column: High-Fidelity Form - WITH ID */}
             <motion.div 

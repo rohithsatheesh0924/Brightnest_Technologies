@@ -6,7 +6,7 @@ import AOS from "aos";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Import all service pages
+// Import all pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import WebDesign from "./pages/web-design";
@@ -24,6 +24,8 @@ import GoogleAdsPage from "./pages/google-ads";
 import EmailMarketingPage from "./pages/email-marketing";
 import ContactPage from "./pages/contact";
 import ServicePage from "./pages/services";
+import PortfolioPage from "./pages/Portfolio";
+import TeamPage from "./pages/Team"; // ✅ Team page imported
 
 import "aos/dist/aos.css";
 import "./App.css";
@@ -60,8 +62,9 @@ function App() {
             {/* Main Pages */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            
-            {/* Service Pages — flat structure */}
+            <Route path="/team" element={<TeamPage />} /> {/* ✅ Team route added */}
+
+            {/* Service Pages */}
             <Route path="/web-design" element={<WebDesign />} />
             <Route path="/logo-design" element={<LogoDesignPage />} />
             <Route path="/ecommerce" element={<ECommercePage />} />
@@ -76,14 +79,12 @@ function App() {
             <Route path="/google-ads" element={<GoogleAdsPage />} />
             <Route path="/email-marketing" element={<EmailMarketingPage />} />
             <Route path="/all-services" element={<ServicePage />} />
-           
 
-            {/* Fallbacks */}
-            <Route path="/services" element={<div className="text-white p-8">Our full range of services</div>} />
-            <Route path="/portfolio" element={<div className="text-white p-8">Portfolio Page</div>} />
+            {/* Other Pages */}
+            <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
 
-            {/* Optional: catch-all 404 */}
+            {/* 404 Fallback */}
             <Route path="*" element={<div className="text-white p-8">Page not found</div>} />
           </Routes>
         </main>

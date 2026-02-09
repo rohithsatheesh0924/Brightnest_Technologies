@@ -48,9 +48,9 @@ const Footer = () => {
   <div className="space-y-2.5">
     {[
       { label: "About", path: "/about" },
-      { label: "Team", path: "/about#team" }, // Optional: scroll to team section
+      { label: "Team", path: "/team" }, 
       { label: "Careers", path: "/careers" },
-      { label: "Services", path: "/all-services" } // 👈 Main services page
+      { label: "Services", path: "/all-services" } 
     ].map((item, idx) => (
       <Link 
         key={idx}
@@ -159,7 +159,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-6 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm font-medium">
-              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved. | Developed By Surya,Rohith,Aakash
+              © {new Date().getFullYear()} Brightnest Technologies Pvt Ltd. All rights reserved.
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
