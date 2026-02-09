@@ -220,7 +220,7 @@ const navigate = useNavigate();
        {/* Mobile: Two-line layout */}
 <span className="sm:hidden block">
   {/* Line 1: "Website Design &" */}
-  <span className="block opacity-90 mb-2 text-xl">
+  <span className="block opacity-90 mb-2 text-2xl">
     {["W", "e", "b", "s", "i", "t", "e", "\u00A0", "D", "e", "s", "i", "g", "n", "\u00A0", "&"].map((char, idx) => (
       <motion.span
         key={idx}
@@ -235,10 +235,10 @@ const navigate = useNavigate();
   </span>
   
   {/* Line 2: "Development Company" */}
-  <span className="block opacity-90 mb-2 text-xl">
+  <span className="block opacity-90 mb-2 text-2xl">
     {["D", "e", "v", "e", "l", "o", "p", "m", "e", "n", "t", "\u00A0", "C", "o", "m", "p", "a", "n", "y"].map((char, idx) => (
       <motion.span
-        key={idx + 100} // Unique key for second line
+        key={idx + 100}
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 + idx * 0.02, duration: 0.4, ease: "easeOut" }}
