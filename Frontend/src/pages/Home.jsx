@@ -593,13 +593,13 @@ const navigate = useNavigate();
     <div className="inline-flex items-center gap-6">
       {/* Avatar */}
       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center border-2 border-orange-200">
-        <span className="text-orange-700 font-bold text-lg">LK</span>
+        <span className="text-orange-700 font-bold text-lg">VC</span>
       </div>
       
       {/* Info */}
       <div className="text-left">
-        <p className="font-bold text-gray-900 text-xl">Mr. L. Komaran</p>
-        <p className="text-gray-600 text-sm font-medium">Correspondent • Minerva Public School</p>
+        <p className="font-bold text-gray-900 text-xl">Mr. Vineeth Chandran</p>
+        <p className="text-gray-600 text-sm font-medium">MD • Aqutech ERP Solutions, Sharjah, UAE</p>
         <div className="flex items-center mt-2">
           {[...Array(5)].map((_, i) => (
             <svg key={i} className="w-4 h-4 text-orange-400" fill="currentColor" viewBox="0 0 20 20">

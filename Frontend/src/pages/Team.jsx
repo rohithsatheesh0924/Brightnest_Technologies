@@ -23,26 +23,26 @@ const TeamPage = () => {
       role: "Managing Partner",
       image: "/images/team/vijaya.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/vijaya-chinnaraj"
+        linkedin: "https://www.linkedin.com/in/brightnest-edutech-a1703a3a9?utm_source=share_via&utm_content=profile&utm_medium=member_android"
       }
     },
     {
       id: 2,
-      name: "Surya Chinnaraj",
-      role: "Founder",
+      name: "Dhinakaran Chinnaraj",
+      role: "Managing Partner",
       image: "/images/team/surya.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/surya-kumar",
-        twitter: "https://twitter.com/suryakumar"
+        linkedin: "https://www.linkedin.com/in/dhinakaran-c-b100b03a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+       
       }
     },
     {
       id: 3,
-      name: "Dhinakaran Chinnaraj",
+      name: "Surya Chinnaraj",
       role: "CEO",
       image: "/images/team/dhinakaran.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/dhinakaran-chinnaraj"
+        linkedin: "https://www.linkedin.com/in/surya-chinnaraj-0a3ba212a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
       }
     },
     {
@@ -51,7 +51,8 @@ const TeamPage = () => {
       role: "CDO",
       image: "/images/team/vimal.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/vimal-vaibhav"
+        linkedin: "https://www.linkedin.com/in/vimal-prabhakar-853100188?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        
       }
     },
     {
@@ -60,28 +61,28 @@ const TeamPage = () => {
       role: "Jr. Web Developer",
       image: "/images/team/aakash.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/aakash-rajan",
-        github: "https://github.com/aakashrajan"
+        linkedin: "https://www.linkedin.com/in/aakash10203?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+       
       }
     },
     {
       id: 6,
-      name: "Rohith Satheesh Kumar",
+      name: "Rohith Satheeshkumar",
       role: "Jr. Web Developer",
       image: "/images/team/rohith-satheesh.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/rohith-satheesh-kumar",
-        github: "https://github.com/rohithsatheesh"
+        linkedin: "https://www.linkedin.com/in/rohith--s?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+       
       }
     },
     {
       id: 7,
-      name: "Dharshan Senthil Kumar",
+      name: "Darshan Senthilkumar",
       role: "Jr. UI/UX Designer",
       image: "/images/team/dharshan.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/dharshan-senthil-kumar",
-        dribbble: "https://dribbble.com/dharshansenthil"
+        linkedin: "https://www.linkedin.com/in/darshansenthilkumar-b04120325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        
       }
     }
   ];

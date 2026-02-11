@@ -1,7 +1,56 @@
 // src/pages/Portfolio.jsx
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// ✅ CORRECTED: Fixed "onst" → "const"
+const AnimatedCounter = ({ value, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (hasAnimated) return;
+    
+    let startTimestamp = null;
+    const targetValue = typeof value === 'string' 
+      ? (value.includes('%') ? parseInt(value) : 
+         (value.includes('+') ? parseInt(value) : 2010))
+      : value;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // Ease-out animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * targetValue));
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setHasAnimated(true);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [value, duration, hasAnimated]);
+
+  // Format display value
+  const formatValue = () => {
+    if (typeof value === 'string') {
+      if (value.includes('%')) return `${count}%`;
+      if (value.includes('+')) return `${count}+`;
+      return count.toString();
+    }
+    return count.toString();
+  };
+
+  return (
+    <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-1">
+      {formatValue()}
+    </div>
+  );
+};
 
 const PortfolioPage = () => {
   const navigate = useNavigate();
@@ -39,61 +88,65 @@ const PortfolioPage = () => {
   };
 
   const clients = [
-    {
-      id: 1,
-      name: "Minerva Public School",
-      industry: "Education",
-      project: "Enterprise Website & Student Portal",
-      description: "Comprehensive digital transformation including responsive website, student management portal, and parent communication system serving 5000+ students across 3 campuses.",
-      results: "42% increase in parent engagement, 65% reduction in administrative workload",
-      image: "/minerva-project.jpg"
-    },
-    {
-      id: 2,
-      name: "Showrya BioHydro",
-      industry: "Agriculture & Sustainability",
-      project: "E-Commerce Platform & Inventory Management",
-      description: "End-to-end e-commerce solution with real-time inventory tracking, automated order processing, and integrated payment gateways.",
-      results: "280% revenue growth in first year, 95% customer retention rate",
-      image: "/showrya-project.jpg"
-    },
-    {
-      id: 3,
-      name: "Coimbatore Medical Center",
-      industry: "Healthcare",
-      project: "Patient Management System & Telemedicine",
-      description: "Secure HIPAA-compliant patient portal with appointment scheduling, medical records access, and video consultation capabilities.",
-      results: "78% reduction in no-show appointments, 90% patient satisfaction score",
-      image: "/cmc-project.jpg"
-    },
-    {
-      id: 4,
-      name: "Tamil Nadu Tourism Board",
-      industry: "Government & Travel",
-      project: "Digital Tourism Platform",
-      description: "Multilingual tourism platform featuring interactive maps, booking integration, and cultural content showcasing 120+ destinations.",
-      results: "1.2M+ monthly visitors, 35% increase in domestic tourism bookings",
-      image: "/tntb-project.jpg"
-    },
-    {
-      id: 5,
-      name: "Urban Retail Group",
-      industry: "Retail & E-Commerce",
-      project: "Omnichannel Retail Platform",
-      description: "Unified commerce platform connecting 15 physical stores with online marketplace, real-time inventory sync, and personalized experiences.",
-      results: "55% increase in online sales, 40% improvement in inventory accuracy",
-      image: "/urban-retail-project.jpg"
-    },
-    {
-      id: 6,
-      name: "Global Logistics Solutions",
-      industry: "Logistics & Transportation",
-      project: "Fleet Management & Tracking System",
-      description: "Real-time fleet tracking system with route optimization, fuel monitoring, and predictive maintenance for 500+ vehicles.",
-      results: "23% reduction in fuel costs, 30% improvement in delivery efficiency",
-      image: "/gls-project.jpg"
-    }
-  ];
+   {
+  id: 1,
+  name: "KAHE Research Data Product",
+  industry: "Education / Research & Analytics",
+  project: "Research Data Management Product for KAHE",
+  description:
+    "Designed and developed a research data product for Karpagam Academy of Higher Education (KAHE) to manage, organize, and analyze academic research data. The system supports structured data handling, researcher information management, and institutional research insights with a secure and user-friendly interface.",
+  results:
+    "Improved research data organization, enhanced accessibility for faculty and researchers, streamlined academic workflows, and strengthened the institution’s research management capabilities",
+  image: "./Karpagam.png"
+},
+  {
+  id: 2,
+  name: "Aadi Super Shakti",
+  industry: "FMCG / Home Care Products",
+  project: "Product Website for Detergent Powder & Dishwashing Soap",
+  description: "Designed and developed a responsive product-focused website for Aadi Super Shakti showcasing detergent powder and dishwashing soap. The website highlights product benefits, usage details, and brand identity with a clean, mobile-first user interface.",
+  results: "Enhanced product visibility, improved brand credibility, and increased distributor and customer inquiries",
+  image: "./c2.jpg"
+},{
+  id: 3,
+  name: "Dreamfly Education Group",
+  industry: "Education / Overseas Medical Consulting",
+  project: "MBBS Abroad Educational Agency Website",
+  description: "Designed and developed a professional website for Dreamfly Education Group, an MBBS abroad educational consultancy. The website presents university options, country details, eligibility criteria, and student inquiry forms with a clean, trust-focused, and mobile-responsive design.",
+  results: "Improved online credibility, increased student inquiries, and streamlined consultation requests",
+  image: "./c7.png"
+},{
+  id: 4,
+  name: "Surya Auto Cast",
+  industry: "Manufacturing / Automotive Components",
+  project: "Corporate Website for Auto Casting Manufacturer",
+  description: "Designed and developed a professional corporate website for Surya Auto Cast to showcase automotive casting products, manufacturing capabilities, quality standards, and company profile with a clean, responsive, and industry-focused design.",
+  results: "Improved brand presence, increased business inquiries, and enhanced credibility among B2B clients",
+  image: "/surya-auto-cast-project.jpg"
+},
+{
+  id: 5,
+  name: "AQES Intense Insight",
+  industry: "Analytics / Research & Business Intelligence",
+  project: "Corporate Website for Data & Insight Company",
+  description:
+    "Designed and developed a professional corporate website for AQES Intense Insight to showcase data analytics services, research solutions, business intelligence offerings, company expertise, and client-focused insights with a clean, modern, and responsive design.",
+  results:
+    "Enhanced brand credibility, improved online presence, increased client inquiries, and strengthened visibility in the analytics and research domain",
+  image: "./c3.webp"
+},
+{
+  id: 6,
+  name: "Mahizhalam Matrimony",
+  industry: "Matrimonial / Relationship Services",
+  project: "Matrimony Website Design & Development",
+  description:
+    "Designed and developed a user-friendly matrimony website for Mahizhalam Matrimony to help users find suitable life partners. The platform includes profile listing, search and filter options, secure user registration, and a clean, culturally focused design optimized for all devices.",
+  results:
+    "Improved user engagement, increased profile registrations, and enhanced trust and credibility among users",
+  image: "./c12.webp"
+}
+]
 
   return (
     <div className="min-h-screen bg-white">
@@ -131,10 +184,17 @@ const PortfolioPage = () => {
               { value: "98%", label: "Retention" },
               { value: "2010", label: "Established" }
             ].map((stat, index) => (
-              <div key={index} className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
-                <div className="text-2xl font-bold text-orange-600 mb-1">{stat.value}</div>
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm"
+              >
+                <AnimatedCounter value={stat.value} duration={2000} />
                 <div className="text-gray-600 text-xs">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -188,12 +248,15 @@ const PortfolioPage = () => {
                     </div>
                     
                     {/* Image */}
-                    <div className={`h-64 lg:h-80 overflow-hidden ${index % 2 === 0 ? 'lg:w-1/2 lg:order-2' : 'lg:w-1/2 lg:order-1'}`}>
-                      <ProjectImage 
-                        src={client.image} 
-                        alt={`${client.name} project`} 
-                      />
-                    </div>
+                   {/* Image */}
+<div className={`h-64 lg:h-80 overflow-hidden ${index % 2 === 0 ? 'lg:w-1/2 lg:order-2' : 'lg:w-1/2 lg:order-1'}`}>
+  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+    <ProjectImage 
+      src={client.image} 
+      alt={`${client.name} project`} 
+    />
+  </div>
+</div>
                   </div>
                 </div>
               </motion.div>

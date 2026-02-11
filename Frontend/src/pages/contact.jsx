@@ -210,8 +210,8 @@ const ContactPage = () => {
   <div className="space-y-3 md:space-y-4">
     {[
       { 
-        name: "Mr. L. Kannan", 
-        role: "Correspondent • Minerva Public", 
+        name: "Mr.  Vineeth Chandran", 
+        role: "MD • Aqutech ERP Solutions, Sharjah, UAE", 
         text: "Consistent excellence and technical depth.", 
         avatar: "https://ui-avatars.com/api/?name=L.+Kannan&background=ffedd5&color=ea580c&size=64" 
       },
@@ -253,7 +253,7 @@ const ContactPage = () => {
 
             {/* Right Column: High-Fidelity Form - WITH ID */}
             <motion.div 
-              id="contact-form" // 👈 CRITICAL: This ID enables scrolling
+              id="contact-form" 
               className="lg:col-span-3 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -333,18 +333,63 @@ const ContactPage = () => {
                   <div className="space-y-1">
                     <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.25em] text-orange-600">Service</label>
                     <div className="relative">
-                      <select 
-                        name="service" 
-                        value={formData.service} 
-                        onChange={handleChange} 
-                        required
-                        className="w-full bg-slate-50/50 border border-transparent rounded-xl md:rounded-xl px-4 md:px-5 py-2.5 md:py-3.5 text-xs md:text-sm font-bold text-slate-800 focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all outline-none appearance-none cursor-pointer invalid:text-slate-300"
-                      >
-                        <option value="" disabled hidden>Selection Area</option>
-                        <option value="Website Design">Website Design</option>
-                        <option value="Mobile App Development">Mobile App Development</option>
-                        <option value="SEO">Enterprise SEO</option>
-                      </select>
+                     <div className="relative">
+  <select 
+    name="service" 
+    value={formData.service} 
+    onChange={handleChange} 
+    required
+    className="w-full bg-slate-50/50 border border-transparent rounded-xl md:rounded-xl px-4 md:px-5 py-2.5 md:py-3.5 text-xs md:text-sm font-bold text-slate-800 focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all outline-none appearance-none cursor-pointer invalid:text-slate-300 pr-10"
+  >
+    <option value="" disabled hidden>Selection Area</option>
+    <option value="Website Design">Website Design</option>
+    <option value="Mobile App Development">Mobile App Development</option>
+    <option value="SEO">Enterprise SEO</option>
+    <option value="E-Commerce Solutions">E-Commerce Solutions</option>
+    <option value="CMS Development">CMS Development</option>
+    <option value="Matrimony Solutions">Matrimony Solutions</option>
+    <option value="PWA Apps">PWA Apps</option>
+    <option value="Web Apps">Web Apps</option>
+    <option value="ERP & POS">ERP & POS</option>
+    <option value="Social Media Marketing">Social Media Marketing</option>
+    <option value="Google Ads">Google Ads</option>
+    <option value="Email Marketing">Email Marketing</option>
+  </select>
+  
+  {/* Custom Dropdown Arrow */}
+  <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+    <svg 
+      className="w-4 h-4 text-orange-500" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+  
+  {/* Custom Styling for Options */}
+  <style jsx>{`
+    select option {
+      background-color: #fff;
+      color: #1e293b;
+      padding: 8px 12px;
+    }
+    
+    select option:checked,
+    select option:hover {
+      background-color: #ffedd5 !important;
+      color: #ea580c !important;
+      font-weight: bold;
+    }
+    
+    /* Selected option styling */
+    select:focus option:checked {
+      background-color: #fed7aa !important;
+      color: #c2410c !important;
+    }
+  `}</style>
+</div>
                       <div className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                         <svg className="w-3 h-3 md:w-3.5 md:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />

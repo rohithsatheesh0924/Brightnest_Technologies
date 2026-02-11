@@ -85,7 +85,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
 
             {/* 404 Fallback */}
-            <Route path="*" element={<div className="text-white p-8">Page not found</div>} />
+            <Route path="*" element={<div className="text-white p-8">Page Coming Soon</div>} />
           </Routes>
         </main>
 
